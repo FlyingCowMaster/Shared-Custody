@@ -1,6 +1,6 @@
 [gd_scene load_steps=15 format=3 uid="uid://dhxvxylwyx3s6"]
 
-[ext_resource type="Script" uid="uid://cm6f3heq6xqh3" path="res://scenes/opening_cutscene.gd" id="1_02jfn"]
+[ext_resource type="Script" uid="uid://cm6f3heq6xqh3" path="res://Scripts/opening_cutscene.gd" id="1_02jfn"]
 [ext_resource type="Texture2D" uid="uid://cnq637ewhcbk" path="res://assets/Cutscenes/Image1Cutscene.png" id="1_oebjb"]
 [ext_resource type="Texture2D" uid="uid://fx3nxexmnae2" path="res://assets/Cutscenes/Image2Cutscene.png" id="2_2bufu"]
 [ext_resource type="AudioStream" uid="uid://bnaa53e8hs8vw" path="res://assets/sound effects/car-crash-sound-effect-376874.mp3" id="2_ci5ub"]
