@@ -1,0 +1,126 @@
+[gd_scene load_steps=15 format=3 uid="uid://dhxvxylwyx3s6"]
+
+[ext_resource type="Script" uid="uid://cm6f3heq6xqh3" path="res://Scripts/opening_cutscene.gd" id="1_02jfn"]
+[ext_resource type="Texture2D" uid="uid://cnq637ewhcbk" path="res://assets/Cutscenes/Image1Cutscene.png" id="1_oebjb"]
+[ext_resource type="Texture2D" uid="uid://fx3nxexmnae2" path="res://assets/Cutscenes/Image2Cutscene.png" id="2_2bufu"]
+[ext_resource type="AudioStream" uid="uid://bnaa53e8hs8vw" path="res://assets/sound effects/car-crash-sound-effect-376874.mp3" id="2_ci5ub"]
+[ext_resource type="AudioStream" uid="uid://dtr7sjh1aqw4w" path="res://assets/sound effects/crying-babywav.mp3" id="3_02jfn"]
+[ext_resource type="Texture2D" uid="uid://cr8xjx8wyo5xk" path="res://assets/Cutscenes/Image3Cutscene.png" id="3_rmyt7"]
+[ext_resource type="Texture2D" uid="uid://dgtfqblfmyj3v" path="res://assets/Cutscenes/Image4Cutscene.png" id="4_ci5ub"]
+[ext_resource type="Texture2D" uid="uid://wyagwuvhv8ys" path="res://assets/Cutscenes/Image5Cutscene.png" id="5_02jfn"]
+[ext_resource type="Texture2D" uid="uid://dphlshe5nmv2n" path="res://assets/Cutscenes/Image6Cutscene.png" id="6_kelyf"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_o80my"]
+blend_mode = 2
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_3qp00"]
+
+[sub_resource type="Animation" id="Animation_7qsw6"]
+resource_name = "OpeningCutscene"
+length = 25.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CutsceneImages:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3, 6.05, 9.066689, 12.026689, 15.033925),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("1_oebjb"), ExtResource("2_2bufu"), ExtResource("3_rmyt7"), ExtResource("4_ci5ub"), ExtResource("5_02jfn"), ExtResource("6_kelyf")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CarCrashSound:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(11.888634),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("BabyCry:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(15.040683),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_l4p34"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CutsceneImages:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_oebjb")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CarCrashSound:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("BabyCry:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_h0r4w"]
+_data = {
+&"OpeningCutscene": SubResource("Animation_7qsw6"),
+&"RESET": SubResource("Animation_l4p34")
+}
+
+[node name="OpeningCutscene" type="Node2D"]
+script = ExtResource("1_02jfn")
+
+[node name="Background" type="Sprite2D" parent="."]
+material = SubResource("CanvasItemMaterial_o80my")
+position = Vector2(563.00006, 313)
+scale = Vector2(1372, 768)
+texture = SubResource("CanvasTexture_3qp00")
+
+[node name="CutsceneImages" type="Sprite2D" parent="."]
+position = Vector2(565, 371.00003)
+scale = Vector2(0.37997532, 0.36675)
+texture = ExtResource("1_oebjb")
+
+[node name="CarCrashSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_ci5ub")
+
+[node name="BabyCry" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_02jfn")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_h0r4w")
+}
