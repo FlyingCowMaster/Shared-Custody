@@ -2,7 +2,7 @@ extends StaticBody3D
 
 @export var isPossesed = false
 # How fast the player moves in meters per second.
-@export var speed = 1
+@export var speed = 15
 
 var target_velocity = Vector3.ZERO
 # Called when the node enters the scene tree for the first time.
@@ -12,9 +12,8 @@ func _ready() -> void:
 func togglePossesion():
 	isPossesed = !isPossesed
 
-func movement():
+func movement(delta):
 	if isPossesed:
-		print(isPossesed)
 		var direction = Vector3.ZERO
 
 		if Input.is_action_pressed("move_right2"):
@@ -31,8 +30,8 @@ func movement():
 		# Setting the basis property will affect the rotation of the node.
 
 		# Ground Velocity
-		target_velocity.x = direction.x * speed
-		target_velocity.z = direction.z * speed
+		target_velocity.x = direction.x * speed * delta
+		target_velocity.z = direction.z * speed * delta
 
 		# Moving the Character
 		position += target_velocity
@@ -41,4 +40,4 @@ func movement():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
 	if isPossesed:
-		movement()
+		movement(delta)
