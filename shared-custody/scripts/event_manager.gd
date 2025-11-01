@@ -1,7 +1,7 @@
 extends Node
 
 var baby: PathFollow3D
-var babyCollision: StaticBody3D
+var babyCollision: Area3D
 
 # Restart level. Can be called after a loss animation or something. I don't know.
 func restartLevel():
@@ -17,3 +17,6 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	const speed = 4.0
 	baby.progress += speed * delta
+
+func test():
+	print("I did it omg")

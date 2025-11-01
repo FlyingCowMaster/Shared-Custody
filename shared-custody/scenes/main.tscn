@@ -1,8 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://dskd24wir2iks"]
+[gd_scene load_steps=9 format=3 uid="uid://dskd24wir2iks"]
 
 [ext_resource type="Script" uid="uid://btbdogsrkdv8t" path="res://scripts/event_manager.gd" id="1_jyhfs"]
-[ext_resource type="PackedScene" uid="uid://c8ocq8o0b3q5d" path="res://scenes/baby_collider.tscn" id="2_tbgi4"]
-[ext_resource type="Script" uid="uid://dyv8x0oh24jbt" path="res://scripts/test_trigger_colliders.gd" id="2_tefeu"]
+[ext_resource type="PackedScene" uid="uid://bcvk4mbr8dhvx" path="res://scenes/baby_collider.tscn" id="2_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://diirsbe27rlth" path="res://scenes/characters/father.tscn" id="3_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://bs0tan5nouunp" path="res://scenes/characters/baby.tscn" id="3_sugp2"]
 [ext_resource type="PackedScene" uid="uid://bvs4oj4gdilar" path="res://scenes/characters/mother.tscn" id="4_tbgi4"]
@@ -29,11 +28,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.972092, 17.727484)
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 
 [node name="TriggerColliders" type="Node3D" parent="."]
-script = ExtResource("2_tefeu")
 
 [node name="BabyTrigger" parent="TriggerColliders" instance=ExtResource("2_tbgi4")]
 collision_layer = 129
-monitorable = true
 
 [node name="CollisionShape3D" parent="TriggerColliders/BabyTrigger" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -14.5)
@@ -52,9 +49,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.2912, 0.45579338, -27.366
 curve = SubResource("Curve3D_sugp2")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D"]
-transform = Transform3D(-0.0018760104, 0, -0.9999829, 0, 1, 0, 0.9999829, 0, -0.0018760104, 0.063165665, 1.7166138e-05, 0.0074710846)
+transform = Transform3D(-0.0018760099, 0, -0.9999826, 0, 1, 0, 0.9999826, 0, -0.0018760099, 0.063165665, 1.7166138e-05, 0.0074710846)
 
 [node name="Baby" parent="Path3D/PathFollow3D" instance=ExtResource("3_sugp2")]
+node_path = NodePath("../../..")
+enter_method = "test"
+exit_method = "test"
 
 [node name="Father" parent="." instance=ExtResource("3_jyhfs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.355113, 1, 0.11585617)

@@ -1,35 +1,22 @@
-[gd_scene load_steps=5 format=3 uid="uid://bs0tan5nouunp"]
+[gd_scene load_steps=4 format=3 uid="uid://bs0tan5nouunp"]
 
 [ext_resource type="Script" uid="uid://jl6d1s2b460i" path="res://scripts/baby_collider.gd" id="1_vrc4k"]
-
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_5mlb3"]
-radius = 1.25
-height = 2.5
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_vrc4k"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vrc4k"]
 size = Vector3(2.4766235, 2.0810852, 2.8051758)
 
-[node name="Baby" type="StaticBody3D"]
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_vrc4k"]
+
+[node name="Baby" type="Area3D"]
 script = ExtResource("1_vrc4k")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(0.45271862, 0, 0, 0, 0.45271862, 0, 0, 0, 0.45271862, 0, 0.08775844, 0)
-shape = SubResource("CapsuleShape3D_5mlb3")
+[node name="TriggerCollider" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.45271862, 0, 0, 0, 0.45271862, 0, 0, 0, 0.45271862, 0.0013677627, 0.12249845, -0.03636338)
+shape = SubResource("BoxShape3D_vrc4k")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.4478193, 0, 0, 0, 1, 0, 0, 0)
 mesh = SubResource("CapsuleMesh_vrc4k")
 
-[node name="Area3D" type="Area3D" parent="."]
-transform = Transform3D(0.45271862, 0, 0, 0, 0.45271862, 0, 0, 0, 0.45271862, 0, 0.08775844, 0)
-collision_layer = 128
-collision_mask = 128
-
-[node name="TriggerCollider" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0030212202, 0.076736435, -0.08032225)
-shape = SubResource("BoxShape3D_vrc4k")
-
-[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
-[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]
