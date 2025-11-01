@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://nkspvjwtxahx"]
+[gd_scene load_steps=6 format=3 uid="uid://bvs4oj4gdilar"]
 
 [ext_resource type="Script" uid="uid://bcp1rvmd05dhg" path="res://scripts/mother.gd" id="1_6ku4e"]
 
@@ -10,7 +10,11 @@ albedo_color = Color(0.56078434, 1, 1, 1)
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_t7ftk"]
 material = SubResource("StandardMaterial3D_gyyn4")
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_6ku4e"]
+
 [node name="Player" type="CharacterBody3D"]
+collision_layer = 5
+collision_mask = 5
 script = ExtResource("1_6ku4e")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
@@ -18,3 +22,14 @@ shape = SubResource("CapsuleShape3D_g2els")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("CapsuleMesh_t7ftk")
+
+[node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+collision_layer = 4
+collision_mask = 4
+monitoring = false
+
+[node name="PossesionShape" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("BoxShape3D_6ku4e")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

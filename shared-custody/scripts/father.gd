@@ -13,25 +13,6 @@ var canPosess: bool
 func _ready():
 	canPosess = true
 
-func possesion():
-	for index in range(get_slide_collision_count()):
-		# We get one of the collisions with the player
-		var collision = get_slide_collision(index)
-
-		# If there are duplicate collisions with a mob in a single frame
-		# the mob will be deleted after the first collision, and a second call to
-		# get_collider will return null, leading to a null pointer when calling
-		# collision.get_collider().is_in_group("mob").
-		# This block of code prevents processing duplicate collisions.
-		if collision.get_collider() == null:
-			continue
-
-		# If the collider is with a mob
-		#if collision.get_collider().is_in_group("possesionObject"):
-				#if get_node(NodePath).has_method("possesion"):
-					#get_node(NodePath).call("possesion")
-					#isPossesing = true
-					#break
 			
 func possesionCheck():
 	$Area3D.monitoring = true
