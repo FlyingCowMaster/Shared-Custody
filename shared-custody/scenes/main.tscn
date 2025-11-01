@@ -1,7 +1,9 @@
+[gd_scene load_steps=5 format=3 uid="uid://dskd24wir2iks"]
 [gd_scene load_steps=7 format=3 uid="uid://dskd24wir2iks"]
 
+[ext_resource type="PackedScene" uid="uid://diirsbe27rlth" path="res://scenes/father.tscn" id="1_0wfyh"]
+[ext_resource type="PackedScene" uid="uid://b5ciqr1hop5a7" path="res://scenes/mother.tscn" id="1_o5qli"]
 [ext_resource type="Script" uid="uid://btbdogsrkdv8t" path="res://scripts/main_baby_pathing.gd" id="1_0wfyh"]
-[ext_resource type="PackedScene" uid="uid://b5ciqr1hop5a7" path="res://scenes/characters/player.tscn" id="1_o5qli"]
 [ext_resource type="PackedScene" uid="uid://bs0tan5nouunp" path="res://scenes/characters/baby.tscn" id="3_sugp2"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_o5qli"]
@@ -34,6 +36,11 @@ shape = SubResource("BoxShape3D_o5qli")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Floor"]
 mesh = SubResource("BoxMesh_0wfyh")
 
+[node name="Father" parent="." instance=ExtResource("1_0wfyh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.249, 1, 3.522)
+
+[node name="Mother" parent="." instance=ExtResource("1_o5qli")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9564576, 1, 3.381178)
 [node name="Player" parent="." instance=ExtResource("1_o5qli")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9212532, 0)
 
