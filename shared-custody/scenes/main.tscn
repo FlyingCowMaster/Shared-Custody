@@ -40,7 +40,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.2912, 0.45579338, -27.366
 curve = SubResource("Curve3D_sugp2")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D"]
-transform = Transform3D(-0.0018760214, 0, -0.99998873, 0, 1, 0, 0.99998873, 0, -0.0018760214, 0.063165665, 1.7166138e-05, 0.0074710846)
+transform = Transform3D(-0.0018760203, 0, -0.99998814, 0, 1, 0, 0.99998814, 0, -0.0018760203, 0.063165665, 1.7166138e-05, 0.0074710846)
 
 [node name="Baby" parent="Path3D/PathFollow3D" instance=ExtResource("3_sugp2")]
 
