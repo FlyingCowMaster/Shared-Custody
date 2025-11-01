@@ -1,5 +1,0 @@
-extends Node
-
-func _physics_process(delta: float) -> void:
-	const move_speed := 4.0
-	$Path3D/PathFollow3D.progress += move_speed * delta
