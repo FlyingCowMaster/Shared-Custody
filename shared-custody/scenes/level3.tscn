@@ -4,12 +4,12 @@
 [ext_resource type="PackedScene" uid="uid://diirsbe27rlth" path="res://scenes/characters/father.tscn" id="2_jyq2n"]
 [ext_resource type="PackedScene" uid="uid://bvs4oj4gdilar" path="res://scenes/characters/mother.tscn" id="3_7uttt"]
 
-[sub_resource type="Curve3D" id="Curve3D_6lxtr"]
+[sub_resource type="Curve3D" id="Curve3D_qyetb"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0.063165665, 1.7166138e-05, 0.0074710846, 0, 0, 0, 0, 0, 0, 54.575996, 1.7166138e-05, 0.109745026, 0, 0, 0, 0, 0, 0, 54.371452, 1.7166138e-05, 11.1554985, 0, 0, 0, 0, 0, 0, 0.3699932, 1.7166138e-05, 11.5646, 0, 0, 0, 0, 0, 0, 0.47226906, 1.7166138e-05, 19.337538, 0, 0, 0, 0, 0, 0, 54.575996, 1.7166138e-05, 19.23526, 0, 0, 0, 0, 0, 0, 54.473724, 1.7166138e-05, 26.905924, 0, 0, 0, 0, 0, 0, 0.5745449, 1.7166138e-05, 27.315025, 0, 0, 0, 0, 0, 0, 0.67682076, 1.7166138e-05, 35.29251, 0, 0, 0, 0, 0, 0, 54.9851, 1.7166138e-05, 35.39479, 0, 0, 0, 0, 0, 0, 54.780556, 1.7166138e-05, 42.963173, 0, 0, 0, 0, 0, 0, 0.67682076, 1.7166138e-05, 42.8609, 0, 0, 0, 0, 0, 0, 0.67682076, 1.7166138e-05, 50.940666, 0, 0, 0, 0, 0, 0, 54.780556, 1.7166138e-05, 51.45204, 0, 0, 0, 0, 0, 0, 54.9851, 1.7166138e-05, 58.099945),
-"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0.30995178, -1.168251e-05, 0.06291199, 0, 0, 0, 0, 0, 0, 14.727459, -1.168251e-05, 0.27880478, 0, 0, 0, 0, 0, 0, 14.727459, -1.168251e-05, 23.759712, 0, 0, 0, 0, 0, 0, 6.252102, -1.168251e-05, 23.759712, 0, 0, 0, 0, 0, 0, 6.113163, -1.168251e-05, 30.289907, 0, 0, 0, 0, 0, 0, 20.840832, -1.168251e-05, 29.873089, 0, 0, 0, 0, 0, 0, 20.840832, -1.168251e-05, 37.236923, 0, 0, 0, 0, 0, 0, 6.5299873, -1.168251e-05, 37.236923, 0, 0, 0, 0, 0, 0, 6.252102, -1.168251e-05, 44.322876, 0, 0, 0, 0, 0, 0, 20.285069, -1.168251e-05, 44.322876, 0, 0, 0, 0, 0, 0, 20.424007, -1.168251e-05, 41.26619, 0, 0, 0, 0, 0, 0, 36.40215, -1.168251e-05, 41.405132, 0, 0, 0, 0, 0, 0, 36.40215, -1.168251e-05, -6.1124477),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 }
-point_count = 15
+point_count = 13
 
 [node name="Level 3" type="Node"]
 
@@ -18,6 +18,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.9720917, 17.727484)
 
 [node name="Floors & Walls" type="CSGCombiner3D" parent="."]
 transform = Transform3D(0.7611568, 0, 0, 0, 1, 0, 0, 0, 0.5205656, 0, 0, 0)
+use_collision = true
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Floors & Walls"]
 transform = Transform3D(67.19275, 0, 0, 0, 1, 0, 0, 0, 96.465485, -5.434106, 0, -0.24765968)
@@ -50,20 +51,20 @@ size = Vector3(0.001, 5.6326904, 0.8239422)
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.57353354, 0, 0.8191821, -0.7579098, 0.37947235, 0.530635, -0.31085694, -0.9252031, 0.21764012, 0, 13.324371, 0)
 
-[node name="Path3D" type="Path3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.2912, 0.45579338, -27.366163)
-curve = SubResource("Curve3D_6lxtr")
-
-[node name="PathFollow3D" type="PathFollow3D" parent="Path3D"]
-transform = Transform3D(-0.0018760078, 0, -0.99998146, 0, 1, 0, 0.99998146, 0, -0.0018760078, 0.063165665, 1.7166138e-05, 0.0074710846)
-
-[node name="Baby" parent="Path3D/PathFollow3D" instance=ExtResource("1_qyetb")]
-node_path = NodePath("../../..")
-enter_method = "test"
-exit_method = "test"
-
 [node name="Father" parent="." instance=ExtResource("2_jyq2n")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.355113, 1, 0.11585617)
 
 [node name="Mother" parent="." instance=ExtResource("3_7uttt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.617932, 1, -9.038626)
+
+[node name="Path3D" type="Path3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.945824, 1.063, -21.32343)
+curve = SubResource("Curve3D_qyetb")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Path3D"]
+transform = Transform3D(-0.014972227, 0, -0.99985975, 0, 1, 0, 0.99985975, 0, -0.014972227, 0.30995178, -1.168251e-05, 0.06291199)
+
+[node name="Baby" parent="Path3D/PathFollow3D" instance=ExtResource("1_qyetb")]
+node_path = NodePath("../../..")
+enter_method = "test"
+exit_method = "test"
