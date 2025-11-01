@@ -1,0 +1,62 @@
+[gd_scene load_steps=5 format=3 uid="uid://b1kedhuodfydf"]
+
+[ext_resource type="PackedScene" uid="uid://bs0tan5nouunp" path="res://scenes/characters/baby.tscn" id="1_8y2od"]
+[ext_resource type="PackedScene" uid="uid://diirsbe27rlth" path="res://scenes/characters/father.tscn" id="2_u23xw"]
+[ext_resource type="PackedScene" uid="uid://bvs4oj4gdilar" path="res://scenes/characters/mother.tscn" id="3_kq3r6"]
+
+[sub_resource type="Curve3D" id="Curve3D_8y2od"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0.30995178, -1.168251e-05, 0.06291199, 0, 0, 0, 0, 0, 0, 0.100316525, -1.168251e-05, 5.942528, 0, 0, 0, 0, 0, 0, -15.335154, -1.168251e-05, 6.067007, 0, 0, 0, 0, 0, 0, -15.459627, -1.168251e-05, 18.390478, 0, 0, 0, 0, 0, 0, 0.2247901, -1.168251e-05, 18.390478, 0, 0, 0, 0, 0, 0, 0.100316525, -1.168251e-05, 10.548269, 0, 0, 0, 0, 0, 0, 23.2535, -1.168251e-05, 10.548269, 0, 0, 0, 0, 0, 0, 23.2535, -1.168251e-05, 16.149849, 0, 0, 0, 0, 0, 0, 6.82221, -1.168251e-05, 16.274326, 0, 0, 0, 0, 0, 0, 6.82221, -1.168251e-05, 23.992056, 0, 0, 0, 0, 0, 0, -14.96171, -1.168251e-05, 24.116537, 0, 0, 0, 0, 0, 0, -14.96171, -1.168251e-05, 32.8301, 0, 0, 0, 0, 0, 0, 12.548269, -1.168251e-05, 32.8301, 0, 0, 0, 0, 0, 0, 12.548269, -1.168251e-05, 21.004549, 0, 0, 0, 0, 0, 0, 23.004545, -1.168251e-05, 21.004549, 0, 0, 0, 0, 0, 0, 23.004545, -1.168251e-05, 49.51036, 0, 0, 0, 0, 0, 0, 13.170668, -1.168251e-05, 49.51036, 0, 0, 0, 0, 0, 0, 13.046186, -1.168251e-05, 40.049915, 0, 0, 0, 0, 0, 0, -15.086191, -1.168251e-05, 40.174397, 0, 0, 0, 0, 0, 0, -14.96171, -1.168251e-05, 49.38588, 0, 0, 0, 0, 0, 0, 8.066999, -1.168251e-05, 49.38588, 0, 0, 0, 0, 0, 0, 8.066999, -1.168251e-05, 56.107773),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 22
+
+[node name="Level 4" type="Node"]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.9720917, 17.727484)
+
+[node name="Floors & Walls" type="CSGCombiner3D" parent="."]
+transform = Transform3D(0.8829473, 0, 0, 0, 1, 0, 0, 0, 0.5205656, 0, 0, 0)
+use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Floors & Walls"]
+transform = Transform3D(67.19275, 0, 0, 0, 1, 0, 0, 0, 96.465485, -5.434106, 0, -0.24765968)
+size = Vector3(0.85302734, 1, 1)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Floors & Walls"]
+transform = Transform3D(67.19275, 0, 0, 0, 1, 0, 0, 0, 96.465485, -34.059135, 2.3163452, -0.24765968)
+size = Vector3(0.001, 5.6326904, 1)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Floors & Walls"]
+transform = Transform3D(67.19275, 0, 0, 0, 1, 0, 0, 0, 96.465485, 23.448404, 2.3163452, -0.24765968)
+size = Vector3(0.001, 5.6326904, 1)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Floors & Walls"]
+transform = Transform3D(-4.034183e-06, 0, 70.231735, 0, 1, 0, -92.29135, 0, -3.0699268e-06, -5.9662457, 2.3163452, -47.855705)
+size = Vector3(0.001, 5.6326904, 0.8432617)
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="Floors & Walls"]
+transform = Transform3D(-4.034183e-06, 0, 70.23175, 0, 1, 0, -92.29138, 0, -3.069928e-06, -5.6267447, 2.3163452, 46.71528)
+size = Vector3(0.001, 5.6326904, 0.8239422)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.57353354, 0, 0.8191821, -0.7579098, 0.37947235, 0.530635, -0.31085694, -0.9252031, 0.21764012, 0, 13.324371, 0)
+
+[node name="Father" parent="." instance=ExtResource("2_u23xw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.355113, 1, 0.11585617)
+
+[node name="Mother" parent="." instance=ExtResource("3_kq3r6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.617932, 1, -9.038626)
+
+[node name="Path3D" type="Path3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.997814, 1.063, -27.859875)
+curve = SubResource("Curve3D_8y2od")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Path3D"]
+transform = Transform3D(-0.9993304, 0, 0.03563066, 0, 1, 0, -0.03563066, 0, -0.9993304, 0.30995178, -1.168251e-05, 0.06291199)
+
+[node name="Baby" parent="Path3D/PathFollow3D" instance=ExtResource("1_8y2od")]
+node_path = NodePath("../../..")
+enter_method = "test"
+exit_method = "test"

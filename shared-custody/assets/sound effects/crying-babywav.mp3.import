@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dtr7sjh1aqw4w"
+path="res://.godot/imported/crying-babywav.mp3-e9e42af29b287f9aa6fb959ed9f488aa.mp3str"
+
+[deps]
+
+source_file="res://assets/sound effects/crying-babywav.mp3"
+dest_files=["res://.godot/imported/crying-babywav.mp3-e9e42af29b287f9aa6fb959ed9f488aa.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

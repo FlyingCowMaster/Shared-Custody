@@ -1,0 +1,70 @@
+[gd_scene load_steps=6 format=3 uid="uid://c2bw1qdgnu4p1"]
+
+[ext_resource type="FontFile" uid="uid://8ycx0yityk65" path="res://assets/MomoTrustDisplay-Regular.ttf" id="1_fgkus"]
+[ext_resource type="Script" uid="uid://bl7nftlu3cr66" path="res://Scripts/play_game_button.gd" id="2_sa3yf"]
+[ext_resource type="Script" uid="uid://c4ng1cergtwp" path="res://Scripts/quit_game_button.gd" id="3_s4lrb"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_sa3yf"]
+blend_mode = 2
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_s4lrb"]
+
+[node name="TitleScreen" type="Node2D"]
+
+[node name="Background" type="TextureRect" parent="."]
+material = SubResource("CanvasItemMaterial_sa3yf")
+offset_right = 1181.0
+offset_bottom = 676.0
+texture = SubResource("CanvasTexture_s4lrb")
+
+[node name="Title" type="Label" parent="."]
+offset_left = 148.0
+offset_top = 111.0
+offset_right = 1043.0
+offset_bottom = 242.0
+theme_override_fonts/font = ExtResource("1_fgkus")
+theme_override_font_sizes/font_size = 100
+text = "Shared Possesion"
+
+[node name="PlayGame" type="Label" parent="."]
+offset_left = 428.0
+offset_top = 306.0
+offset_right = 764.0
+offset_bottom = 386.0
+theme_override_fonts/font = ExtResource("1_fgkus")
+theme_override_font_sizes/font_size = 60
+text = "Play Game"
+
+[node name="PlayGameButton" type="Button" parent="PlayGame"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.034
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -2.5759993
+offset_right = 5.424011
+offset_bottom = 8.0
+script = ExtResource("2_sa3yf")
+
+[node name="QuitGame" type="Label" parent="."]
+offset_left = 428.0
+offset_top = 439.0
+offset_right = 764.0
+offset_bottom = 519.0
+theme_override_fonts/font = ExtResource("1_fgkus")
+theme_override_font_sizes/font_size = 60
+text = "Quit Game"
+
+[node name="QuitGameButton" type="Button" parent="QuitGame"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.034
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -2.5759993
+offset_right = 5.424011
+offset_bottom = 8.0
+script = ExtResource("3_s4lrb")
+
+[connection signal="pressed" from="PlayGame/PlayGameButton" to="PlayGame/PlayGameButton" method="_on_pressed"]
+[connection signal="pressed" from="QuitGame/QuitGameButton" to="QuitGame/QuitGameButton" method="_on_pressed"]
