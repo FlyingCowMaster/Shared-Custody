@@ -1,6 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://ci25f00fbufb0"]
+[gd_scene load_steps=5 format=3 uid="uid://doud2qlat6v2d"]
 
-[ext_resource type="Script" uid="uid://8t1ant0r4tqw" path="res://scripts/father.gd" id="1_ltch0"]
+[ext_resource type="Script" path="res://scripts/father.gd" id="1_ltch0"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_g2els"]
 
