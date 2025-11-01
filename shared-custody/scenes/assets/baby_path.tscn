@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bh3qa6guwg7fv"]
+
+[ext_resource type="PackedScene" uid="uid://bs0tan5nouunp" path="res://scenes/characters/baby.tscn" id="1_4gf6o"]
+
+[sub_resource type="Curve3D" id="Curve3D_wl0u2"]
+
+[node name="BabyPath" type="Path3D"]
+curve = SubResource("Curve3D_wl0u2")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="."]
+transform = Transform3D(-0.0018760089, 0, -0.99998206, 0, 1, 0, 0.99998206, 0, -0.0018760089, 0.063165665, 1.7166138e-05, 0.0074710846)
+
+[node name="Baby" parent="PathFollow3D" instance=ExtResource("1_4gf6o")]
+enter_method = "test"
+exit_method = "test"
