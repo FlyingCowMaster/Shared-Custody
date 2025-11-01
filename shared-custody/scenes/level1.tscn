@@ -1,0 +1,85 @@
+[gd_scene load_steps=5 format=3 uid="uid://cpr3bn875rien"]
+
+[ext_resource type="PackedScene" uid="uid://bs0tan5nouunp" path="res://scenes/characters/baby.tscn" id="1_m7ahb"]
+[ext_resource type="PackedScene" uid="uid://diirsbe27rlth" path="res://scenes/characters/father.tscn" id="2_dwgg1"]
+[ext_resource type="PackedScene" uid="uid://bvs4oj4gdilar" path="res://scenes/characters/mother.tscn" id="3_ru4tf"]
+
+[sub_resource type="Curve3D" id="Curve3D_6sh32"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0.063165665, 1.7166138e-05, 0.0074710846, 0, 0, 0, 0, 0, 0, 54.575996, 1.7166138e-05, 0.109745026, 0, 0, 0, 0, 0, 0, 54.371452, 1.7166138e-05, 11.1554985, 0, 0, 0, 0, 0, 0, 0.3699932, 1.7166138e-05, 11.5646, 0, 0, 0, 0, 0, 0, 0.47226906, 1.7166138e-05, 19.337538, 0, 0, 0, 0, 0, 0, 54.575996, 1.7166138e-05, 19.23526, 0, 0, 0, 0, 0, 0, 54.473724, 1.7166138e-05, 26.905924, 0, 0, 0, 0, 0, 0, 0.5745449, 1.7166138e-05, 27.315025, 0, 0, 0, 0, 0, 0, 0.67682076, 1.7166138e-05, 35.29251, 0, 0, 0, 0, 0, 0, 54.9851, 1.7166138e-05, 35.39479, 0, 0, 0, 0, 0, 0, 54.780556, 1.7166138e-05, 42.963173, 0, 0, 0, 0, 0, 0, 0.67682076, 1.7166138e-05, 42.8609, 0, 0, 0, 0, 0, 0, 0.67682076, 1.7166138e-05, 50.940666, 0, 0, 0, 0, 0, 0, 54.780556, 1.7166138e-05, 51.45204, 0, 0, 0, 0, 0, 0, 54.9851, 1.7166138e-05, 58.099945),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 15
+
+[node name="Level 1" type="Node"]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.9720917, 17.727484)
+
+[node name="Floors & Walls" type="CSGCombiner3D" parent="."]
+transform = Transform3D(0.6342973, 0, 0, 0, 1, 0, 0, 0, 0.5205656, 0, 0, 0)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Floors & Walls"]
+transform = Transform3D(67.19275, 0, 0, 0, 1, 0, 0, 0, 96.465485, -5.434106, 0, -0.24765968)
+size = Vector3(0.85302734, 1, 1)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Floors & Walls"]
+transform = Transform3D(67.19275, 0, 0, 0, 1, 0, 0, 0, 96.465485, -34.059135, 2.3163452, -0.24765968)
+size = Vector3(0.001, 5.6326904, 1)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Floors & Walls"]
+transform = Transform3D(67.19275, 0, 0, 0, 1, 0, 0, 0, 96.465485, 23.448404, 2.3163452, -0.24765968)
+size = Vector3(0.001, 5.6326904, 1)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Floors & Walls"]
+transform = Transform3D(-4.034183e-06, 0, 70.231735, 0, 1, 0, -92.29135, 0, -3.0699268e-06, -5.9662457, 2.3163452, -47.855705)
+size = Vector3(0.001, 5.6326904, 0.8432617)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Floors & Walls"]
+transform = Transform3D(-4.034183e-06, 0, 70.231735, 0, 1, 0, -92.29135, 0, -3.0699268e-06, -5.876772, 2.3163452, -26.395157)
+size = Vector3(0.001, 5.6326904, 0.8548889)
+
+[node name="CSGBox3D9" type="CSGBox3D" parent="Floors & Walls"]
+transform = Transform3D(-92.29135, 0, -6.1398537e-06, 0, 1, 0, 8.068366e-06, 0, -70.231735, 4.849331, 2.3163452, -1.7794685)
+size = Vector3(0.001, 5.6326904, 0.7048588)
+
+[node name="CSGBox3D11" type="CSGBox3D" parent="Floors & Walls"]
+transform = Transform3D(-92.29135, 0, -6.1398537e-06, 0, 1, 0, 8.068366e-06, 0, -70.231735, -14.878425, 2.3163452, 10.573534)
+size = Vector3(0.001, 5.6326904, 0.35600662)
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="Floors & Walls"]
+transform = Transform3D(-4.034183e-06, 0, 70.231735, 0, 1, 0, -92.29135, 0, -3.0699268e-06, -5.876772, 2.3163452, -2.0970764)
+size = Vector3(0.001, 5.6326904, 0.8548889)
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="Floors & Walls"]
+transform = Transform3D(-4.034183e-06, 0, 70.231735, 0, 1, 0, -92.29135, 0, -3.0699268e-06, -5.876772, 2.3163452, 22.696014)
+size = Vector3(0.001, 5.6326904, 0.8548889)
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="Floors & Walls"]
+transform = Transform3D(-4.034183e-06, 0, 70.231735, 0, 1, 0, -92.29135, 0, -3.0699268e-06, -11.86918, 2.3163452, 46.71527)
+size = Vector3(0.001, 5.6326904, 0.6461754)
+
+[node name="CSGBox3D10" type="CSGBox3D" parent="Floors & Walls"]
+transform = Transform3D(-4.034183e-06, 0, 70.231735, 0, 1, 0, -92.29135, 0, -3.0699268e-06, 20.943432, 2.3163452, 46.71527)
+size = Vector3(0.001, 5.6326904, 0.09055996)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.57353354, 0, 0.8191821, -0.7579098, 0.37947235, 0.530635, -0.31085694, -0.9252031, 0.21764012, 0, 13.324371, 0)
+
+[node name="Path3D" type="Path3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.2912, 0.45579338, -27.366163)
+curve = SubResource("Curve3D_6sh32")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Path3D"]
+transform = Transform3D(-0.0018760078, 0, -0.99998146, 0, 1, 0, 0.99998146, 0, -0.0018760078, 0.063165665, 1.7166138e-05, 0.0074710846)
+
+[node name="Baby" parent="Path3D/PathFollow3D" instance=ExtResource("1_m7ahb")]
+node_path = NodePath("../../..")
+enter_method = "test"
+exit_method = "test"
+
+[node name="Father" parent="." instance=ExtResource("2_dwgg1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.355113, 1, 0.11585617)
+
+[node name="Mother" parent="." instance=ExtResource("3_ru4tf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.617932, 1, -9.038626)
