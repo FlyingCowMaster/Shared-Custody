@@ -3,6 +3,7 @@ extends Node3D
 @export var node_path: NodePath
 @export var enter_method: String
 @export var exit_method: String
+@export var speed = 4.0
 
 var baby: PathFollow3D
 var babyCollision: Area3D
@@ -14,7 +15,6 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	const speed = 4.0
 	baby.progress += speed * delta
 
 func _on_area_entered(area: Area3D) -> void:
