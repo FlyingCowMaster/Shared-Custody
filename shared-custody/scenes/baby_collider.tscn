@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://c8ocq8o0b3q5d"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_t3k17"]
+size = Vector3(2, 1.7374268, 31)
+
+[node name="BabyTrigger" type="Area3D"]
+collision_layer = 128
+collision_mask = 128
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_t3k17")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

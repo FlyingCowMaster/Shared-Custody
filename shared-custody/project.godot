@@ -79,6 +79,10 @@ possesion2={
 ]
 }
 
+[layer_names]
+
+3d_physics/layer_8="Baby & Triggers"
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"
