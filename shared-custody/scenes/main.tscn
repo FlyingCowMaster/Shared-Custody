@@ -1,6 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://dskd24wir2iks"]
+[gd_scene load_steps=8 format=3 uid="uid://dskd24wir2iks"]
 
-[ext_resource type="PackedScene" uid="uid://b5ciqr1hop5a7" path="res://scenes/player.tscn" id="1_o5qli"]
+[ext_resource type="Script" uid="uid://btbdogsrkdv8t" path="res://scripts/main_baby_pathing.gd" id="1_0wfyh"]
+[ext_resource type="PackedScene" uid="uid://diirsbe27rlth" path="res://scenes/characters/father.tscn" id="3_jyhfs"]
+[ext_resource type="PackedScene" uid="uid://bs0tan5nouunp" path="res://scenes/characters/baby.tscn" id="3_sugp2"]
+[ext_resource type="PackedScene" uid="uid://bvs4oj4gdilar" path="res://scenes/characters/mother.tscn" id="4_tbgi4"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_o5qli"]
 size = Vector3(60, 2, 60)
@@ -8,7 +11,15 @@ size = Vector3(60, 2, 60)
 [sub_resource type="BoxMesh" id="BoxMesh_0wfyh"]
 size = Vector3(60, 2, 60)
 
+[sub_resource type="Curve3D" id="Curve3D_sugp2"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0.063165665, 1.7166138e-05, 0.0074710846, 0, 0, 0, 0, 0, 0, 54.575996, 1.7166138e-05, 0.109745026, 0, 0, 0, 0, 0, 0, 54.371452, 1.7166138e-05, 11.1554985, 0, 0, 0, 0, 0, 0, 0.3699932, 1.7166138e-05, 11.5646, 0, 0, 0, 0, 0, 0, 0.47226906, 1.7166138e-05, 19.337538, 0, 0, 0, 0, 0, 0, 54.575996, 1.7166138e-05, 19.23526, 0, 0, 0, 0, 0, 0, 54.473724, 1.7166138e-05, 26.905924, 0, 0, 0, 0, 0, 0, 0.5745449, 1.7166138e-05, 27.315025, 0, 0, 0, 0, 0, 0, 0.67682076, 1.7166138e-05, 35.29251, 0, 0, 0, 0, 0, 0, 54.9851, 1.7166138e-05, 35.39479, 0, 0, 0, 0, 0, 0, 54.780556, 1.7166138e-05, 42.963173, 0, 0, 0, 0, 0, 0, 0.67682076, 1.7166138e-05, 42.8609, 0, 0, 0, 0, 0, 0, 0.67682076, 1.7166138e-05, 50.940666, 0, 0, 0, 0, 0, 0, 54.780556, 1.7166138e-05, 51.45204, 0, 0, 0, 0, 0, 0, 54.9851, 1.7166138e-05, 58.099945),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 15
+
 [node name="Main" type="Node"]
+script = ExtResource("1_0wfyh")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.972092, 17.727484)
@@ -24,5 +35,17 @@ shape = SubResource("BoxShape3D_o5qli")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Floor"]
 mesh = SubResource("BoxMesh_0wfyh")
 
-[node name="Player" parent="." instance=ExtResource("1_o5qli")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9212532, 0)
+[node name="Path3D" type="Path3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.2912, 0.45579338, -27.366163)
+curve = SubResource("Curve3D_sugp2")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Path3D"]
+transform = Transform3D(-0.0018760214, 0, -0.99998873, 0, 1, 0, 0.99998873, 0, -0.0018760214, 0.063165665, 1.7166138e-05, 0.0074710846)
+
+[node name="Baby" parent="Path3D/PathFollow3D" instance=ExtResource("3_sugp2")]
+
+[node name="Father" parent="." instance=ExtResource("3_jyhfs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.355113, 1, 0.11585617)
+
+[node name="Mother" parent="." instance=ExtResource("4_tbgi4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.617932, 1, -9.038626)
