@@ -72,7 +72,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.2912, 0.45579338, -27.366
 curve = SubResource("Curve3D_sugp2")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D"]
-transform = Transform3D(-0.001876007, 0, -0.99998105, 0, 1, 0, 0.99998105, 0, -0.001876007, 0.063165665, 1.7166138e-05, 0.0074710846)
+transform = Transform3D(-0.0018760066, 0, -0.9999808, 0, 1, 0, 0.9999808, 0, -0.0018760066, 0.063165665, 1.7166138e-05, 0.0074710846)
 
 [node name="Baby" parent="Path3D/PathFollow3D" instance=ExtResource("3_sugp2")]
 node_path = NodePath("../../..")
@@ -80,7 +80,7 @@ enter_method = "test"
 exit_method = "test"
 
 [node name="ParticlePathFollower" parent="Path3D" instance=ExtResource("4_o6xl0")]
-transform = Transform3D(-0.0018759959, 0, -0.99997514, 0, 1, 0, 0.99997514, 0, -0.0018759959, 0.063165665, 1.7166138e-05, 0.0074710846)
+transform = Transform3D(-0.0018759954, 0, -0.9999749, 0, 1, 0, 0.9999749, 0, -0.0018759954, 0.063165665, 1.7166138e-05, 0.0074710846)
 
 [node name="Father" parent="." instance=ExtResource("3_jyhfs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.355113, 1, 0.11585617)
