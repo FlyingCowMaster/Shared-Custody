@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bs0tan5nouunp"]
 
-[ext_resource type="Script" uid="uid://jl6d1s2b460i" path="res://scripts/baby_collider.gd" id="1_vrc4k"]
+[ext_resource type="Script" uid="uid://jl6d1s2b460i" path="res://Scripts/baby_collider.gd" id="1_vrc4k"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vrc4k"]
 size = Vector3(2.4766235, 2.0810852, 2.8051758)
