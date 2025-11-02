@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://cmjxurx3qflen"]
+[gd_scene load_steps=9 format=3 uid="uid://cmjxurx3qflen"]
 
 [ext_resource type="Script" uid="uid://btbdogsrkdv8t" path="res://scripts/event_manager.gd" id="1_4kmhl"]
 [ext_resource type="PackedScene" uid="uid://bs0tan5nouunp" path="res://scenes/characters/baby.tscn" id="1_ph3nu"]
 [ext_resource type="PackedScene" uid="uid://diirsbe27rlth" path="res://scenes/characters/father.tscn" id="2_4kmhl"]
 [ext_resource type="PackedScene" uid="uid://b02lgthkhoxeo" path="res://scenes/assets/baby_particle_path_follower.tscn" id="3_6yjpi"]
 [ext_resource type="PackedScene" uid="uid://bvs4oj4gdilar" path="res://scenes/characters/mother.tscn" id="3_cq4me"]
+[ext_resource type="PackedScene" uid="uid://ckoq51a42mi66" path="res://scenes/light_bulb.tscn" id="6_6yjpi"]
 
 [sub_resource type="Curve3D" id="Curve3D_6yjpi"]
 _data = {
@@ -12,6 +13,9 @@ _data = {
 "tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0)
 }
 point_count = 7
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6yjpi"]
+size = Vector3(5, 2.423706, 7)
 
 [node name="Tutorial" type="Node"]
 script = ExtResource("1_4kmhl")
@@ -47,8 +51,8 @@ transform = Transform3D(-44.795166, 0, -6.374574e-06, 0, 1, 0, 3.9161177e-06, 0,
 size = Vector3(0.001, 5.6326904, 0.11716461)
 
 [node name="CSGBox3D12" type="CSGBox3D" parent="Floors & Walls"]
-transform = Transform3D(-44.795166, 0, -6.374574e-06, 0, 1, 0, 3.9161177e-06, 0, -72.91662, -4.8317194, 2.3163452, 4.857338)
-size = Vector3(0.001, 5.6326904, 0.110206604)
+transform = Transform3D(-44.795166, 0, -6.374574e-06, 0, 1, 0, 3.9161177e-06, 0, -72.91662, -4.8317194, 2.3163452, 4.628556)
+size = Vector3(0.001, 5.6326904, 0.10393143)
 
 [node name="CSGBox3D8" type="CSGBox3D" parent="Floors & Walls"]
 transform = Transform3D(-3.0849633e-06, 0, 46.280952, 0, 1, 0, -70.57574, 0, -2.0230048e-06, 10.6357, 2.3163452, -15.739007)
@@ -89,9 +93,83 @@ exit_method = "test"
 transform = Transform3D(-0.0066677826, 0, -0.99993235, 0, 1, 0, 0.99993235, 0, -0.0066677826, 0.30995178, -1.168251e-05, -3.260086)
 
 [node name="Father" parent="." instance=ExtResource("2_4kmhl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.355113, 1, 0.11585617)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.82537, 2.243062, -32.898586)
 
 [node name="Mother" parent="." instance=ExtResource("3_cq4me")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.617932, 1, -9.038626)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.122578, 2.0613885, -20.254637)
+
+[node name="LightBulb" parent="." instance=ExtResource("6_6yjpi")]
+transform = Transform3D(0.0027925496, 0, -0.9999961, 0, 1, 0, 0.9999961, 0, 0.0027925496, -11.575869, 3.3250437, -35.469124)
+
+[node name="LightTrigger" type="Area3D" parent="LightBulb"]
+collision_layer = 128
+collision_mask = 128
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LightBulb/LightTrigger"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.133356, -1.7074325, 0.025517464)
+shape = SubResource("BoxShape3D_6yjpi")
+
+[node name="LightBulb4" parent="." instance=ExtResource("6_6yjpi")]
+transform = Transform3D(0.0027925496, 0, -0.9999961, 0, 1, 0, 0.9999961, 0, 0.0027925496, -19.575869, 3.3250437, 9.530876)
+
+[node name="LightTrigger" type="Area3D" parent="LightBulb4"]
+collision_layer = 128
+collision_mask = 128
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LightBulb4/LightTrigger"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6691475, -1.7074325, -4.6040735)
+shape = SubResource("BoxShape3D_6yjpi")
+
+[node name="LightBulb5" parent="." instance=ExtResource("6_6yjpi")]
+transform = Transform3D(0.0027925496, 0, -0.9999961, 0, 1, 0, 0.9999961, 0, 0.0027925496, -4.5758686, 3.3250437, 9.530876)
+
+[node name="LightTrigger" type="Area3D" parent="LightBulb5"]
+collision_layer = 128
+collision_mask = 128
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LightBulb5/LightTrigger"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.006834, -1.7074325, 0.027956009)
+shape = SubResource("BoxShape3D_6yjpi")
+
+[node name="LightBulb6" parent="." instance=ExtResource("6_6yjpi")]
+transform = Transform3D(-0.9999961, 0, -0.0027925058, 0, 1, 0, 0.0027925058, 0, -0.9999961, 13.424131, 3.3250437, 32.530876)
+
+[node name="LightTrigger" type="Area3D" parent="LightBulb6"]
+collision_layer = 128
+collision_mask = 128
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LightBulb6/LightTrigger"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.133356, -1.7074325, 0.025517464)
+shape = SubResource("BoxShape3D_6yjpi")
+
+[node name="LightBulb2" parent="." instance=ExtResource("6_6yjpi")]
+transform = Transform3D(0.0027925496, 0, -0.9999961, 0, 1, 0, 0.9999961, 0, 0.0027925496, 11.424131, 3.3250437, -35.469124)
+
+[node name="Area3D" type="Area3D" parent="LightBulb2"]
+collision_layer = 128
+collision_mask = 128
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LightBulb2/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.113312, -1.7074325, 7.2033935)
+shape = SubResource("BoxShape3D_6yjpi")
+
+[node name="LightBulb3" parent="." instance=ExtResource("6_6yjpi")]
+transform = Transform3D(-0.0027924622, 0, 0.9999961, 0, 1, 0, -0.9999961, 0, -0.0027924622, -0.5758686, 3.3250437, -16.649002)
+
+[node name="Area3D" type="Area3D" parent="LightBulb3"]
+collision_layer = 128
+collision_mask = 128
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LightBulb3/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.6251545, -1.7074325, -2.7072678)
+shape = SubResource("BoxShape3D_6yjpi")
+
+[node name="Area3D2" type="Area3D" parent="LightBulb3"]
+collision_layer = 128
+collision_mask = 128
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LightBulb3/Area3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.900114, -1.7074325, 4.6354704)
+shape = SubResource("BoxShape3D_6yjpi")
 
 [editable path="Path3D/ParticlePathFollower"]
