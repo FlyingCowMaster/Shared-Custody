@@ -171,7 +171,7 @@ texture = ExtResource("1_oebjb")
 
 [node name="CarCrashSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2_ci5ub")
-volume_db = -25.524
+volume_db = -5.0
 
 [node name="BabyCry" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_02jfn")
@@ -193,7 +193,6 @@ libraries = {
 
 [node name="BackgroundMusic" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("16_6j8m8")
-volume_db = -11.797
 autoplay = true
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
