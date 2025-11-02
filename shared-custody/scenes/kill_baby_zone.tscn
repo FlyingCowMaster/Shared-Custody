@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cjgy2adcowg1q"]
+
+[ext_resource type="Script" uid="uid://kci1y5ijio1" path="res://Scripts/kill_baby_zone.gd" id="1_mvj14"]
+
+[node name="KillBabyZone" type="Area3D"]
+script = ExtResource("1_mvj14")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
