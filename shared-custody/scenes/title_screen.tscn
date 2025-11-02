@@ -15,10 +15,10 @@ blend_mode = 2
 
 [node name="Background" type="TextureRect" parent="."]
 material = SubResource("CanvasItemMaterial_sa3yf")
-offset_left = -12.0
-offset_top = -2.0
-offset_right = 1944.0
-offset_bottom = 1094.0
+offset_left = -912.0
+offset_top = -626.0
+offset_right = 2569.0
+offset_bottom = 1739.0
 texture = SubResource("CanvasTexture_s4lrb")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
