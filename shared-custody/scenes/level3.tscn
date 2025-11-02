@@ -28,24 +28,32 @@ transform = Transform3D(67.19275, 0, 0, 0, 1, 0, 0, 0, 96.465485, -5.434106, 0, 
 size = Vector3(0.85302734, 1, 1)
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="Floors & Walls"]
-transform = Transform3D(67.19275, 0, 0, 0, 1, 0, 0, 0, 96.465485, -34.059135, 2.3163452, -0.24765968)
-size = Vector3(0.001, 5.6326904, 1)
+transform = Transform3D(67.19275, 0, 0, 0, 0.9999925, 0, 0, 0, 96.465485, -34.059135, 2.3163443, 6.6292734)
+size = Vector3(0.001, 5.6326904, 0.8574219)
 
 [node name="CSGBox3D3" type="CSGBox3D" parent="Floors & Walls"]
 transform = Transform3D(67.19275, 0, 0, 0, 1, 0, 0, 0, 96.465485, 23.448404, 2.3163452, -0.24765968)
 size = Vector3(0.001, 5.6326904, 1)
 
 [node name="CSGBox3D4" type="CSGBox3D" parent="Floors & Walls"]
-transform = Transform3D(-4.034183e-06, 0, 70.231735, 0, 1, 0, -92.29135, 0, -3.0699268e-06, -5.9662457, 2.3163452, -47.855705)
-size = Vector3(0.001, 5.6326904, 0.8432617)
+transform = Transform3D(-4.034183e-06, 0, 70.231735, 0, 0.9999978, 0, -92.291275, 0, -3.0699239e-06, -5.460426, 2.3163447, -47.855698)
+size = Vector3(0.001, 5.6326904, 0.8288574)
 
 [node name="CSGBox3D5" type="CSGBox3D" parent="Floors & Walls"]
-transform = Transform3D(92.291374, 0, 2.273737e-13, 0, 1, 0, 0, 0, 70.231735, -4.6737123, 2.3163452, -0.17670338)
-size = Vector3(0.001, 5.6326904, 1.3532257)
+transform = Transform3D(92.291374, 0, 2.273737e-13, 0, 0.9999963, 0, 0, 0, 70.23167, -4.6737123, 2.3163447, -7.0987654)
+size = Vector3(0.001, 5.6326904, 1.156105)
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="Floors & Walls"]
+transform = Transform3D(92.291374, 0, 2.273737e-13, 0, 0.9999843, 0, 0, 0, 70.23167, -4.6737123, 2.3163428, 45.038776)
+size = Vector3(0.001, 5.6326904, 0.047049046)
 
 [node name="CSGBox3D8" type="CSGBox3D" parent="Floors & Walls"]
-transform = Transform3D(-4.0341847e-06, 0, 70.23175, 0, 1, 0, -92.29138, 0, -3.069928e-06, -19.343922, 2.3163452, -1.4824181)
-size = Vector3(0.001, 5.6326904, 0.42039204)
+transform = Transform3D(-4.0341847e-06, 0, 70.23175, 0, 0.9999954, 0, -92.291275, 0, -3.0699239e-06, -27.685335, 2.3163447, -1.4824177)
+size = Vector3(0.001, 5.6326904, 0.18285227)
+
+[node name="CSGBox3D9" type="CSGBox3D" parent="Floors & Walls"]
+transform = Transform3D(-4.0341847e-06, 0, 70.23175, 0, 0.999993, 0, -92.291275, 0, -3.0699239e-06, -9.204934, 2.3163443, -1.4824183)
+size = Vector3(0.001, 5.6326904, 0.1260941)
 
 [node name="CSGBox3D7" type="CSGBox3D" parent="Floors & Walls"]
 transform = Transform3D(-4.034183e-06, 0, 70.23175, 0, 1, 0, -92.29138, 0, -3.069928e-06, -5.6267447, 2.3163452, 46.71528)
@@ -65,7 +73,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.945824, 1.063, -21.32343)
 curve = SubResource("Curve3D_qyetb")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D"]
-transform = Transform3D(-0.014972219, 0, -0.9998593, 0, 1, 0, 0.9998593, 0, -0.014972219, 0.30995178, -1.168251e-05, 0.06291199)
+transform = Transform3D(-0.014972217, 0, -0.99985915, 0, 1, 0, 0.99985915, 0, -0.014972217, 0.30995178, -1.168251e-05, 0.06291199)
 
 [node name="Baby" parent="Path3D/PathFollow3D" instance=ExtResource("1_qyetb")]
 node_path = NodePath("../../..")
@@ -73,4 +81,4 @@ enter_method = "test"
 exit_method = "test"
 
 [node name="ParticlePathFollower" parent="Path3D" instance=ExtResource("5_7uttt")]
-transform = Transform3D(-0.014972321, 0, -0.99986607, 0, 1, 0, 0.99986607, 0, -0.014972321, 0.30995178, -1.168251e-05, 0.06291199)
+transform = Transform3D(-0.014972319, 0, -0.99986595, 0, 1, 0, 0.99986595, 0, -0.014972319, 0.30995178, -1.168251e-05, 0.06291199)
