@@ -1,0 +1,98 @@
+[gd_scene load_steps=9 format=3 uid="uid://dkfsxc47yahh7"]
+
+[ext_resource type="Script" uid="uid://0niq0lvpwcye" path="res://Scripts/ending_cutscene.gd" id="1_4bhu5"]
+[ext_resource type="Texture2D" uid="uid://b16gsh4dieype" path="res://assets/Cutscenes/Ending1Cutscene.png" id="1_wgvga"]
+[ext_resource type="Texture2D" uid="uid://dhpbavx444gbk" path="res://assets/Cutscenes/Ending2Cutscene.png" id="2_lhtbx"]
+[ext_resource type="Texture2D" uid="uid://dhxyhqueywmwo" path="res://assets/Cutscenes/Ending3Cutscene.png" id="3_4bhu5"]
+[ext_resource type="AudioStream" uid="uid://du6pafcf0ky3f" path="res://assets/sound effects/Yippee.wav" id="4_lhtbx"]
+
+[sub_resource type="Animation" id="Animation_yefcl"]
+resource_name = "endingCutscene"
+length = 8.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CutsceneImages:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.0666666, 3.3333333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("1_wgvga"), ExtResource("2_lhtbx"), ExtResource("3_4bhu5")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("FadeRect:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.97, 5.3333335, 7.766667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(0.011764706, 0.011764706, 0.011764706, 1), Color(0.011764706, 0.011764706, 0.011764706, 0), Color(0.011764706, 0.011764706, 0.011764706, 0), Color(0.011764706, 0.011764706, 0.011764706, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ksuli"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CutsceneImages:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_wgvga")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("FadeRect:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.011764706, 0.011764706, 0.011764706, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1qf8i"]
+_data = {
+&"RESET": SubResource("Animation_ksuli"),
+&"endingCutscene": SubResource("Animation_yefcl")
+}
+
+[node name="EndingCutscene" type="Node2D"]
+script = ExtResource("1_4bhu5")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1977.0
+offset_bottom = 1192.0
+color = Color(0.012617188, 0.012617188, 0.012617188, 1)
+
+[node name="CutsceneImages" type="Sprite2D" parent="."]
+position = Vector2(976, 538)
+scale = Vector2(0.7199999, 0.72)
+texture = ExtResource("1_wgvga")
+
+[node name="FadeRect" type="ColorRect" parent="."]
+offset_left = -9.0
+offset_top = -26.0
+offset_right = 1968.0
+offset_bottom = 1166.0
+color = Color(0.011764706, 0.011764706, 0.011764706, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_1qf8i")
+}
+
+[node name="BackgroundMusic" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_lhtbx")
+volume_db = -9.017
+autoplay = true
