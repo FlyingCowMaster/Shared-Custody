@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://c8alkc13kviw2"]
+[gd_scene load_steps=12 format=3 uid="uid://c8alkc13kviw2"]
 
 [ext_resource type="Script" uid="uid://btbdogsrkdv8t" path="res://scripts/event_manager.gd" id="1_2k3dv"]
 [ext_resource type="PackedScene" uid="uid://bs0tan5nouunp" path="res://scenes/characters/baby.tscn" id="1_4038r"]
 [ext_resource type="PackedScene" uid="uid://diirsbe27rlth" path="res://scenes/characters/father.tscn" id="2_2k3dv"]
 [ext_resource type="PackedScene" uid="uid://bvs4oj4gdilar" path="res://scenes/characters/mother.tscn" id="3_alqfr"]
 [ext_resource type="PackedScene" uid="uid://b02lgthkhoxeo" path="res://scenes/assets/baby_particle_path_follower.tscn" id="5_alqfr"]
+[ext_resource type="PackedScene" uid="uid://ckoq51a42mi66" path="res://scenes/light_bulb.tscn" id="6_yqkch"]
 
 [sub_resource type="Curve3D" id="Curve3D_4038r"]
 _data = {
@@ -12,6 +13,18 @@ _data = {
 "tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 }
 point_count = 14
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yqkch"]
+size = Vector3(9.635223, 2.4555664, 10.405788)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6ep0u"]
+size = Vector3(4.99292, 2.9355469, 8.156982)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hrcei"]
+size = Vector3(6, 3.4492188, 4.7487183)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xa7n4"]
+size = Vector3(4.892639, 2.1522217, 7.633667)
 
 [node name="Level 2" type="Node"]
 script = ExtResource("1_2k3dv")
@@ -79,6 +92,10 @@ size = Vector3(0.001, 5.6326904, 0.032344103)
 transform = Transform3D(-4.034183e-06, 0, 70.23175, 0, 1, 0, -92.29138, 0, -3.069928e-06, -5.6267447, 2.3163452, 46.71528)
 size = Vector3(0.001, 5.6326904, 0.8239422)
 
+[node name="CSGBox3D15" type="CSGBox3D" parent="Floors & Walls"]
+transform = Transform3D(-4.034183e-06, 0, 70.23175, 0, 1, 0, -92.29138, 0, -3.069928e-06, -15.301508, 3.280487, 36.67362)
+size = Vector3(0.041515626, 7.560974, 0.046561718)
+
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.57353354, 0, 0.8191821, -0.7579098, 0.37947235, 0.530635, -0.31085694, -0.9252031, 0.21764012, 0, 13.324371, 0)
 
@@ -102,3 +119,75 @@ exit_method = "test"
 
 [node name="ParticlePathFollower" parent="Path3D" instance=ExtResource("5_alqfr")]
 transform = Transform3D(-0.9999731, 0, 0.0031865402, 0, 1, 0, -0.0031865402, 0, -0.9999731, 0.30995178, -1.168251e-05, 0.06291199)
+
+[node name="LightBulb" parent="." instance=ExtResource("6_yqkch")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -9.548266, 2.4510517, -24.061432)
+
+[node name="Area3D" type="Area3D" parent="LightBulb"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LightBulb/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.9980164, -0.7277832, -0.5590658)
+shape = SubResource("BoxShape3D_yqkch")
+
+[node name="LightBulb2" parent="." instance=ExtResource("6_yqkch")]
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, -8.227612, 2.4510517, -11.713884)
+
+[node name="Area3D" type="Area3D" parent="LightBulb2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LightBulb2/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.9980164, -0.7277832, -0.5590658)
+shape = SubResource("BoxShape3D_yqkch")
+
+[node name="LightBulb3" parent="." instance=ExtResource("6_yqkch")]
+transform = Transform3D(-1, 0, 8.742277e-08, 0, 1, 0, -8.742277e-08, 0, -1, -0.1388213, 2.4510517, -3.8875)
+
+[node name="Area3D" type="Area3D" parent="LightBulb3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LightBulb3/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.578585, -0.96777344, 2.4141848)
+shape = SubResource("BoxShape3D_6ep0u")
+
+[node name="LightBulb5" parent="." instance=ExtResource("6_yqkch")]
+transform = Transform3D(-4.371138e-08, 0, -1, 0, 1, 0, 1, 0, -4.371138e-08, -15.415762, 2.4510517, 4.5413356)
+
+[node name="Area3D" type="Area3D" parent="LightBulb5"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LightBulb5/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.6453934, -1.2246094, -5.7431335)
+shape = SubResource("BoxShape3D_hrcei")
+
+[node name="LightBulb4" parent="." instance=ExtResource("6_yqkch")]
+transform = Transform3D(1, 0, -1.7484555e-07, 0, 1, 0, 1.7484555e-07, 0, 1, -20.71538, 2.4510517, -3.8875036)
+
+[node name="Area3D" type="Area3D" parent="LightBulb4"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LightBulb4/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.764732, -0.8808646, 3.316834)
+shape = SubResource("BoxShape3D_xa7n4")
+
+[node name="LightBulb6" parent="." instance=ExtResource("6_yqkch")]
+transform = Transform3D(-1, 0, 8.940697e-08, 0, 1, 0, -8.940697e-08, 0, -1, -11.5709715, 2.4510517, 19.24451)
+
+[node name="Area3D" type="Area3D" parent="LightBulb6"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LightBulb6/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.8498936, -0.7277832, 0.61987877)
+shape = SubResource("BoxShape3D_yqkch")
+
+[node name="LightBulb7" parent="." instance=ExtResource("6_yqkch")]
+transform = Transform3D(-1, 0, 8.940697e-08, 0, 1, 0, -8.940697e-08, 0, -1, -0.13832736, 2.4510517, 11.931485)
+
+[node name="Area3D" type="Area3D" parent="LightBulb7"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LightBulb7/Area3D"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 1.3555317, -1.2246094, -4.0784464)
+shape = SubResource("BoxShape3D_hrcei")
+
+[node name="LightBulb8" parent="." instance=ExtResource("6_yqkch")]
+transform = Transform3D(-1, 0, 8.940697e-08, 0, 1, 0, -8.940697e-08, 0, -1, -0.13832814, 2.4510517, 20.677044)
+
+[node name="Area3D" type="Area3D" parent="LightBulb8"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LightBulb8/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.9057956, -1.2246094, -0.9363365)
+shape = SubResource("BoxShape3D_hrcei")

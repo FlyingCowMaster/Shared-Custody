@@ -17,7 +17,7 @@ point_count = 22
 script = ExtResource("1_u23xw")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -5, 39.102154, -0.94090843)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -5, 39.102154, -0.37220097)
 
 [node name="Floors & Walls" type="CSGCombiner3D" parent="."]
 transform = Transform3D(0.8829473, 0, 0, 0, 1, 0, 0, 0, 0.5205656, 0, 0, 0)
@@ -65,7 +65,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.997814, 1.063, -27.859875)
 curve = SubResource("Curve3D_8y2od")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D"]
-transform = Transform3D(-0.9993294, 0, 0.035630625, 0, 1, 0, -0.035630625, 0, -0.9993294, 0.30995178, -1.168251e-05, 0.06291199)
+transform = Transform3D(-0.9993293, 0, 0.03563062, 0, 1, 0, -0.03563062, 0, -0.9993293, 0.30995178, -1.168251e-05, 0.06291199)
 
 [node name="Baby" parent="Path3D/PathFollow3D" instance=ExtResource("1_8y2od")]
 node_path = NodePath("../../..")
@@ -73,4 +73,4 @@ enter_method = "test"
 exit_method = "test"
 
 [node name="ParticlePathFollower" parent="Path3D" instance=ExtResource("5_kq3r6")]
-transform = Transform3D(-0.99934256, 0, 0.035631094, 0, 1, 0, -0.035631094, 0, -0.99934256, 0.30995178, -1.168251e-05, 0.06291199)
+transform = Transform3D(-0.9993425, 0, 0.03563109, 0, 1, 0, -0.03563109, 0, -0.9993425, 0.30995178, -1.168251e-05, 0.06291199)
