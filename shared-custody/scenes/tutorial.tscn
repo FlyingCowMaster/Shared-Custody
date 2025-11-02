@@ -69,13 +69,13 @@ size = Vector3(0.001, 5.6326904, 1)
 material = SubResource("StandardMaterial3D_5qvs7")
 
 [node name="CSGBox3D4" type="CSGBox3D" parent="Floors & Walls"]
-transform = Transform3D(-3.0849633e-06, 0, 46.280952, 0, 1, 0, -70.57574, 0, -2.0230048e-06, -5.4285846, 2.3163452, -36.3269)
-size = Vector3(0.001, 5.6326904, 0.8432617)
+transform = Transform3D(-3.0849633e-06, 0, 46.280952, 0, 1, 0, -70.57574, 0, -2.0230048e-06, -5.050066, 2.3163452, -36.3269)
+size = Vector3(0.001, 5.6326904, 0.8269043)
 material = SubResource("StandardMaterial3D_5qvs7")
 
 [node name="CSGBox3D5" type="CSGBox3D" parent="Floors & Walls"]
-transform = Transform3D(-3.0849633e-06, 0, 46.280952, 0, 1, 0, -70.57574, 0, -2.0230048e-06, -12.139192, 2.3163452, -15.739007)
-size = Vector3(0.001, 5.6326904, 0.5623169)
+transform = Transform3D(-3.0849633e-06, 0, 46.280952, 0, 1, 0, -70.57574, 0, -2.0230048e-06, -11.628793, 2.3163452, -15.739007)
+size = Vector3(0.001, 5.6326904, 0.5402603)
 material = SubResource("StandardMaterial3D_5qvs7")
 
 [node name="CSGBox3D11" type="CSGBox3D" parent="Floors & Walls"]
@@ -99,8 +99,8 @@ size = Vector3(0.001, 5.6326904, 0.13847733)
 material = SubResource("StandardMaterial3D_5qvs7")
 
 [node name="CSGBox3D6" type="CSGBox3D" parent="Floors & Walls"]
-transform = Transform3D(-3.0849633e-06, 0, 46.280952, 0, 1, 0, -70.57574, 0, -2.0230048e-06, 1.575428, 2.3163452, 8.41035)
-size = Vector3(0.001, 5.6326904, 0.55833435)
+transform = Transform3D(-3.0849633e-06, 0, 46.280952, 0, 1, 0, -70.57574, 0, -2.0230048e-06, 1.4089434, 2.3163452, 8.41035)
+size = Vector3(0.001, 5.6326904, 0.55113983)
 material = SubResource("StandardMaterial3D_5qvs7")
 
 [node name="CSGBox3D7" type="CSGBox3D" parent="Floors & Walls"]
