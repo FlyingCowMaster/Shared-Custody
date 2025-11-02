@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://c8alkc13kviw2"]
+[gd_scene load_steps=37 format=3 uid="uid://c8alkc13kviw2"]
 
 [ext_resource type="Script" uid="uid://btbdogsrkdv8t" path="res://scripts/event_manager.gd" id="1_2k3dv"]
 [ext_resource type="PackedScene" uid="uid://bs0tan5nouunp" path="res://scenes/characters/baby.tscn" id="1_4038r"]
@@ -39,6 +39,10 @@ metallic_texture = ExtResource("7_y6lc1")
 roughness_texture = ExtResource("9_nflru")
 normal_enabled = true
 normal_texture = ExtResource("8_ekhvm")
+
+[sub_resource type="ORMMaterial3D" id="ORMMaterial3D_y6lc1"]
+shading_mode = 0
+albedo_color = Color(0, 0, 0, 1)
 
 [sub_resource type="Curve3D" id="Curve3D_4038r"]
 _data = {
@@ -187,6 +191,11 @@ material = SubResource("StandardMaterial3D_5qvs7")
 [node name="door" parent="Floors & Walls" instance=ExtResource("10_y6lc1")]
 transform = Transform3D(2.3648221, 0, 0, 0, 1.5, 0, 0, 0, 2.8814812, -24.691864, 1.25, -46.430035)
 
+[node name="Background" type="CSGBox3D" parent="Floors & Walls/door"]
+transform = Transform3D(67.19275, 0, 0, 0, 1, 0, 0, 0, 96.46563, -3.8515828, -3.9866142, -11.505135)
+size = Vector3(3.7570343, 1, 1.9306641)
+material = SubResource("ORMMaterial3D_y6lc1")
+
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.57353354, 0, 0.8191821, -0.7579098, 0.37947235, 0.530635, -0.31085694, -0.9252031, 0.21764012, 0, 13.324371, 0)
 
@@ -296,7 +305,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.723798, 0.46767962, -3.869
 curve = SubResource("Curve3D_bo4dx")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D2"]
-transform = Transform3D(-0.013057571, -0.034768537, 0.99930537, -1.8626383e-09, 0.99939007, 0.034771517, -0.99991107, 0.00045403116, -0.013049661, -0.02270794, -0.019153476, -0.013527632)
+transform = Transform3D(-0.013057571, -0.034768537, 0.9993055, -1.8626383e-09, 0.99939007, 0.034771524, -0.99991107, 0.00045403116, -0.013049663, -0.02270794, -0.019153476, -0.013527632)
 script = ExtResource("9_bo4dx")
 
 [node name="Buzzsaw" parent="Path3D2/PathFollow3D" instance=ExtResource("9_xa7n4")]
@@ -318,7 +327,7 @@ transform = Transform3D(0.035387937, 0, 0.9993736, 0, 1, 0, -0.9993736, 0, 0.035
 curve = SubResource("Curve3D_8g4ke")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D4"]
-transform = Transform3D(-0.9995429, -0.000113593895, -0.030217493, 0, 0.9999911, -0.0037591849, 0.030217713, -0.003757464, -0.9995356, -0.00097084045, -0.00941205, -0.020932674)
+transform = Transform3D(-0.9995429, -0.00011359388, -0.030217493, 0, 0.999991, -0.0037591849, 0.030217713, -0.0037574635, -0.9995356, -0.00097084045, -0.00941205, -0.020932674)
 script = ExtResource("9_bo4dx")
 
 [node name="Buzzsaw" parent="Path3D4/PathFollow3D" instance=ExtResource("9_xa7n4")]
@@ -368,7 +377,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.145434, 0.6826478, -10.495
 curve = SubResource("Curve3D_cleqw")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D6"]
-transform = Transform3D(-0.012921965, -0.0011342464, -0.99991536, -5.8207647e-11, 0.99999934, -0.0011343405, 0.999916, -1.4657865e-05, -0.012921956, -0.015583992, -0.00750643, 0.00091171265)
+transform = Transform3D(-0.012921964, -0.0011342464, -0.99991524, -5.820764e-11, 0.99999934, -0.0011343404, 0.9999159, -1.4657865e-05, -0.012921955, -0.015583992, -0.00750643, 0.00091171265)
 script = ExtResource("9_bo4dx")
 
 [node name="Buzzsaw" parent="Path3D6/PathFollow3D" instance=ExtResource("9_xa7n4")]

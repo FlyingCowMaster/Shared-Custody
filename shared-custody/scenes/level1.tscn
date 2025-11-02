@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://cpr3bn875rien"]
+[gd_scene load_steps=30 format=3 uid="uid://cpr3bn875rien"]
 
 [ext_resource type="Script" uid="uid://btbdogsrkdv8t" path="res://scripts/event_manager.gd" id="1_dwgg1"]
 [ext_resource type="PackedScene" uid="uid://bs0tan5nouunp" path="res://scenes/characters/baby.tscn" id="1_m7ahb"]
@@ -22,6 +22,9 @@
 [ext_resource type="PackedScene" uid="uid://6w4yu6ji1utk" path="res://scenes/characters/enemy.tscn" id="11_u3awl"]
 [ext_resource type="Script" uid="uid://cu6x6kintnmm0" path="res://scripts/enemy_movement.gd" id="12_2ku1j"]
 
+[sub_resource type="Environment" id="Environment_u068y"]
+ambient_light_source = 2
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_210s6"]
 albedo_texture = ExtResource("2_3w4mx")
 metallic = 1.0
@@ -29,6 +32,10 @@ metallic_texture = ExtResource("3_u068y")
 roughness_texture = ExtResource("5_ai3nx")
 normal_enabled = true
 normal_texture = ExtResource("4_1ooyw")
+
+[sub_resource type="ORMMaterial3D" id="ORMMaterial3D_u068y"]
+shading_mode = 0
+albedo_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5qvs7"]
 albedo_texture = ExtResource("6_phfsf")
@@ -67,6 +74,7 @@ script = ExtResource("1_dwgg1")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.3467883, 0.93794346, 0, -0.93794346, 0.3467883, -3.4556847, 33.877213, 17.090527)
+environment = SubResource("Environment_u068y")
 
 [node name="Floors & Walls" type="CSGCombiner3D" parent="."]
 transform = Transform3D(0.6342973, 0, 0, 0, 1, 0, 0, 0, 0.5205656, 0, 0, 0)
@@ -76,6 +84,11 @@ use_collision = true
 transform = Transform3D(67.19275, 0, 0, 0, 1, 0, 0, 0, 96.465485, -5.434106, 0, -0.24765968)
 size = Vector3(0.85302734, 1, 1)
 material = SubResource("StandardMaterial3D_210s6")
+
+[node name="Background" type="CSGBox3D" parent="Floors & Walls"]
+transform = Transform3D(67.19275, 0, 0, 0, 1, 0, 0, 0, 96.46563, -3.8515828, -3.9866142, -11.505135)
+size = Vector3(3.7570343, 1, 1.9306641)
+material = SubResource("ORMMaterial3D_u068y")
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="Floors & Walls"]
 transform = Transform3D(67.19275, 0, 0, 0, 1, 0, 0, 0, 96.465485, -34.059135, 2.3163452, -0.24765968)
