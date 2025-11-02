@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://cmjxurx3qflen"]
+[gd_scene load_steps=7 format=3 uid="uid://cmjxurx3qflen"]
 
+[ext_resource type="Script" uid="uid://btbdogsrkdv8t" path="res://scripts/event_manager.gd" id="1_4kmhl"]
 [ext_resource type="PackedScene" uid="uid://bs0tan5nouunp" path="res://scenes/characters/baby.tscn" id="1_ph3nu"]
 [ext_resource type="PackedScene" uid="uid://diirsbe27rlth" path="res://scenes/characters/father.tscn" id="2_4kmhl"]
+[ext_resource type="PackedScene" uid="uid://b02lgthkhoxeo" path="res://scenes/assets/baby_particle_path_follower.tscn" id="3_6yjpi"]
 [ext_resource type="PackedScene" uid="uid://bvs4oj4gdilar" path="res://scenes/characters/mother.tscn" id="3_cq4me"]
 
 [sub_resource type="Curve3D" id="Curve3D_6yjpi"]
@@ -12,6 +14,7 @@ _data = {
 point_count = 7
 
 [node name="Tutorial" type="Node"]
+script = ExtResource("1_4kmhl")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.23988919, 0.9708003, 0, -0.9708003, 0.23988919, 0, 57.563366, 17.727484)
@@ -82,8 +85,13 @@ node_path = NodePath("../../..")
 enter_method = "test"
 exit_method = "test"
 
+[node name="ParticlePathFollower" parent="Path3D" instance=ExtResource("3_6yjpi")]
+transform = Transform3D(0.0004982295, 0, -0.99995655, 0, 1, 0, 0.99995655, 0, 0.0004982295, 0.30995178, -1.168251e-05, 0.06291199)
+
 [node name="Father" parent="." instance=ExtResource("2_4kmhl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.355113, 1, 0.11585617)
 
 [node name="Mother" parent="." instance=ExtResource("3_cq4me")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.617932, 1, -9.038626)
+
+[editable path="Path3D/ParticlePathFollower"]
