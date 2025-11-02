@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dhxvxylwyx3s6"]
+[gd_scene load_steps=22 format=3 uid="uid://dhxvxylwyx3s6"]
 
 [ext_resource type="Script" uid="uid://cm6f3heq6xqh3" path="res://Scripts/opening_cutscene.gd" id="1_02jfn"]
 [ext_resource type="Texture2D" uid="uid://cnq637ewhcbk" path="res://assets/Cutscenes/Image1Cutscene.png" id="1_oebjb"]
@@ -8,7 +8,14 @@
 [ext_resource type="Texture2D" uid="uid://cr8xjx8wyo5xk" path="res://assets/Cutscenes/Image3Cutscene.png" id="3_rmyt7"]
 [ext_resource type="Texture2D" uid="uid://dgtfqblfmyj3v" path="res://assets/Cutscenes/Image4Cutscene.png" id="4_ci5ub"]
 [ext_resource type="Texture2D" uid="uid://wyagwuvhv8ys" path="res://assets/Cutscenes/Image5Cutscene.png" id="5_02jfn"]
+[ext_resource type="AudioStream" uid="uid://xr0p4b2iaii" path="res://assets/sound effects/siren.mp3" id="5_3qp00"]
 [ext_resource type="Texture2D" uid="uid://dphlshe5nmv2n" path="res://assets/Cutscenes/Image6Cutscene.png" id="6_kelyf"]
+[ext_resource type="Texture2D" uid="uid://bbqxog6j4bioa" path="res://assets/Cutscenes/Image7Cutscene.png" id="11_l4p34"]
+[ext_resource type="Texture2D" uid="uid://dc4bfp1ddcslt" path="res://assets/Cutscenes/Image8Cutscene.png" id="12_wb2sb"]
+[ext_resource type="Texture2D" uid="uid://dnl8be4tmrv2n" path="res://assets/Cutscenes/Image9Cutscene.png" id="13_1crn2"]
+[ext_resource type="Texture2D" uid="uid://b2vb513gdf2qh" path="res://assets/Cutscenes/Image10Cutscene.png" id="14_6j8m8"]
+[ext_resource type="Texture2D" uid="uid://bipm6u1ctnq5r" path="res://assets/Cutscenes/Image11Cutscene.png" id="15_qn173"]
+[ext_resource type="AudioStream" uid="uid://dq8ogf573bqpe" path="res://assets/sound effects/Shared Custody Instrumental.wav" id="16_6j8m8"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_o80my"]
 blend_mode = 2
@@ -17,7 +24,7 @@ blend_mode = 2
 
 [sub_resource type="Animation" id="Animation_7qsw6"]
 resource_name = "OpeningCutscene"
-length = 25.0
+length = 30.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -25,10 +32,10 @@ tracks/0/path = NodePath("CutsceneImages:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 3, 6.05, 9.066689, 12.026689, 15.033925),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 3, 6.05, 9.066689, 12.026689, 15.033925, 17.040182, 17.533333, 18, 18.5, 19, 19.480183, 19.890182, 20.350182, 20.865723, 21.465723, 21.908922, 22.177567, 24.5088, 26.0288),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [ExtResource("1_oebjb"), ExtResource("2_2bufu"), ExtResource("3_rmyt7"), ExtResource("4_ci5ub"), ExtResource("5_02jfn"), ExtResource("6_kelyf")]
+"values": [ExtResource("1_oebjb"), ExtResource("2_2bufu"), ExtResource("3_rmyt7"), ExtResource("4_ci5ub"), ExtResource("5_02jfn"), ExtResource("6_kelyf"), ExtResource("11_l4p34"), ExtResource("12_wb2sb"), ExtResource("11_l4p34"), ExtResource("12_wb2sb"), ExtResource("11_l4p34"), ExtResource("12_wb2sb"), ExtResource("11_l4p34"), ExtResource("12_wb2sb"), ExtResource("11_l4p34"), ExtResource("12_wb2sb"), ExtResource("11_l4p34"), ExtResource("13_1crn2"), ExtResource("14_6j8m8"), ExtResource("15_qn173")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -44,15 +51,39 @@ tracks/1/keys = {
 }
 tracks/2/type = "value"
 tracks/2/imported = false
-tracks/2/enabled = true
+tracks/2/enabled = false
 tracks/2/path = NodePath("BabyCry:playing")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(15.040683),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(14.733334, 21.869062),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [true]
+"values": [true, true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = false
+tracks/3/path = NodePath("Siren:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(17.028183, 22.133333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("ColorRect:color")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 27.933332, 30),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0.012617188, 0.012617188, 0.012617188, 0), Color(0.012617188, 0.012617188, 0.012617188, 0), Color(0.012617188, 0.012617188, 0.012617188, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_l4p34"]
@@ -93,6 +124,30 @@ tracks/2/keys = {
 "update": 1,
 "values": [true]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Siren:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("ColorRect:color")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.012617188, 0.012617188, 0.012617188, 0)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_h0r4w"]
 _data = {
@@ -116,11 +171,29 @@ texture = ExtResource("1_oebjb")
 
 [node name="CarCrashSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2_ci5ub")
+volume_db = -25.524
 
 [node name="BabyCry" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_02jfn")
+volume_db = -9.728
+
+[node name="Siren" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_3qp00")
+volume_db = -11.422
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1952.0
+offset_bottom = 1112.0
+color = Color(0.012617188, 0.012617188, 0.012617188, 0)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_h0r4w")
 }
+
+[node name="BackgroundMusic" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("16_6j8m8")
+volume_db = -11.797
+autoplay = true
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
