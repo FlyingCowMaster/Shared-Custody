@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://ckoq51a42mi66"]
+
+[ext_resource type="Script" uid="uid://b83rt4fovminj" path="res://scenes/light_bulb.gd" id="1_e3e1c"]
+[ext_resource type="PackedScene" uid="uid://df0jbqwmlery6" path="res://scenes/wall_lamp_2.tscn" id="1_vthir"]
+
+[node name="LightBulb" type="Node3D"]
+script = ExtResource("1_e3e1c")
+
+[node name="WALL_LAMP_2" parent="." instance=ExtResource("1_vthir")]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="WALL_LAMP_2"]
+transform = Transform3D(0.9253554, 0, 0.37910083, 0, 1, 0, -0.37910083, 0, 0.9253554, 0.006645784, 0.0111209825, -0.0050545186)
+light_color = Color(0.9386276, 0.75177073, 0.44022268, 1)
+light_energy = 9.825
+light_indirect_energy = 2.937
+light_volumetric_fog_energy = 3.009
+light_size = 1.0
+light_specular = 3.011
+omni_range = 58.627
