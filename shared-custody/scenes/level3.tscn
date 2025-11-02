@@ -1,10 +1,14 @@
-[gd_scene load_steps=7 format=3 uid="uid://hhvqqi6qehdi"]
+[gd_scene load_steps=8 format=3 uid="uid://hhvqqi6qehdi"]
 
 [ext_resource type="Script" uid="uid://btbdogsrkdv8t" path="res://scripts/event_manager.gd" id="1_jyq2n"]
 [ext_resource type="PackedScene" uid="uid://bs0tan5nouunp" path="res://scenes/characters/baby.tscn" id="1_qyetb"]
 [ext_resource type="PackedScene" uid="uid://diirsbe27rlth" path="res://scenes/characters/father.tscn" id="2_jyq2n"]
 [ext_resource type="PackedScene" uid="uid://bvs4oj4gdilar" path="res://scenes/characters/mother.tscn" id="3_7uttt"]
 [ext_resource type="PackedScene" uid="uid://b02lgthkhoxeo" path="res://scenes/assets/baby_particle_path_follower.tscn" id="5_7uttt"]
+
+[sub_resource type="ORMMaterial3D" id="ORMMaterial3D_7uttt"]
+shading_mode = 0
+albedo_color = Color(0, 0, 0, 1)
 
 [sub_resource type="Curve3D" id="Curve3D_qyetb"]
 _data = {
@@ -63,6 +67,11 @@ size = Vector3(0.001, 5.6326904, 0.1260941)
 transform = Transform3D(-4.034183e-06, 0, 70.23175, 0, 1, 0, -92.29138, 0, -3.069928e-06, -5.6267447, 2.3163452, 46.71528)
 size = Vector3(0.001, 5.6326904, 0.8239422)
 
+[node name="Background" type="CSGBox3D" parent="Floors & Walls"]
+transform = Transform3D(67.19275, 0, 0, 0, 1, 0, 0, 0, 96.46563, -3.8515828, -3.9866142, -11.505135)
+size = Vector3(3.7570343, 1, 1.9306641)
+material = SubResource("ORMMaterial3D_7uttt")
+
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.57353354, 0, 0.8191821, -0.7579098, 0.37947235, 0.530635, -0.31085694, -0.9252031, 0.21764012, 0, 13.324371, 0)
 
@@ -77,12 +86,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.945824, 1.063, -21.32343)
 curve = SubResource("Curve3D_qyetb")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D"]
-transform = Transform3D(-0.014972212, 0, -0.9998588, 0, 1, 0, 0.9998588, 0, -0.014972212, 0.30995178, -1.168251e-05, 0.06291199)
+transform = Transform3D(-0.014972209, 0, -0.9998586, 0, 1, 0, 0.9998586, 0, -0.014972209, 0.30995178, -1.168251e-05, 0.06291199)
 
 [node name="Baby" parent="Path3D/PathFollow3D" instance=ExtResource("1_qyetb")]
-node_path = NodePath("../../..")
 enter_method = "test"
 exit_method = "test"
 
 [node name="ParticlePathFollower" parent="Path3D" instance=ExtResource("5_7uttt")]
-transform = Transform3D(-0.014972314, 0, -0.9998656, 0, 1, 0, 0.9998656, 0, -0.014972314, 0.30995178, -1.168251e-05, 0.06291199)
+transform = Transform3D(-0.014972311, 0, -0.9998654, 0, 1, 0, 0.9998654, 0, -0.014972311, 0.30995178, -1.168251e-05, 0.06291199)

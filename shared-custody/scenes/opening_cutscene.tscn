@@ -160,8 +160,8 @@ script = ExtResource("1_02jfn")
 
 [node name="Background" type="Sprite2D" parent="."]
 material = SubResource("CanvasItemMaterial_o80my")
-position = Vector2(923.50006, 525.5)
-scale = Vector2(2093, 1193)
+position = Vector2(935.00024, 765.5001)
+scale = Vector2(3564.0002, 2673)
 texture = SubResource("CanvasTexture_3qp00")
 
 [node name="CutsceneImages" type="Sprite2D" parent="."]
