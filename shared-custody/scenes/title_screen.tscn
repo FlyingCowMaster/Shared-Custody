@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://c2bw1qdgnu4p1"]
+[gd_scene load_steps=7 format=3 uid="uid://c2bw1qdgnu4p1"]
 
 [ext_resource type="FontFile" uid="uid://8ycx0yityk65" path="res://assets/MomoTrustDisplay-Regular.ttf" id="1_fgkus"]
 [ext_resource type="Script" uid="uid://bl7nftlu3cr66" path="res://Scripts/play_game_button.gd" id="2_sa3yf"]
 [ext_resource type="Script" uid="uid://c4ng1cergtwp" path="res://Scripts/quit_game_button.gd" id="3_s4lrb"]
+[ext_resource type="AudioStream" uid="uid://dvmxta1k5ydrm" path="res://assets/sound effects/Shared Custody.wav" id="4_mgrm8"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_sa3yf"]
 blend_mode = 2
@@ -20,13 +21,13 @@ offset_bottom = 1094.0
 texture = SubResource("CanvasTexture_s4lrb")
 
 [node name="Title" type="Label" parent="."]
-offset_left = 544.0
-offset_top = 382.0
-offset_right = 1439.0
-offset_bottom = 513.0
+offset_left = 562.0
+offset_top = 387.0
+offset_right = 1457.0
+offset_bottom = 518.0
 theme_override_fonts/font = ExtResource("1_fgkus")
 theme_override_font_sizes/font_size = 100
-text = "Shared Possesion"
+text = "Shared Custody"
 
 [node name="PlayGame" type="Label" parent="."]
 offset_left = 815.0
@@ -67,6 +68,11 @@ offset_left = -2.5759993
 offset_right = 5.424011
 offset_bottom = 8.0
 script = ExtResource("3_s4lrb")
+
+[node name="BackgroundMusic" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_mgrm8")
+volume_db = -11.797
+autoplay = true
 
 [connection signal="pressed" from="PlayGame/PlayGameButton" to="PlayGame/PlayGameButton" method="_on_pressed"]
 [connection signal="pressed" from="QuitGame/QuitGameButton" to="QuitGame/QuitGameButton" method="_on_pressed"]

@@ -1,0 +1,78 @@
+[gd_scene load_steps=12 format=3 uid="uid://cg7rbick67xuu"]
+
+[ext_resource type="Script" uid="uid://btbdogsrkdv8t" path="res://scripts/event_manager.gd" id="1_at5dv"]
+[ext_resource type="PackedScene" uid="uid://bcvk4mbr8dhvx" path="res://scenes/assets/baby_collider.tscn" id="2_jcd4p"]
+[ext_resource type="PackedScene" uid="uid://bs0tan5nouunp" path="res://scenes/characters/baby.tscn" id="3_uacia"]
+[ext_resource type="PackedScene" path="res://scenes/assets/baby_particle_path_follower.tscn" id="4_jcd4p"]
+[ext_resource type="PackedScene" uid="uid://diirsbe27rlth" path="res://scenes/characters/father.tscn" id="4_yk7ts"]
+[ext_resource type="PackedScene" uid="uid://bvs4oj4gdilar" path="res://scenes/characters/mother.tscn" id="5_ajshl"]
+[ext_resource type="PackedScene" uid="uid://hyrdcbf6duxy" path="res://scenes/assets/box.tscn" id="6_ghpyy"]
+[ext_resource type="PackedScene" uid="uid://4c04tlwc1m4g" path="res://scenes/assets/door.tscn" id="7_44saj"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_o5qli"]
+size = Vector3(60, 2, 60)
+
+[sub_resource type="BoxMesh" id="BoxMesh_0wfyh"]
+size = Vector3(60, 2, 60)
+
+[sub_resource type="Curve3D" id="Curve3D_sugp2"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0.063165665, 1.7166138e-05, 0.0074710846, 0, 0, 0, 0, 0, 0, 54.575996, 1.7166138e-05, 0.109745026, 0, 0, 0, 0, 0, 0, 54.371452, 1.7166138e-05, 11.1554985, 0, 0, 0, 0, 0, 0, 0.3699932, 1.7166138e-05, 11.5646, 0, 0, 0, 0, 0, 0, 0.47226906, 1.7166138e-05, 19.337538, 0, 0, 0, 0, 0, 0, 54.575996, 1.7166138e-05, 19.23526, 0, 0, 0, 0, 0, 0, 54.473724, 1.7166138e-05, 26.905924, 0, 0, 0, 0, 0, 0, 0.5745449, 1.7166138e-05, 27.315025, 0, 0, 0, 0, 0, 0, 0.67682076, 1.7166138e-05, 35.29251, 0, 0, 0, 0, 0, 0, 54.9851, 1.7166138e-05, 35.39479, 0, 0, 0, 0, 0, 0, 54.780556, 1.7166138e-05, 42.963173, 0, 0, 0, 0, 0, 0, 0.67682076, 1.7166138e-05, 42.8609, 0, 0, 0, 0, 0, 0, 0.67682076, 1.7166138e-05, 50.940666, 0, 0, 0, 0, 0, 0, 54.780556, 1.7166138e-05, 51.45204, 0, 0, 0, 0, 0, 0, 54.9851, 1.7166138e-05, 58.099945),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 15
+
+[node name="Main" type="Node"]
+script = ExtResource("1_at5dv")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.972092, 17.727484)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.019633643, 0.99980724, 0, -0.99980724, -0.019633643, 0, 20.340107, 0)
+
+[node name="TriggerColliders" type="Node3D" parent="."]
+
+[node name="BabyTrigger" parent="TriggerColliders" instance=ExtResource("2_jcd4p")]
+collision_layer = 129
+
+[node name="CollisionShape3D" parent="TriggerColliders/BabyTrigger" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -14.5)
+
+[node name="Floor" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
+shape = SubResource("BoxShape3D_o5qli")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor"]
+mesh = SubResource("BoxMesh_0wfyh")
+
+[node name="Path3D" type="Path3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.2912, 0.45579338, -27.366163)
+curve = SubResource("Curve3D_sugp2")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Path3D"]
+transform = Transform3D(-0.0018760046, 0, -0.9999798, 0, 1, 0, 0.9999798, 0, -0.0018760046, 0.063165665, 1.7166138e-05, 0.0074710846)
+
+[node name="Baby" parent="Path3D/PathFollow3D" instance=ExtResource("3_uacia")]
+node_path = NodePath("../../..")
+enter_method = "test"
+exit_method = "test"
+
+[node name="ParticlePathFollower" parent="Path3D" instance=ExtResource("4_jcd4p")]
+transform = Transform3D(-0.001875996, 0, -0.9999752, 0, 1, 0, 0.9999752, 0, -0.001875996, 0.063165665, 1.7166138e-05, 0.0074710846)
+
+[node name="Father" parent="." instance=ExtResource("4_yk7ts")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.355113, 1, 0.11585617)
+
+[node name="Mother" parent="." instance=ExtResource("5_ajshl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.617932, 1, -9.038626)
+
+[node name="box" parent="." instance=ExtResource("6_ghpyy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.4737015, 0.5, 5.4805946)
+
+[node name="door" parent="." instance=ExtResource("7_44saj")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 3.584875, 0.75, -3.8587255)
+
+[editable path="TriggerColliders/BabyTrigger"]

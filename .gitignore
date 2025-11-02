@@ -1,16 +1,36 @@
-# Godot 4+ specific ignores
+# Godot specific files
 .godot/
-.nomedia
-
-# Godot-specific ignores
-.import/
-export.cfg
-export_credentials.cfg
-
-# Imported translations (automatically generated from CSV files)
+export/
+*.import
 *.translation
+*.tscn.converted
+*.gdns
+*.gdnlib
+*.tres.converted
+*.gltf.converted
 
-# Mono-specific ignores
-.mono/
-data_*/
-mono_crash.*.json
+# Build artifacts
+*.zip
+*.rar
+*.7z
+*.apk
+*.exe
+*.pck
+*.dbg
+*.release
+*.debug
+*.export
+*.import/
+build/
+bin/
+
+# Editor specific files
+.vscode/
+.idea/
+.vs/
+*.sublime-project
+*.sublime-workspace
+
+# OS generated files
+.DS_Store
+Thumbs.db
