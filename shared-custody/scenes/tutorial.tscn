@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://cmjxurx3qflen"]
 
-[ext_resource type="Script" uid="uid://btbdogsrkdv8t" path="res://scripts/event_manager.gd" id="1_4kmhl"]
+[ext_resource type="Script" uid="uid://btbdogsrkdv8t" path="res://Scripts/event_manager.gd" id="1_4kmhl"]
 [ext_resource type="PackedScene" uid="uid://bs0tan5nouunp" path="res://scenes/characters/baby.tscn" id="1_ph3nu"]
 [ext_resource type="PackedScene" uid="uid://diirsbe27rlth" path="res://scenes/characters/father.tscn" id="2_4kmhl"]
 [ext_resource type="PackedScene" uid="uid://b02lgthkhoxeo" path="res://scenes/assets/baby_particle_path_follower.tscn" id="3_6yjpi"]
@@ -85,7 +85,6 @@ curve = SubResource("Curve3D_6yjpi")
 transform = Transform3D(-0.0066679306, 0, -0.9999546, 0, 1, 0, 0.9999546, 0, -0.0066679306, 0.30995178, -1.168251e-05, -3.260086)
 
 [node name="Baby" parent="Path3D/PathFollow3D" instance=ExtResource("1_ph3nu")]
-node_path = NodePath("../../..")
 enter_method = "test"
 exit_method = "test"
 
@@ -100,6 +99,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.122578, 2.0613885, -20.25
 
 [node name="LightBulb" parent="." instance=ExtResource("6_6yjpi")]
 transform = Transform3D(0.0027925496, 0, -0.9999961, 0, 1, 0, 0.9999961, 0, 0.0027925496, -11.575869, 3.3250437, -35.469124)
+script = null
 
 [node name="LightTrigger" type="Area3D" parent="LightBulb"]
 collision_layer = 128
@@ -111,6 +111,7 @@ shape = SubResource("BoxShape3D_6yjpi")
 
 [node name="LightBulb4" parent="." instance=ExtResource("6_6yjpi")]
 transform = Transform3D(0.0027925496, 0, -0.9999961, 0, 1, 0, 0.9999961, 0, 0.0027925496, -19.575869, 3.3250437, 9.530876)
+script = null
 
 [node name="LightTrigger" type="Area3D" parent="LightBulb4"]
 collision_layer = 128
@@ -122,6 +123,7 @@ shape = SubResource("BoxShape3D_6yjpi")
 
 [node name="LightBulb5" parent="." instance=ExtResource("6_6yjpi")]
 transform = Transform3D(0.0027925496, 0, -0.9999961, 0, 1, 0, 0.9999961, 0, 0.0027925496, -4.5758686, 3.3250437, 9.530876)
+script = null
 
 [node name="LightTrigger" type="Area3D" parent="LightBulb5"]
 collision_layer = 128
@@ -133,6 +135,7 @@ shape = SubResource("BoxShape3D_6yjpi")
 
 [node name="LightBulb6" parent="." instance=ExtResource("6_6yjpi")]
 transform = Transform3D(-0.9999961, 0, -0.0027925058, 0, 1, 0, 0.0027925058, 0, -0.9999961, 13.424131, 3.3250437, 32.530876)
+script = null
 
 [node name="LightTrigger" type="Area3D" parent="LightBulb6"]
 collision_layer = 128
@@ -144,25 +147,15 @@ shape = SubResource("BoxShape3D_6yjpi")
 
 [node name="LightBulb2" parent="." instance=ExtResource("6_6yjpi")]
 transform = Transform3D(0.0027925496, 0, -0.9999961, 0, 1, 0, 0.9999961, 0, 0.0027925496, 11.424131, 3.3250437, -35.469124)
+script = null
 
-[node name="Area3D" type="Area3D" parent="LightBulb2"]
+[node name="Area3D2" type="Area3D" parent="LightBulb2"]
 collision_layer = 128
 collision_mask = 128
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="LightBulb2/Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.113312, -1.7074325, 7.2033935)
-shape = SubResource("BoxShape3D_6yjpi")
 
 [node name="LightBulb3" parent="." instance=ExtResource("6_6yjpi")]
 transform = Transform3D(-0.0027924622, 0, 0.9999961, 0, 1, 0, -0.9999961, 0, -0.0027924622, -0.5758686, 3.3250437, -16.649002)
-
-[node name="Area3D" type="Area3D" parent="LightBulb3"]
-collision_layer = 128
-collision_mask = 128
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="LightBulb3/Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.6251545, -1.7074325, -2.7072678)
-shape = SubResource("BoxShape3D_6yjpi")
+script = null
 
 [node name="Area3D2" type="Area3D" parent="LightBulb3"]
 collision_layer = 128
@@ -171,5 +164,9 @@ collision_mask = 128
 [node name="CollisionShape3D" type="CollisionShape3D" parent="LightBulb3/Area3D2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.900114, -1.7074325, 4.6354704)
 shape = SubResource("BoxShape3D_6yjpi")
+
+[node name="Area3D3" type="Area3D" parent="LightBulb3"]
+collision_layer = 128
+collision_mask = 128
 
 [editable path="Path3D/ParticlePathFollower"]
