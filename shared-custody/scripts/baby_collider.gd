@@ -25,7 +25,7 @@ func _on_area_entered(area: Area3D) -> void:
 		get_node(root_node).call("restartLevel")
 	elif (area.name.begins_with("Light")):
 		# Block Baby
-		speed = -maxSpeed
+		speed = -4
 		print("Blocked")
 	else: 
 		speed = maxSpeed

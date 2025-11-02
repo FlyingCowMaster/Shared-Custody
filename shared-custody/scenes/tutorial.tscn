@@ -1,6 +1,6 @@
 [gd_scene load_steps=22 format=3 uid="uid://cmjxurx3qflen"]
 
-[ext_resource type="Script" uid="uid://btbdogsrkdv8t" path="res://Scripts/event_manager.gd" id="1_4kmhl"]
+[ext_resource type="Script" uid="uid://btbdogsrkdv8t" path="res://scripts/event_manager.gd" id="1_4kmhl"]
 [ext_resource type="PackedScene" uid="uid://bs0tan5nouunp" path="res://scenes/characters/baby.tscn" id="1_ph3nu"]
 [ext_resource type="PackedScene" uid="uid://diirsbe27rlth" path="res://scenes/characters/father.tscn" id="2_4kmhl"]
 [ext_resource type="Texture2D" uid="uid://cw0u3tb2i7r5v" path="res://assets/3DAssets/lambert1_Base_Color.png" id="2_vrdqu"]
