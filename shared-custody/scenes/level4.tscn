@@ -17,7 +17,7 @@ point_count = 22
 script = ExtResource("1_u23xw")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.9720917, 17.727484)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -5, 39.102154, -0.94090843)
 
 [node name="Floors & Walls" type="CSGCombiner3D" parent="."]
 transform = Transform3D(0.8829473, 0, 0, 0, 1, 0, 0, 0, 0.5205656, 0, 0, 0)
@@ -36,12 +36,20 @@ transform = Transform3D(67.19275, 0, 0, 0, 1, 0, 0, 0, 96.465485, 23.448404, 2.3
 size = Vector3(0.001, 5.6326904, 1)
 
 [node name="CSGBox3D4" type="CSGBox3D" parent="Floors & Walls"]
-transform = Transform3D(-4.034183e-06, 0, 70.231735, 0, 1, 0, -92.29135, 0, -3.0699268e-06, -5.9662457, 2.3163452, -47.855705)
-size = Vector3(0.001, 5.6326904, 0.8432617)
+transform = Transform3D(-4.034183e-06, 0, 70.231735, 0, 1, 0, -92.29135, 0, -3.0699268e-06, -23.92712, 2.3163452, -47.855705)
+size = Vector3(0.001, 5.6326904, 0.3317871)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Floors & Walls"]
+transform = Transform3D(-4.034183e-06, 0, 70.231735, 0, 1, 0, -92.29135, 0, -3.0699268e-06, 8.912392, 2.3163452, -47.855705)
+size = Vector3(0.001, 5.6326904, 0.40563965)
 
 [node name="CSGBox3D7" type="CSGBox3D" parent="Floors & Walls"]
-transform = Transform3D(-4.034183e-06, 0, 70.23175, 0, 1, 0, -92.29138, 0, -3.069928e-06, -5.6267447, 2.3163452, 46.71528)
-size = Vector3(0.001, 5.6326904, 0.8239422)
+transform = Transform3D(-4.034183e-06, 0, 70.23175, 0, 1, 0, -92.29138, 0, -3.069928e-06, 13.396645, 2.3163452, 46.71528)
+size = Vector3(0.001, 5.6326904, 0.28221035)
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="Floors & Walls"]
+transform = Transform3D(-4.034183e-06, 0, 70.23175, 0, 1, 0, -92.29138, 0, -3.069928e-06, -18.859215, 2.3163452, 46.71528)
+size = Vector3(0.001, 5.6326904, 0.41759443)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.57353354, 0, 0.8191821, -0.7579098, 0.37947235, 0.530635, -0.31085694, -0.9252031, 0.21764012, 0, 13.324371, 0)
@@ -57,7 +65,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.997814, 1.063, -27.859875)
 curve = SubResource("Curve3D_8y2od")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D"]
-transform = Transform3D(-0.99933, 0, 0.035630643, 0, 1, 0, -0.035630643, 0, -0.99933, 0.30995178, -1.168251e-05, 0.06291199)
+transform = Transform3D(-0.9993294, 0, 0.035630625, 0, 1, 0, -0.035630625, 0, -0.9993294, 0.30995178, -1.168251e-05, 0.06291199)
 
 [node name="Baby" parent="Path3D/PathFollow3D" instance=ExtResource("1_8y2od")]
 node_path = NodePath("../../..")
@@ -65,4 +73,4 @@ enter_method = "test"
 exit_method = "test"
 
 [node name="ParticlePathFollower" parent="Path3D" instance=ExtResource("5_kq3r6")]
-transform = Transform3D(-0.99934316, 0, 0.035631113, 0, 1, 0, -0.035631113, 0, -0.99934316, 0.30995178, -1.168251e-05, 0.06291199)
+transform = Transform3D(-0.99934256, 0, 0.035631094, 0, 1, 0, -0.035631094, 0, -0.99934256, 0.30995178, -1.168251e-05, 0.06291199)
