@@ -1,7 +1,6 @@
-[gd_scene load_steps=20 format=3 uid="uid://dskd24wir2iks"]
+[gd_scene load_steps=21 format=3 uid="uid://dskd24wir2iks"]
 
-[ext_resource type="Script" uid="uid://btbdogsrkdv8t" path="res://Scripts/event_manager.gd" id="1_jyhfs"]
-[ext_resource type="PackedScene" uid="uid://bcvk4mbr8dhvx" path="res://scenes/assets/baby_collider.tscn" id="2_tbgi4"]
+[ext_resource type="Script" uid="uid://btbdogsrkdv8t" path="res://scripts/event_manager.gd" id="1_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://diirsbe27rlth" path="res://scenes/characters/father.tscn" id="3_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://bs0tan5nouunp" path="res://scenes/characters/baby.tscn" id="3_sugp2"]
 [ext_resource type="Texture2D" uid="uid://cw0u3tb2i7r5v" path="res://assets/3DAssets/lambert1_Base_Color.png" id="3_trceg"]
@@ -13,7 +12,8 @@
 [ext_resource type="PackedScene" uid="uid://hyrdcbf6duxy" path="res://scenes/assets/box.tscn" id="6_tefeu"]
 [ext_resource type="Texture2D" uid="uid://cp06yaiu0yvka" path="res://assets/3DAssets/lambert1_Roughness.png" id="7_muem4"]
 [ext_resource type="PackedScene" uid="uid://ckoq51a42mi66" path="res://scenes/light_bulb.tscn" id="7_tipki"]
-[ext_resource type="PackedScene" uid="uid://cjgy2adcowg1q" path="res://scenes/kill_baby_zone.tscn" id="13_a8y0u"]
+[ext_resource type="PackedScene" uid="uid://6w4yu6ji1utk" path="res://scenes/characters/enemy.tscn" id="12_a8y0u"]
+[ext_resource type="PackedScene" path="res://scenes/kill_baby_zone.tscn" id="13_a8y0u"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_t3k17"]
 size = Vector3(6, 3, 19.523926)
@@ -78,15 +78,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.2912, 0.45579338, -27.366
 curve = SubResource("Curve3D_sugp2")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D"]
-transform = Transform3D(-0.001876007, 0, -0.99998105, 0, 1, 0, 0.99998105, 0, -0.001876007, 0.063165665, 1.7166138e-05, 0.0074710846)
+transform = Transform3D(-0.0018760064, 0, -0.9999807, 0, 1, 0, 0.9999807, 0, -0.0018760064, 0.063165665, 1.7166138e-05, 0.0074710846)
 
 [node name="Baby" parent="Path3D/PathFollow3D" instance=ExtResource("3_sugp2")]
-node_path = NodePath("../../..")
 enter_method = "test"
 exit_method = "test"
 
 [node name="ParticlePathFollower" parent="Path3D" instance=ExtResource("4_o6xl0")]
-transform = Transform3D(-0.0018759959, 0, -0.99997514, 0, 1, 0, 0.99997514, 0, -0.0018759959, 0.063165665, 1.7166138e-05, 0.0074710846)
+transform = Transform3D(-0.0018759953, 0, -0.9999748, 0, 1, 0, 0.9999748, 0, -0.0018759953, 0.063165665, 1.7166138e-05, 0.0074710846)
 
 [node name="Father" parent="." instance=ExtResource("3_jyhfs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.355113, 1, 0.11585617)
@@ -95,8 +94,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.355113, 1, 0.11585617)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.617932, 1, -9.038626)
 
 [node name="LightBulb" parent="." instance=ExtResource("7_tipki")]
-transform = Transform3D(-50, -7.54979e-06, 0, 7.54979e-06, -50, 0, 0, 0, 50, 0, 19.106201, 0)
+transform = Transform3D(-1, -1.509958e-07, 0, 1.509958e-07, -1, 0, 0, 0, 1, 0, 19.106201, 0)
 script = null
+
+[node name="Enemy" parent="." instance=ExtResource("12_a8y0u")]
 
 [node name="KillBabyZone" parent="." instance=ExtResource("13_a8y0u")]
 
