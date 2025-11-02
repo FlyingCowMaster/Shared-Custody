@@ -9,6 +9,7 @@ var target_velocity = Vector3.ZERO
 
 var posessed: Node3D
 var canPosess: bool
+var possesionFunc: String
 
 func _ready():
 	canPosess = true
@@ -54,13 +55,21 @@ func _physics_process(delta):
 			possesionCheck()
 		else:
 			isPossesing = false
-			posessed.call("togglePossesion")
+			posessed.call(possesionFunc)
 			$MeshInstance3D.show()
 		get_tree().create_timer(2).timeout.connect(func(): canPosess = true)
 
 func _on_area_3d_body_entered(body: Node3D) -> void:
+	print(body)
 	if body.has_method("togglePossesion"):
 		body.call("togglePossesion")
 		$MeshInstance3D.visible = false
 		posessed = body
 		isPossesing = true
+		possesionFunc = "togglePossesion"
+	elif body.has_method("togglePossesionMom"):
+		$MeshInstance3D.visible = false
+		posessed = body
+		isPossesing = true
+		body.call("togglePossesionMom")
+		possesionFunc = "togglePossesionMom"

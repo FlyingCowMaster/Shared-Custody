@@ -40,24 +40,48 @@ transform = Transform3D(-4.034183e-06, 0, 70.231735, 0, 1, 0, -92.29135, 0, -3.0
 size = Vector3(0.001, 5.6326904, 0.8432617)
 
 [node name="CSGBox3D5" type="CSGBox3D" parent="Floors & Walls"]
-transform = Transform3D(-4.034183e-06, 0, 70.231735, 0, 1, 0, -92.29135, 0, -3.0699268e-06, -5.876772, 2.3163452, -26.395157)
-size = Vector3(0.001, 5.6326904, 0.8548889)
+transform = Transform3D(-4.034183e-06, 0, 70.23175, 0, 1, 0, -92.29138, 0, -3.069928e-06, 21.497349, 2.3163452, -26.395164)
+size = Vector3(0.001, 5.6326904, 0.07022858)
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="Floors & Walls"]
+transform = Transform3D(-4.034183e-06, 0, 70.23175, 0, 1, 0, -92.29138, 0, -3.069928e-06, 21.497349, 2.3163452, -1.9671392)
+size = Vector3(0.001, 5.6326904, 0.07022858)
+
+[node name="CSGBox3D12" type="CSGBox3D" parent="Floors & Walls"]
+transform = Transform3D(-4.034183e-06, 0, 70.23175, 0, 1, 0, -92.29138, 0, -3.069928e-06, -12.377946, 2.3163452, -26.39516)
+size = Vector3(0.001, 5.6326904, 0.669754)
+
+[node name="CSGBox3D13" type="CSGBox3D" parent="Floors & Walls"]
+transform = Transform3D(-4.034183e-06, 0, 70.23175, 0, 1, 0, -92.29138, 0, -3.069928e-06, 5.3999496, 2.3163452, -1.8569194)
+size = Vector3(0.001, 5.6326904, 0.1634903)
+
+[node name="CSGBox3D14" type="CSGBox3D" parent="Floors & Walls"]
+transform = Transform3D(-4.034183e-06, 0, 70.23175, 0, 1, 0, -92.29138, 0, -3.069928e-06, -12.400025, 2.3163452, -1.8539964)
+size = Vector3(0.001, 5.6326904, 0.06660843)
+
+[node name="CSGBox3D15" type="CSGBox3D" parent="Floors & Walls"]
+transform = Transform3D(-4.034183e-06, 0, 70.23175, 0, 1, 0, -92.29138, 0, -3.069928e-06, -28.624926, 2.3163452, -1.8569185)
+size = Vector3(0.001, 5.6326904, 0.14756203)
+
+[node name="CSGBox3D16" type="CSGBox3D" parent="Floors & Walls"]
+transform = Transform3D(-4.034183e-06, 0, 70.23175, 0, 1, 0, -92.29138, 0, -3.069928e-06, -31.722727, 2.3163452, 22.710306)
+size = Vector3(0.001, 5.6326904, 0.0646615)
 
 [node name="CSGBox3D9" type="CSGBox3D" parent="Floors & Walls"]
-transform = Transform3D(-92.29135, 0, -6.1398537e-06, 0, 1, 0, 8.068366e-06, 0, -70.231735, 4.849331, 2.3163452, -1.7794685)
-size = Vector3(0.001, 5.6326904, 0.7048588)
+transform = Transform3D(-92.291374, 0, -6.1398555e-06, 0, 1, 0, 8.068366e-06, 0, -70.231735, 4.849332, 2.3163452, 2.2023523)
+size = Vector3(0.001, 5.6326904, 0.8182497)
+
+[node name="CSGBox3D17" type="CSGBox3D" parent="Floors & Walls"]
+transform = Transform3D(-92.291374, 0, -6.1398555e-06, 0, 1, 0, 8.068366e-06, 0, -70.231735, 4.849337, 2.3163452, 43.577484)
+size = Vector3(0.001, 5.6326904, 0.087619066)
 
 [node name="CSGBox3D11" type="CSGBox3D" parent="Floors & Walls"]
 transform = Transform3D(-92.29135, 0, -6.1398537e-06, 0, 1, 0, 8.068366e-06, 0, -70.231735, -14.878425, 2.3163452, 10.573534)
 size = Vector3(0.001, 5.6326904, 0.35600662)
 
-[node name="CSGBox3D6" type="CSGBox3D" parent="Floors & Walls"]
-transform = Transform3D(-4.034183e-06, 0, 70.231735, 0, 1, 0, -92.29135, 0, -3.0699268e-06, -5.876772, 2.3163452, -2.0970764)
-size = Vector3(0.001, 5.6326904, 0.8548889)
-
 [node name="CSGBox3D8" type="CSGBox3D" parent="Floors & Walls"]
-transform = Transform3D(-4.034183e-06, 0, 70.231735, 0, 1, 0, -92.29135, 0, -3.0699268e-06, -5.876772, 2.3163452, 22.696014)
-size = Vector3(0.001, 5.6326904, 0.8548889)
+transform = Transform3D(-4.034183e-06, 0, 70.23175, 0, 1, 0, -92.29138, 0, -3.069928e-06, 1.7985966, 2.3163452, 22.696024)
+size = Vector3(0.001, 5.6326904, 0.6363163)
 
 [node name="CSGBox3D7" type="CSGBox3D" parent="Floors & Walls"]
 transform = Transform3D(-4.034183e-06, 0, 70.231735, 0, 1, 0, -92.29135, 0, -3.0699268e-06, -11.86918, 2.3163452, 46.71527)
