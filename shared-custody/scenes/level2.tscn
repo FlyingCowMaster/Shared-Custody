@@ -1,19 +1,44 @@
-[gd_scene load_steps=25 format=3 uid="uid://c8alkc13kviw2"]
+[gd_scene load_steps=36 format=3 uid="uid://c8alkc13kviw2"]
 
 [ext_resource type="Script" uid="uid://btbdogsrkdv8t" path="res://scripts/event_manager.gd" id="1_2k3dv"]
 [ext_resource type="PackedScene" uid="uid://bs0tan5nouunp" path="res://scenes/characters/baby.tscn" id="1_4038r"]
 [ext_resource type="PackedScene" uid="uid://diirsbe27rlth" path="res://scenes/characters/father.tscn" id="2_2k3dv"]
+[ext_resource type="Texture2D" uid="uid://cw0u3tb2i7r5v" path="res://assets/3DAssets/lambert1_Base_Color.png" id="2_cqal4"]
 [ext_resource type="PackedScene" uid="uid://bvs4oj4gdilar" path="res://scenes/characters/mother.tscn" id="3_alqfr"]
+[ext_resource type="Texture2D" uid="uid://dnulbtqh7ntvf" path="res://assets/3DAssets/lambert1_Metallic.png" id="3_o3sye"]
+[ext_resource type="Texture2D" uid="uid://dxg5gtiyiokb3" path="res://assets/3DAssets/lambert1_Normal_DirectX.png" id="4_24ks5"]
 [ext_resource type="PackedScene" uid="uid://b02lgthkhoxeo" path="res://scenes/assets/baby_particle_path_follower.tscn" id="5_alqfr"]
+[ext_resource type="Texture2D" uid="uid://cp06yaiu0yvka" path="res://assets/3DAssets/lambert1_Roughness.png" id="5_s4es8"]
+[ext_resource type="Texture2D" uid="uid://brt15q3l2eh6b" path="res://assets/3DAssets/Wall/DefaultMaterial_BaseColor.png" id="6_63e4f"]
 [ext_resource type="PackedScene" uid="uid://ckoq51a42mi66" path="res://scenes/light_bulb.tscn" id="6_yqkch"]
 [ext_resource type="PackedScene" uid="uid://b6viguqx6ukpp" path="res://scenes/assets/breakable.tscn" id="7_6ep0u"]
+[ext_resource type="Texture2D" uid="uid://ddbud8hxlhkx8" path="res://assets/3DAssets/Wall/DefaultMaterial_Metallic.png" id="7_y6lc1"]
+[ext_resource type="Texture2D" uid="uid://m05m3khiwf2m" path="res://assets/3DAssets/Wall/DefaultMaterial_Normal_OpenGL.png" id="8_ekhvm"]
 [ext_resource type="PackedScene" uid="uid://ctu4nmgnnlnnk" path="res://scenes/assets/Button.tscn" id="8_hrcei"]
 [ext_resource type="PackedScene" uid="uid://hyrdcbf6duxy" path="res://scenes/assets/box.tscn" id="9_76toy"]
 [ext_resource type="Script" uid="uid://cu6x6kintnmm0" path="res://scripts/enemy_movement.gd" id="9_bo4dx"]
+[ext_resource type="Texture2D" uid="uid://dyy4m472vc6vx" path="res://assets/3DAssets/Wall/DefaultMaterial_Roughness.png" id="9_nflru"]
 [ext_resource type="PackedScene" uid="uid://ddfsj6x3ohhm4" path="res://scenes/assets/buzzsaw.tscn" id="9_xa7n4"]
+[ext_resource type="PackedScene" uid="uid://4c04tlwc1m4g" path="res://scenes/assets/door.tscn" id="10_y6lc1"]
 [ext_resource type="PackedScene" uid="uid://bq03xe7hhnb4x" path="res://scenes/assets/hole.tscn" id="12_8g4ke"]
 [ext_resource type="PackedScene" uid="uid://6w4yu6ji1utk" path="res://scenes/characters/enemy.tscn" id="13_56gwk"]
 [ext_resource type="PackedScene" uid="uid://bkejdlqeic10b" path="res://scenes/assets/spikes.tscn" id="14_ve5ok"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_210s6"]
+albedo_texture = ExtResource("2_cqal4")
+metallic = 1.0
+metallic_texture = ExtResource("3_o3sye")
+roughness_texture = ExtResource("5_s4es8")
+normal_enabled = true
+normal_texture = ExtResource("4_24ks5")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5qvs7"]
+albedo_texture = ExtResource("6_63e4f")
+metallic = 1.0
+metallic_texture = ExtResource("7_y6lc1")
+roughness_texture = ExtResource("9_nflru")
+normal_enabled = true
+normal_texture = ExtResource("8_ekhvm")
 
 [sub_resource type="Curve3D" id="Curve3D_4038r"]
 _data = {
@@ -82,66 +107,85 @@ use_collision = true
 [node name="CSGBox3D" type="CSGBox3D" parent="Floors & Walls"]
 transform = Transform3D(67.19275, 0, 0, 0, 1, 0, 0, 0, 96.465485, -5.434106, 0, -0.24765968)
 size = Vector3(0.85302734, 1, 1)
+material = SubResource("StandardMaterial3D_210s6")
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="Floors & Walls"]
 transform = Transform3D(67.19275, 0, 0, 0, 1, 0, 0, 0, 96.465485, -34.059135, 2.3163452, -0.24765968)
 size = Vector3(0.001, 5.6326904, 1)
+material = SubResource("StandardMaterial3D_5qvs7")
 
 [node name="CSGBox3D3" type="CSGBox3D" parent="Floors & Walls"]
 transform = Transform3D(67.19275, 0, 0, 0, 1, 0, 0, 0, 96.465485, 23.448404, 2.3163452, -0.24765968)
 size = Vector3(0.001, 5.6326904, 1)
+material = SubResource("StandardMaterial3D_5qvs7")
 
 [node name="CSGBox3D4" type="CSGBox3D" parent="Floors & Walls"]
 transform = Transform3D(-4.034183e-06, 0, 70.23175, 0, 1, 0, -92.29138, 0, -3.069928e-06, -5.3382597, 2.3163452, -47.855717)
 size = Vector3(0.001, 5.6326904, 0.40386963)
+material = SubResource("StandardMaterial3D_5qvs7")
 
 [node name="CSGBox3D16" type="CSGBox3D" parent="Floors & Walls"]
 transform = Transform3D(-4.034183e-06, 0, 70.23175, 0, 1, 0, -92.29138, 0, -3.069928e-06, 19.480337, 2.3163452, -47.855717)
 size = Vector3(0.001, 5.6326904, 0.11305237)
+material = SubResource("StandardMaterial3D_5qvs7")
 
 [node name="CSGBox3D14" type="CSGBox3D" parent="Floors & Walls"]
 transform = Transform3D(-4.034183e-06, 0, 70.23175, 0, 1, 0, -92.29138, 0, -3.069928e-06, -31.7579, 2.3163452, -47.855717)
 size = Vector3(0.001, 5.6326904, 0.055908203)
+material = SubResource("StandardMaterial3D_5qvs7")
 
 [node name="CSGBox3D5" type="CSGBox3D" parent="Floors & Walls"]
 transform = Transform3D(92.291374, 0, 2.273737e-13, 0, 1, 0, 0, 0, 70.231735, 1.1124107, 2.3163452, -10.92242)
 size = Vector3(0.001, 5.6326904, 1.0472183)
+material = SubResource("StandardMaterial3D_5qvs7")
 
 [node name="CSGBox3D11" type="CSGBox3D" parent="Floors & Walls"]
 transform = Transform3D(92.291374, 0, 2.273737e-13, 0, 1, 0, 0, 0, 70.231735, 1.1124107, 2.3163452, 41.769054)
 size = Vector3(0.001, 5.6326904, 0.1416874)
+material = SubResource("StandardMaterial3D_5qvs7")
 
 [node name="CSGBox3D6" type="CSGBox3D" parent="Floors & Walls"]
 transform = Transform3D(-4.0341847e-06, 0, 70.23175, 0, 1, 0, -92.29138, 0, -3.069928e-06, 4.556464, 2.3163452, -6.2596884)
 size = Vector3(0.001, 5.6326904, 0.10584569)
+material = SubResource("StandardMaterial3D_5qvs7")
 
 [node name="CSGBox3D10" type="CSGBox3D" parent="Floors & Walls"]
 transform = Transform3D(-4.0341847e-06, 0, 70.23175, 0, 1, 0, -92.29138, 0, -3.069928e-06, 19.893423, 2.3163452, -6.259688)
 size = Vector3(0.001, 5.6326904, 0.09865427)
+material = SubResource("StandardMaterial3D_5qvs7")
 
 [node name="CSGBox3D9" type="CSGBox3D" parent="Floors & Walls"]
 transform = Transform3D(-4.0341847e-06, 0, 70.23175, 0, 1, 0, -92.29138, 0, -3.069928e-06, -27.159035, 2.3163452, 7.1228685)
 size = Vector3(0.001, 5.6326904, 0.19783974)
+material = SubResource("StandardMaterial3D_5qvs7")
 
 [node name="CSGBox3D12" type="CSGBox3D" parent="Floors & Walls"]
 transform = Transform3D(-4.0341847e-06, 0, 70.23175, 0, 1, 0, -92.29138, 0, -3.069928e-06, -5.1951594, 2.3163452, 7.1228685)
 size = Vector3(0.001, 5.6326904, 0.17265034)
+material = SubResource("StandardMaterial3D_5qvs7")
 
 [node name="CSGBox3D8" type="CSGBox3D" parent="Floors & Walls"]
 transform = Transform3D(-4.0341847e-06, 0, 70.23175, 0, 1, 0, -92.29138, 0, -3.069928e-06, -22.361692, 2.3163452, -20.858824)
 size = Vector3(0.001, 5.6326904, 0.33445454)
+material = SubResource("StandardMaterial3D_5qvs7")
 
 [node name="CSGBox3D13" type="CSGBox3D" parent="Floors & Walls"]
 transform = Transform3D(-4.0341847e-06, 0, 70.23175, 0, 1, 0, -92.29138, 0, -3.069928e-06, -1.3018379, 2.3163452, -20.858835)
 size = Vector3(0.001, 5.6326904, 0.060117364)
+material = SubResource("StandardMaterial3D_5qvs7")
 
 [node name="CSGBox3D7" type="CSGBox3D" parent="Floors & Walls"]
 transform = Transform3D(-4.034183e-06, 0, 70.23175, 0, 1, 0, -92.29138, 0, -3.069928e-06, -5.6267447, 2.3163452, 46.71528)
 size = Vector3(0.001, 5.6326904, 0.8239422)
+material = SubResource("StandardMaterial3D_5qvs7")
 
 [node name="CSGBox3D15" type="CSGBox3D" parent="Floors & Walls"]
 transform = Transform3D(-4.034183e-06, 0, 70.23175, 0, 1, 0, -92.29138, 0, -3.069928e-06, -15.301508, 3.280487, 36.67362)
 size = Vector3(0.041515626, 7.560974, 0.046561718)
+material = SubResource("StandardMaterial3D_5qvs7")
+
+[node name="door" parent="Floors & Walls" instance=ExtResource("10_y6lc1")]
+transform = Transform3D(2.3648221, 0, 0, 0, 1.5, 0, 0, 0, 2.8814812, -24.691864, 1.25, -46.430035)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.57353354, 0, 0.8191821, -0.7579098, 0.37947235, 0.530635, -0.31085694, -0.9252031, 0.21764012, 0, 13.324371, 0)
@@ -252,7 +296,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.723798, 0.46767962, -3.869
 curve = SubResource("Curve3D_bo4dx")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D2"]
-transform = Transform3D(-0.013057571, -0.034768537, 0.99930495, -1.8626383e-09, 0.99939007, 0.034771506, -0.99991107, 0.00045403116, -0.013049656, -0.02270794, -0.019153476, -0.013527632)
+transform = Transform3D(-0.013057571, -0.034768537, 0.99930537, -1.8626383e-09, 0.99939007, 0.034771517, -0.99991107, 0.00045403116, -0.013049661, -0.02270794, -0.019153476, -0.013527632)
 script = ExtResource("9_bo4dx")
 
 [node name="Buzzsaw" parent="Path3D2/PathFollow3D" instance=ExtResource("9_xa7n4")]
@@ -274,7 +318,7 @@ transform = Transform3D(0.035387937, 0, 0.9993736, 0, 1, 0, -0.9993736, 0, 0.035
 curve = SubResource("Curve3D_8g4ke")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D4"]
-transform = Transform3D(-0.9995429, -0.000113593946, -0.030217493, 0, 0.99999154, -0.0037591849, 0.030217713, -0.0037574656, -0.9995356, -0.00097084045, -0.00941205, -0.020932674)
+transform = Transform3D(-0.9995429, -0.000113593895, -0.030217493, 0, 0.9999911, -0.0037591849, 0.030217713, -0.003757464, -0.9995356, -0.00097084045, -0.00941205, -0.020932674)
 script = ExtResource("9_bo4dx")
 
 [node name="Buzzsaw" parent="Path3D4/PathFollow3D" instance=ExtResource("9_xa7n4")]
@@ -317,14 +361,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.55497, 0.6020321, -4.0129
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -6.771401, 3.690001, -4.00821)
 
 [node name="Breakable7" parent="." instance=ExtResource("7_6ep0u")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.10882, 3.69, -9.991252)
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -15.10882, 3.69, -9.991252)
 
 [node name="Path3D6" type="Path3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.145434, 0.6826478, -10.495628)
 curve = SubResource("Curve3D_cleqw")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D6"]
-transform = Transform3D(-0.01292197, -0.0011342464, -0.9999158, -5.820767e-11, 0.99999934, -0.001134341, 0.99991643, -1.4657865e-05, -0.012921962, -0.015583992, -0.00750643, 0.00091171265)
+transform = Transform3D(-0.012921965, -0.0011342464, -0.99991536, -5.8207647e-11, 0.99999934, -0.0011343405, 0.999916, -1.4657865e-05, -0.012921956, -0.015583992, -0.00750643, 0.00091171265)
 script = ExtResource("9_bo4dx")
 
 [node name="Buzzsaw" parent="Path3D6/PathFollow3D" instance=ExtResource("9_xa7n4")]

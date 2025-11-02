@@ -1,6 +1,6 @@
-[gd_scene load_steps=27 format=3 uid="uid://cpr3bn875rien"]
+[gd_scene load_steps=28 format=3 uid="uid://cpr3bn875rien"]
 
-[ext_resource type="Script" uid="uid://btbdogsrkdv8t" path="res://Scripts/event_manager.gd" id="1_dwgg1"]
+[ext_resource type="Script" uid="uid://btbdogsrkdv8t" path="res://scripts/event_manager.gd" id="1_dwgg1"]
 [ext_resource type="PackedScene" uid="uid://bs0tan5nouunp" path="res://scenes/characters/baby.tscn" id="1_m7ahb"]
 [ext_resource type="Texture2D" uid="uid://cw0u3tb2i7r5v" path="res://assets/3DAssets/lambert1_Base_Color.png" id="2_3w4mx"]
 [ext_resource type="PackedScene" uid="uid://diirsbe27rlth" path="res://scenes/characters/father.tscn" id="2_dwgg1"]
@@ -18,8 +18,9 @@
 [ext_resource type="Texture2D" uid="uid://dyy4m472vc6vx" path="res://assets/3DAssets/Wall/DefaultMaterial_Roughness.png" id="9_msy1c"]
 [ext_resource type="PackedScene" uid="uid://bq03xe7hhnb4x" path="res://scenes/assets/hole.tscn" id="9_u3awl"]
 [ext_resource type="PackedScene" uid="uid://bkejdlqeic10b" path="res://scenes/assets/spikes.tscn" id="10_d3jkd"]
+[ext_resource type="PackedScene" uid="uid://4c04tlwc1m4g" path="res://scenes/assets/door.tscn" id="10_u068y"]
 [ext_resource type="PackedScene" uid="uid://6w4yu6ji1utk" path="res://scenes/characters/enemy.tscn" id="11_u3awl"]
-[ext_resource type="Script" uid="uid://cu6x6kintnmm0" path="res://Scripts/enemy_movement.gd" id="12_2ku1j"]
+[ext_resource type="Script" uid="uid://cu6x6kintnmm0" path="res://scripts/enemy_movement.gd" id="12_2ku1j"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_210s6"]
 albedo_texture = ExtResource("2_3w4mx")
@@ -166,6 +167,9 @@ transform = Transform3D(-4.034183e-06, 0, 70.231735, 0, 1, 0, -92.29135, 0, -3.0
 size = Vector3(0.001, 5.6326904, 0.09055996)
 material = SubResource("StandardMaterial3D_5qvs7")
 
+[node name="door" parent="Floors & Walls" instance=ExtResource("10_u068y")]
+transform = Transform3D(2.364822, 0, 0, 0, 1.5, 0, 0, 0, 2.8814812, 14.717995, 1.2499981, 43.79587)
+
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.57353354, 0, 0.8191821, -0.7579098, 0.37947235, 0.530635, -0.31085694, -0.9252031, 0.21764012, 0, 13.324371, 0)
 
@@ -180,14 +184,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.887291, 1.063, -23.129654
 curve = SubResource("Curve3D_m7ahb")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D"]
-transform = Transform3D(-0.99988973, -0.00020748674, 0.007790848, 0, 0.9996428, 0.026618624, -0.0077935914, 0.026619803, -0.99953777, 8.784168, 0.22079062, -4.1292763)
+transform = Transform3D(-0.9998891, -0.00020748674, 0.007790848, 0, 0.9996428, 0.026618624, -0.0077935862, 0.026619803, -0.99953777, 8.784168, 0.22079062, -4.1292763)
 
 [node name="Baby" parent="Path3D/PathFollow3D" instance=ExtResource("1_m7ahb")]
 enter_method = "test"
 exit_method = "test"
 
 [node name="ParticlePathFollower" parent="Path3D" instance=ExtResource("5_ru4tf")]
-transform = Transform3D(-0.9999032, -0.00020748674, 0.0077908626, 0, 0.9996428, 0.026618674, -0.0077936966, 0.026619803, -0.9995396, 8.784168, 0.22079062, -4.1292763)
+transform = Transform3D(-0.99990255, -0.00020748674, 0.0077908575, 0, 0.9996428, 0.026618656, -0.0077936915, 0.026619803, -0.99953896, 8.784168, 0.22079062, -4.1292763)
 
 [node name="LightBulb" parent="." instance=ExtResource("6_6sh32")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -18.341942, 2.3830976, -24.09218)
@@ -258,7 +262,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.6300745, -1.7074325, 0.025
 shape = SubResource("BoxShape3D_6sh32")
 
 [node name="Breakable" parent="." instance=ExtResource("7_conm7")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.21232307, 3.69, -22.154621)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.21232307, 3.69, -22.154621)
 
 [node name="Breakable2" parent="." instance=ExtResource("7_conm7")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 6.952489, 3.69, -22.154621)
