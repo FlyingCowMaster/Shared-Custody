@@ -25,6 +25,10 @@ window/stretch/mode="viewport"
 
 project/assembly_name="shared-custody"
 
+[global_group]
+
+possesionObject=""
+
 [input]
 
 ui_left={
