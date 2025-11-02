@@ -98,8 +98,6 @@ possesion1={
 
 3d_physics/layer_2="Dad Possesion"
 3d_physics/layer_3="Mom Possesion"
-3d_physics/layer_4="Kill Baby"
-3d_physics/layer_5="Block Baby"
 3d_physics/layer_8="Baby & Triggers"
 
 [rendering]

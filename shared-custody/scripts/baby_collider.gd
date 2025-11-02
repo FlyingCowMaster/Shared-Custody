@@ -1,10 +1,9 @@
 extends Node3D
 
-@export var root_node: NodePath
+@export var node_path: NodePath
 @export var enter_method: String
 @export var exit_method: String
-@export var maxSpeed = 4.0
-var speed = maxSpeed
+@export var speed = 4.0
 
 var baby: PathFollow3D
 var babyCollision: Area3D
@@ -20,16 +19,20 @@ func _process(delta: float) -> void:
 
 func _on_area_entered(area: Area3D) -> void:
 	print("Baby entered: ", area.name)
-	if (false):
-		# Kill Baby
-		get_node(root_node).call("restartLevel")
-	elif (area.name.begins_with("Light")):
-		# Block Baby
-		speed = -maxSpeed
-		print("Blocked")
-	else: 
-		speed = maxSpeed
-		print("Unblocked")
+	if node_path:
+		if get_node_or_null(node_path) != null:
+			if get_node(node_path).has_method(enter_method):
+				get_node(node_path).call(enter_method)
+			else: printerr("Trigger node missing method")
+		else: printerr("Trigger couldn't get node")
+	else: printerr("Trigger node path empty")
 
-func _on_area_exited(_area: Area3D) -> void:
-	pass
+func _on_area_exited(area: Area3D) -> void:
+	print(area)
+	if node_path:
+		if get_node_or_null(node_path) != null:
+			if get_node(node_path).has_method(exit_method):
+				get_node(node_path).call(exit_method)
+			else: printerr("Trigger node missing method")
+		else: printerr("Trigger couldn't get node")
+	else: printerr("Trigger node path empty")
