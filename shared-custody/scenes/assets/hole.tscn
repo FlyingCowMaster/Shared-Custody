@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://bq03xe7hhnb4x"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_t3u60"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kry80"]
+render_priority = 1
+transparency = 1
+shading_mode = 0
+albedo_color = Color(1, 0, 0, 1)
+grow = true
+grow_amount = 0.056
+stencil_mode = 3
+stencil_flags = 1
+stencil_compare = 5
+metadata/_stencil_owned = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6xfnk"]
+next_pass = SubResource("StandardMaterial3D_kry80")
+shading_mode = 0
+albedo_color = Color(0, 0, 0, 1)
+stencil_mode = 1
+stencil_flags = 2
+stencil_color = Color(1, 0, 0, 1)
+stencil_outline_thickness = 0.056
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_t3u60"]
+height = 1.0
+radius = 4.0
+
+[node name="Hole" type="StaticBody3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(8, 0, 0, 0, 0.026087834, 0, 0, 0, 8, 0, 0, 0)
+mesh = SubResource("CylinderMesh_t3u60")
+surface_material_override/0 = SubResource("StandardMaterial3D_6xfnk")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.39241362, 0)
+shape = SubResource("CylinderShape3D_t3u60")
