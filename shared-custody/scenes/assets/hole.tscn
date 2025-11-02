@@ -1,4 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://bq03xe7hhnb4x"]
+[gd_scene load_steps=7 format=3 uid="uid://bq03xe7hhnb4x"]
+
+[ext_resource type="PackedScene" uid="uid://cjgy2adcowg1q" path="res://scenes/kill_baby_zone.tscn" id="1_kry80"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_t3u60"]
 
@@ -27,7 +29,12 @@ stencil_outline_thickness = 0.056
 height = 1.0
 radius = 4.0
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_6xfnk"]
+size = Vector3(4.8771973, 1, 4.560974)
+
 [node name="Hole" type="StaticBody3D"]
+collision_layer = 0
+collision_mask = 0
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(8, 0, 0, 0, 0.026087834, 0, 0, 0, 8, 0, 0, 0)
@@ -35,5 +42,12 @@ mesh = SubResource("CylinderMesh_t3u60")
 surface_material_override/0 = SubResource("StandardMaterial3D_6xfnk")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+process_mode = 4
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.39241362, 0)
 shape = SubResource("CylinderShape3D_t3u60")
+
+[node name="KillBabyZone" parent="." instance=ExtResource("1_kry80")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="KillBabyZone"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.07067871, 0, -0.10870361)
+shape = SubResource("BoxShape3D_6xfnk")
