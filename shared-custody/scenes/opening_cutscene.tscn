@@ -105,13 +105,13 @@ script = ExtResource("1_02jfn")
 
 [node name="Background" type="Sprite2D" parent="."]
 material = SubResource("CanvasItemMaterial_o80my")
-position = Vector2(563.00006, 313)
-scale = Vector2(1372, 768)
+position = Vector2(923.50006, 525.5)
+scale = Vector2(2093, 1193)
 texture = SubResource("CanvasTexture_3qp00")
 
 [node name="CutsceneImages" type="Sprite2D" parent="."]
-position = Vector2(565, 371.00003)
-scale = Vector2(0.37997532, 0.36675)
+position = Vector2(983, 547.99994)
+scale = Vector2(0.7266671, 0.70137495)
 texture = ExtResource("1_oebjb")
 
 [node name="CarCrashSound" type="AudioStreamPlayer2D" parent="."]

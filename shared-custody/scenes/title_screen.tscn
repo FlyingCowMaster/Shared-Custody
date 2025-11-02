@@ -13,24 +13,26 @@ blend_mode = 2
 
 [node name="Background" type="TextureRect" parent="."]
 material = SubResource("CanvasItemMaterial_sa3yf")
-offset_right = 1181.0
-offset_bottom = 676.0
+offset_left = -12.0
+offset_top = -2.0
+offset_right = 1944.0
+offset_bottom = 1094.0
 texture = SubResource("CanvasTexture_s4lrb")
 
 [node name="Title" type="Label" parent="."]
-offset_left = 148.0
-offset_top = 111.0
-offset_right = 1043.0
-offset_bottom = 242.0
+offset_left = 544.0
+offset_top = 382.0
+offset_right = 1439.0
+offset_bottom = 513.0
 theme_override_fonts/font = ExtResource("1_fgkus")
 theme_override_font_sizes/font_size = 100
 text = "Shared Possesion"
 
 [node name="PlayGame" type="Label" parent="."]
-offset_left = 428.0
-offset_top = 306.0
-offset_right = 764.0
-offset_bottom = 386.0
+offset_left = 815.0
+offset_top = 594.0
+offset_right = 1151.0
+offset_bottom = 674.0
 theme_override_fonts/font = ExtResource("1_fgkus")
 theme_override_font_sizes/font_size = 60
 text = "Play Game"
@@ -47,10 +49,10 @@ offset_bottom = 8.0
 script = ExtResource("2_sa3yf")
 
 [node name="QuitGame" type="Label" parent="."]
-offset_left = 428.0
-offset_top = 439.0
-offset_right = 764.0
-offset_bottom = 519.0
+offset_left = 815.0
+offset_top = 727.0
+offset_right = 1151.0
+offset_bottom = 807.0
 theme_override_fonts/font = ExtResource("1_fgkus")
 theme_override_font_sizes/font_size = 60
 text = "Quit Game"
