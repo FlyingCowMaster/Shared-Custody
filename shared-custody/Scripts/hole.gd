@@ -13,6 +13,7 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 
 func _on_area_shape_entered(area_rid: RID, area: Area3D, area_shape_index: int, local_shape_index: int) -> void:
 	print(area.name + ' entered my tight hole.')
-	if area.is_in_group('Box'):
-		area.queue_free()
-		queue_free()
+	print(area.get_parent_node_3d().name)
+	if area.get_parent_node_3d().is_in_group('Box'):
+		area.get_parent_node_3d().queue_free()
+		get_parent().queue_free()

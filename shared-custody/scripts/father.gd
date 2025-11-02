@@ -55,7 +55,8 @@ func _physics_process(delta):
 			possesionCheck()
 		else:
 			isPossesing = false
-			posessed.call(possesionFunc)
+			if posessed != null:
+				posessed.call(possesionFunc)
 			$PoltDad.show()
 		get_tree().create_timer(0.5).timeout.connect(func(): canPosess = true)
 
