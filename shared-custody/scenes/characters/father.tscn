@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://diirsbe27rlth"]
 
-[ext_resource type="Script" uid="uid://8t1ant0r4tqw" path="res://scripts/father.gd" id="1_ltch0"]
+[ext_resource type="Script" uid="uid://8t1ant0r4tqw" path="res://Scripts/father.gd" id="1_ltch0"]
 [ext_resource type="PackedScene" uid="uid://yk38dog1o5tf" path="res://assets/3DAssets/Characters/PoltDad.glb" id="2_gbbrh"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_g2els"]
@@ -23,6 +23,7 @@ shape = SubResource("CapsuleShape3D_g2els")
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
 collision_layer = 2
 collision_mask = 2
+monitoring = false
 
 [node name="PossesionShape" type="CollisionShape3D" parent="Area3D"]
 shape = SubResource("BoxShape3D_12txw")

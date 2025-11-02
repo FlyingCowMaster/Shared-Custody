@@ -1,5 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://bq03xe7hhnb4x"]
+[gd_scene load_steps=8 format=3 uid="uid://bq03xe7hhnb4x"]
 
+[ext_resource type="Script" uid="uid://notr0dic1rmw" path="res://Scripts/hole.gd" id="1_6xfnk"]
 [ext_resource type="PackedScene" uid="uid://cjgy2adcowg1q" path="res://scenes/kill_baby_zone.tscn" id="1_kry80"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_t3u60"]
@@ -29,6 +30,10 @@ stencil_outline_thickness = 0.056
 height = 1.0
 radius = 3.0073242
 
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_6xfnk"]
+height = 5.7734375
+radius = 4.1469727
+
 [node name="Hole" type="StaticBody3D"]
 collision_layer = 0
 collision_mask = 0
@@ -48,3 +53,15 @@ shape = SubResource("CylinderShape3D_t3u60")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="KillBabyZone"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.39241362, 0)
 shape = SubResource("CylinderShape3D_t3u60")
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 2147485697
+collision_mask = 2147485696
+script = ExtResource("1_6xfnk")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8867188, 0)
+shape = SubResource("CylinderShape3D_6xfnk")
+
+[connection signal="area_shape_entered" from="Area3D" to="Area3D" method="_on_area_shape_entered"]
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
