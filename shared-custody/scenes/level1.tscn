@@ -21,7 +21,7 @@ size = Vector3(5, 2.423706, 7)
 script = ExtResource("1_dwgg1")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.9720917, 17.727484)
+transform = Transform3D(1, 0, 0, 0, 0.3467883, 0.93794346, 0, -0.93794346, 0.3467883, -3.4556847, 33.877213, 17.090527)
 
 [node name="Floors & Walls" type="CSGCombiner3D" parent="."]
 transform = Transform3D(0.6342973, 0, 0, 0, 1, 0, 0, 0, 0.5205656, 0, 0, 0)
@@ -110,37 +110,21 @@ transform = Transform3D(0.57353354, 0, 0.8191821, -0.7579098, 0.37947235, 0.5306
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.355113, 1, 0.11585617)
 
 [node name="Mother" parent="." instance=ExtResource("3_ru4tf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.617932, 1, -9.038626)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.617932, 2.9191022, -9.038626)
 
 [node name="Path3D" type="Path3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.887291, 1.063, -23.129654)
 curve = SubResource("Curve3D_m7ahb")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D"]
-transform = Transform3D(-0.9999222, -0.00020748674, 0.007791088, 0, 0.9996428, 0.026619444, -0.0077938447, 0.026619803, -0.9995685, 8.784168, 0.22079062, -4.1292763)
+transform = Transform3D(-0.9999219, -0.00020748674, 0.0077910856, 0, 0.9996428, 0.026619436, -0.0077938423, 0.026619803, -0.9995682, 8.784168, 0.22079062, -4.1292763)
 
 [node name="Baby" parent="Path3D/PathFollow3D" instance=ExtResource("1_m7ahb")]
-node_path = NodePath("../../..")
 enter_method = "test"
 exit_method = "test"
 
 [node name="ParticlePathFollower" parent="Path3D" instance=ExtResource("5_ru4tf")]
-transform = Transform3D(-0.9999357, -0.00020748674, 0.0077911927, 0, 0.9996428, 0.026619801, -0.0077939495, 0.026619803, -0.99958193, 8.784168, 0.22079062, -4.1292763)
-
-[node name="Path3D2" type="Path3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.887291, 1.063, -23.129654)
-curve = SubResource("Curve3D_m7ahb")
-
-[node name="PathFollow3D" type="PathFollow3D" parent="Path3D2"]
-transform = Transform3D(-0.99992216, -0.00020748674, 0.0077910875, 0, 0.9996428, 0.026619442, -0.007793844, 0.026619803, -0.99956846, 8.784168, 0.22079062, -4.1292763)
-
-[node name="Baby" parent="Path3D2/PathFollow3D" instance=ExtResource("1_m7ahb")]
-node_path = NodePath("../../..")
-enter_method = "test"
-exit_method = "test"
-
-[node name="ParticlePathFollower" parent="Path3D2" instance=ExtResource("5_ru4tf")]
-transform = Transform3D(-0.9999356, -0.00020748674, 0.0077911923, 0, 0.9996428, 0.0266198, -0.007793949, 0.026619803, -0.9995819, 8.784168, 0.22079062, -4.1292763)
+transform = Transform3D(-0.9999354, -0.00020748674, 0.0077911904, 0, 0.9996428, 0.026619792, -0.007793947, 0.026619803, -0.99958163, 8.784168, 0.22079062, -4.1292763)
 
 [node name="LightBulb" parent="." instance=ExtResource("6_6sh32")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -18.341942, 2.3830976, -24.09218)
