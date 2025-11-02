@@ -1,5 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://c2bw1qdgnu4p1"]
+[gd_scene load_steps=8 format=3 uid="uid://c2bw1qdgnu4p1"]
 
+[ext_resource type="Texture2D" uid="uid://8t0y7bqb8vh8" path="res://assets/Cutscenes/TitleScreen.png" id="1_dc4i4"]
 [ext_resource type="FontFile" uid="uid://8ycx0yityk65" path="res://assets/MomoTrustDisplay-Regular.ttf" id="1_fgkus"]
 [ext_resource type="Script" uid="uid://bl7nftlu3cr66" path="res://Scripts/play_game_button.gd" id="2_sa3yf"]
 [ext_resource type="Script" uid="uid://c4ng1cergtwp" path="res://Scripts/quit_game_button.gd" id="3_s4lrb"]
@@ -20,10 +21,15 @@ offset_right = 1944.0
 offset_bottom = 1094.0
 texture = SubResource("CanvasTexture_s4lrb")
 
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(986, 695)
+scale = Vector2(0.8409524, 0.764)
+texture = ExtResource("1_dc4i4")
+
 [node name="Title" type="Label" parent="."]
-offset_left = 562.0
+offset_left = 561.0
 offset_top = 387.0
-offset_right = 1457.0
+offset_right = 1456.0
 offset_bottom = 518.0
 theme_override_fonts/font = ExtResource("1_fgkus")
 theme_override_font_sizes/font_size = 100
@@ -44,8 +50,8 @@ anchors_preset = -1
 anchor_left = -0.034
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -2.5759993
-offset_right = 5.424011
+offset_left = -6.5759993
+offset_right = 1.4240112
 offset_bottom = 8.0
 script = ExtResource("2_sa3yf")
 
@@ -64,8 +70,8 @@ anchors_preset = -1
 anchor_left = -0.034
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -2.5759993
-offset_right = 5.424011
+offset_left = -6.5759993
+offset_right = 1.4240112
 offset_bottom = 8.0
 script = ExtResource("3_s4lrb")
 
