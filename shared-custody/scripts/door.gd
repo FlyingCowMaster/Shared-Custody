@@ -12,4 +12,5 @@ func togglePossesionDad():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta) -> void:
 	if isPossesedDad and isPossesedMom:
-		print("Shared Possesion!")  
+		print("Shared Possesion!")
+		GlobalLevelManager.goto_scene()
