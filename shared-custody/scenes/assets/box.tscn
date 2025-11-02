@@ -1,14 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://hyrdcbf6duxy"]
+[gd_scene load_steps=5 format=3 uid="uid://hyrdcbf6duxy"]
 
-[ext_resource type="Script" uid="uid://reopoiwhnqur" path="res://scripts/box.gd" id="1_3inec"]
+[ext_resource type="Script" uid="uid://reopoiwhnqur" path="res://Scripts/box.gd" id="1_3inec"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_on5l8"]
 size = Vector3(1.0064697, 1, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_3inec"]
 
-[node name="box" type="StaticBody3D" groups=["possesionObject"]]
-collision_layer = 3
+[sub_resource type="BoxShape3D" id="BoxShape3D_rq8ie"]
+
+[node name="box" type="StaticBody3D" groups=["Box", "possesionObject"]]
+collision_layer = 2147485699
+collision_mask = 2147485697
 script = ExtResource("1_3inec")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
@@ -16,3 +19,8 @@ shape = SubResource("BoxShape3D_on5l8")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("BoxMesh_3inec")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("BoxShape3D_rq8ie")

@@ -32,6 +32,7 @@ project/assembly_name="shared-custody"
 [global_group]
 
 possesionObject=""
+Box=""
 
 [input]
 
