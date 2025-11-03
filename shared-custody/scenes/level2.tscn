@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://b02lgthkhoxeo" path="res://scenes/assets/baby_particle_path_follower.tscn" id="5_alqfr"]
 [ext_resource type="Texture2D" uid="uid://cp06yaiu0yvka" path="res://assets/3DAssets/lambert1_Roughness.png" id="5_s4es8"]
 [ext_resource type="Texture2D" uid="uid://brt15q3l2eh6b" path="res://assets/3DAssets/Wall/DefaultMaterial_BaseColor.png" id="6_63e4f"]
-[ext_resource type="PackedScene" path="res://scenes/light_bulb.tscn" id="6_yqkch"]
+[ext_resource type="PackedScene" uid="uid://ckoq51a42mi66" path="res://scenes/assets/light_bulb.tscn" id="6_yqkch"]
 [ext_resource type="PackedScene" uid="uid://b6viguqx6ukpp" path="res://scenes/assets/breakable.tscn" id="7_6ep0u"]
 [ext_resource type="Texture2D" uid="uid://ddbud8hxlhkx8" path="res://assets/3DAssets/Wall/DefaultMaterial_Metallic.png" id="7_y6lc1"]
 [ext_resource type="Texture2D" uid="uid://m05m3khiwf2m" path="res://assets/3DAssets/Wall/DefaultMaterial_Normal_OpenGL.png" id="8_ekhvm"]
@@ -306,7 +306,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.723798, 0.46767962, -3.869
 curve = SubResource("Curve3D_bo4dx")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D2"]
-transform = Transform3D(-0.013057571, -0.034768537, 0.9993055, -1.8626383e-09, 0.99939007, 0.034771524, -0.99991107, 0.00045403116, -0.013049663, -0.02270794, -0.019153476, -0.013527632)
+transform = Transform3D(-0.013057571, -0.034768537, 0.99930567, -1.8626383e-09, 0.99939007, 0.034771528, -0.99991107, 0.00045403116, -0.013049665, -0.02270794, -0.019153476, -0.013527632)
 script = ExtResource("9_bo4dx")
 
 [node name="Buzzsaw" parent="Path3D2/PathFollow3D" instance=ExtResource("9_xa7n4")]
@@ -328,7 +328,7 @@ transform = Transform3D(0.035387937, 0, 0.9993736, 0, 1, 0, -0.9993736, 0, 0.035
 curve = SubResource("Curve3D_8g4ke")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D4"]
-transform = Transform3D(-0.9995429, -0.00011359388, -0.030217493, 0, 0.999991, -0.0037591849, 0.030217713, -0.0037574635, -0.9995356, -0.00097084045, -0.00941205, -0.020932674)
+transform = Transform3D(-0.9995429, -0.00011359386, -0.030217493, 0, 0.9999908, -0.0037591849, 0.030217713, -0.0037574628, -0.9995356, -0.00097084045, -0.00941205, -0.020932674)
 script = ExtResource("9_bo4dx")
 
 [node name="Buzzsaw" parent="Path3D4/PathFollow3D" instance=ExtResource("9_xa7n4")]
@@ -378,7 +378,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.145434, 0.6826478, -10.495
 curve = SubResource("Curve3D_cleqw")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D6"]
-transform = Transform3D(-0.012921964, -0.0011342464, -0.99991524, -5.820764e-11, 0.99999934, -0.0011343404, 0.9999159, -1.4657865e-05, -0.012921955, -0.015583992, -0.00750643, 0.00091171265)
+transform = Transform3D(-0.012921961, -0.0011342464, -0.99991506, -5.820763e-11, 0.99999934, -0.0011343402, 0.9999157, -1.4657865e-05, -0.012921953, -0.015583992, -0.00750643, 0.00091171265)
 script = ExtResource("9_bo4dx")
 
 [node name="Buzzsaw" parent="Path3D6/PathFollow3D" instance=ExtResource("9_xa7n4")]

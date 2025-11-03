@@ -2,8 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://8t0y7bqb8vh8" path="res://assets/Cutscenes/TitleScreen.png" id="1_dc4i4"]
 [ext_resource type="FontFile" uid="uid://8ycx0yityk65" path="res://assets/MomoTrustDisplay-Regular.ttf" id="1_fgkus"]
-[ext_resource type="Script" uid="uid://bl7nftlu3cr66" path="res://Scripts/play_game_button.gd" id="2_sa3yf"]
-[ext_resource type="Script" uid="uid://c4ng1cergtwp" path="res://Scripts/quit_game_button.gd" id="3_s4lrb"]
+[ext_resource type="Script" uid="uid://bl7nftlu3cr66" path="res://scripts/play_game_button.gd" id="2_sa3yf"]
+[ext_resource type="Script" uid="uid://c4ng1cergtwp" path="res://scripts/quit_game_button.gd" id="3_s4lrb"]
 [ext_resource type="AudioStream" uid="uid://dvmxta1k5ydrm" path="res://assets/sound effects/Shared Custody.wav" id="4_mgrm8"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_sa3yf"]

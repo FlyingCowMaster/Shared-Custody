@@ -1,6 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://ddfsj6x3ohhm4"]
 
-[ext_resource type="PackedScene" uid="uid://cjgy2adcowg1q" path="res://scenes/kill_baby_zone.tscn" id="1_d8rg1"]
+[ext_resource type="PackedScene" uid="uid://cjgy2adcowg1q" path="res://scenes/assets/kill_baby_zone.tscn" id="1_d8rg1"]
+
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_438uj"]
 

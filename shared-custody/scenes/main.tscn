@@ -11,9 +11,10 @@
 [ext_resource type="Texture2D" uid="uid://dxg5gtiyiokb3" path="res://assets/3DAssets/lambert1_Normal_DirectX.png" id="6_jbj1t"]
 [ext_resource type="PackedScene" uid="uid://hyrdcbf6duxy" path="res://scenes/assets/box.tscn" id="6_tefeu"]
 [ext_resource type="Texture2D" uid="uid://cp06yaiu0yvka" path="res://assets/3DAssets/lambert1_Roughness.png" id="7_muem4"]
-[ext_resource type="PackedScene" uid="uid://ckoq51a42mi66" path="res://scenes/light_bulb.tscn" id="7_tipki"]
+[ext_resource type="PackedScene" uid="uid://ckoq51a42mi66" path="res://scenes/assets/light_bulb.tscn" id="7_tipki"]
 [ext_resource type="PackedScene" uid="uid://6w4yu6ji1utk" path="res://scenes/characters/enemy.tscn" id="12_a8y0u"]
-[ext_resource type="PackedScene" uid="uid://cjgy2adcowg1q" path="res://scenes/kill_baby_zone.tscn" id="13_a8y0u"]
+[ext_resource type="PackedScene" uid="uid://cjgy2adcowg1q" path="res://scenes/assets/kill_baby_zone.tscn" id="13_a8y0u"]
+
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_t3k17"]
 size = Vector3(6, 3, 19.523926)

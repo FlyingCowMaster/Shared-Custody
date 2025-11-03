@@ -1,7 +1,8 @@
 [gd_scene load_steps=8 format=3 uid="uid://bq03xe7hhnb4x"]
 
-[ext_resource type="Script" uid="uid://notr0dic1rmw" path="res://Scripts/hole.gd" id="1_6xfnk"]
-[ext_resource type="PackedScene" uid="uid://cjgy2adcowg1q" path="res://scenes/kill_baby_zone.tscn" id="1_kry80"]
+[ext_resource type="Script" uid="uid://notr0dic1rmw" path="res://scripts/hole.gd" id="1_6xfnk"]
+[ext_resource type="PackedScene" uid="uid://cjgy2adcowg1q" path="res://scenes/assets/kill_baby_zone.tscn" id="1_kry80"]
+
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_t3u60"]
 
