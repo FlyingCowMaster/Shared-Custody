@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://b02lgthkhoxeo" path="res://scenes/assets/baby_particle_path_follower.tscn" id="5_alqfr"]
 [ext_resource type="Texture2D" uid="uid://cp06yaiu0yvka" path="res://assets/3DAssets/lambert1_Roughness.png" id="5_s4es8"]
 [ext_resource type="Texture2D" uid="uid://brt15q3l2eh6b" path="res://assets/3DAssets/Wall/DefaultMaterial_BaseColor.png" id="6_63e4f"]
-[ext_resource type="PackedScene" uid="uid://ckoq51a42mi66" path="res://scenes/light_bulb.tscn" id="6_yqkch"]
+[ext_resource type="PackedScene" path="res://scenes/light_bulb.tscn" id="6_yqkch"]
 [ext_resource type="PackedScene" uid="uid://b6viguqx6ukpp" path="res://scenes/assets/breakable.tscn" id="7_6ep0u"]
 [ext_resource type="Texture2D" uid="uid://ddbud8hxlhkx8" path="res://assets/3DAssets/Wall/DefaultMaterial_Metallic.png" id="7_y6lc1"]
 [ext_resource type="Texture2D" uid="uid://m05m3khiwf2m" path="res://assets/3DAssets/Wall/DefaultMaterial_Normal_OpenGL.png" id="8_ekhvm"]
@@ -23,6 +23,7 @@
 [ext_resource type="PackedScene" uid="uid://bq03xe7hhnb4x" path="res://scenes/assets/hole.tscn" id="12_8g4ke"]
 [ext_resource type="PackedScene" uid="uid://6w4yu6ji1utk" path="res://scenes/characters/enemy.tscn" id="13_56gwk"]
 [ext_resource type="PackedScene" uid="uid://bkejdlqeic10b" path="res://scenes/assets/spikes.tscn" id="14_ve5ok"]
+
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_210s6"]
 albedo_texture = ExtResource("2_cqal4")
