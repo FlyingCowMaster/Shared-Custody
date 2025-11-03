@@ -1,7 +1,8 @@
 [gd_scene load_steps=7 format=4 uid="uid://6w4yu6ji1utk"]
 
 [ext_resource type="Texture2D" uid="uid://ct851qwdxdaiy" path="res://assets/3DAssets/Characters/EnemyGhost_Ghost.png" id="1_fulqv"]
-[ext_resource type="PackedScene" uid="uid://cjgy2adcowg1q" path="res://scenes/kill_baby_zone.tscn" id="2_f2e6v"]
+[ext_resource type="PackedScene" uid="uid://cjgy2adcowg1q" path="res://scenes/assets/kill_baby_zone.tscn" id="2_f2e6v"]
+
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4fm3u"]
 resource_name = "Material.001"
