@@ -1,0 +1,99 @@
+[gd_scene load_steps=4 format=3 uid="uid://bkejdlqeic10b"]
+
+[ext_resource type="PackedScene" uid="uid://cjgy2adcowg1q" path="res://scenes/assets/kill_baby_zone.tscn" id="1_1upk7"]
+
+
+[sub_resource type="BoxMesh" id="BoxMesh_44tt7"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_44tt7"]
+size = Vector3(3.234394, 0.79589844, 0.4585266)
+
+[node name="Breakable" type="StaticBody3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(3.5475354, 0, 0, 0, 0.20406611, 0, 0, 0, 0.7931875, 0, 0, 0.025468439)
+mesh = SubResource("BoxMesh_44tt7")
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="CSGCombiner3D"]
+transform = Transform3D(0.542, 0, 0, 0, 0.421, 0, 0, 0, 0.17753038, -1.5816205, 0.06275505, 0.22610879)
+polygon = PackedVector2Array(0, 0, 0.41375127, 1.0519933, 0.42135137, 1.0484499, 1.0609417, 0.008380532)
+
+[node name="CSGPolygon3D4" type="CSGPolygon3D" parent="CSGCombiner3D"]
+transform = Transform3D(0.542, 0, 0, 0, 0.421, 0, 0, 0, 0.17753038, -0.40704274, 0.06275505, 0.22610879)
+polygon = PackedVector2Array(0, 0, 0.41375127, 1.0519933, 0.42135137, 1.0484499, 1.0609417, 0.008380532)
+
+[node name="CSGPolygon3D2" type="CSGPolygon3D" parent="CSGCombiner3D"]
+transform = Transform3D(0.49347174, 0, -0.024009133, 0, 0.421, 0, 0.06664107, 0, 0.1777857, -1.1216135, 0, 0.22610879)
+polygon = PackedVector2Array(0, 0, 0.41375127, 1.0519933, 0.42135137, 1.0484499, 1.0609417, 0.008380532)
+
+[node name="CSGPolygon3D3" type="CSGPolygon3D" parent="CSGCombiner3D"]
+transform = Transform3D(0.49347174, 0, -0.024009133, 0, 0.421, 0, 0.06664107, 0, 0.1777857, 0.07104075, 0.06082177, 0.20802838)
+polygon = PackedVector2Array(0, 0, 0.41375127, 1.0519933, 0.42135137, 1.0484499, 1.0609417, 0.008380532)
+
+[node name="CSGPolygon3D5" type="CSGPolygon3D" parent="CSGCombiner3D"]
+transform = Transform3D(0.59338963, 0, 0.032912668, 0, 0.421, 0, -0.10973188, 0, 0.17797959, 0.87490046, 0.06082177, 0.24649128)
+polygon = PackedVector2Array(0, 0, 0.41375127, 1.0519933, 0.42135137, 1.0484499, 1.0609417, 0.008380532)
+
+[node name="CSGPolygon3D6" type="CSGPolygon3D" parent="CSGCombiner3D"]
+transform = Transform3D(-0.5547598, 0, -0.007019592, 0, 0.421, 0, 0.021932445, 0, -0.17755373, 1.5500913, 0.06275505, 0.0020128638)
+polygon = PackedVector2Array(0, 0, 0.41375127, 1.0519933, 0.42135137, 1.0484499, 1.0609417, 0.008380532)
+
+[node name="CSGPolygon3D7" type="CSGPolygon3D" parent="CSGCombiner3D"]
+transform = Transform3D(-0.5547598, 0, -0.007019592, 0, 0.421, 0, 0.021932445, 0, -0.17755373, 0.37643036, 0.06275505, 0.0223023)
+polygon = PackedVector2Array(0, 0, 0.41375127, 1.0519933, 0.42135137, 1.0484499, 1.0609417, 0.008380532)
+
+[node name="CSGPolygon3D8" type="CSGPolygon3D" parent="CSGCombiner3D"]
+transform = Transform3D(-0.508478, 0, 0.016878389, 0, 0.421, 0, -0.048306994, 0, -0.17766142, 1.0904433, 0, 0.009958923)
+polygon = PackedVector2Array(0, 0, 0.41375127, 1.0519933, 0.42135137, 1.0484499, 1.0609417, 0.008380532)
+
+[node name="CSGPolygon3D9" type="CSGPolygon3D" parent="CSGCombiner3D"]
+transform = Transform3D(-0.508478, 0, 0.016878389, 0, 0.421, 0, -0.048306994, 0, -0.17766142, -0.09964657, 0.06082177, 0.04862699)
+polygon = PackedVector2Array(0, 0, 0.41375127, 1.0519933, 0.42135137, 1.0484499, 1.0609417, 0.008380532)
+
+[node name="CSGPolygon3D10" type="CSGPolygon3D" parent="CSGCombiner3D"]
+transform = Transform3D(-0.601581, 0, -0.040283438, 0, 0.421, 0, 0.13602456, 0, -0.17815715, -0.9063537, 0.06082177, 0.0240798)
+polygon = PackedVector2Array(0, 0, 0.41375127, 1.0519933, 0.42135137, 1.0484499, 1.0609417, 0.008380532)
+
+[node name="CSGPolygon3D11" type="CSGPolygon3D" parent="CSGCombiner3D"]
+transform = Transform3D(0.542, 0, 0, 0, 0.421, 0, 0, 0, 0.17753038, -1.5816205, 0.06275505, 0.017959327)
+polygon = PackedVector2Array(0, 0, 0.41375127, 1.0519933, 0.42135137, 1.0484499, 1.0609417, 0.008380532)
+
+[node name="CSGPolygon3D12" type="CSGPolygon3D" parent="CSGCombiner3D"]
+transform = Transform3D(0.542, 0, 0, 0, 0.421, 0, 0, 0, 0.17753038, -0.40704274, 0.06275505, 0.017959327)
+polygon = PackedVector2Array(0, 0, 0.41375127, 1.0519933, 0.42135137, 1.0484499, 1.0609417, 0.008380532)
+
+[node name="CSGPolygon3D13" type="CSGPolygon3D" parent="CSGCombiner3D"]
+transform = Transform3D(0.49347174, 0, -0.024009133, 0, 0.421, 0, 0.06664107, 0, 0.1777857, -1.1216135, 0, 0.017959327)
+polygon = PackedVector2Array(0, 0, 0.41375127, 1.0519933, 0.42135137, 1.0484499, 1.0609417, 0.008380532)
+
+[node name="CSGPolygon3D14" type="CSGPolygon3D" parent="CSGCombiner3D"]
+transform = Transform3D(0.49347174, 0, -0.024009133, 0, 0.421, 0, 0.06664107, 0, 0.1777857, 0.07104075, 0.06082177, -0.00012113154)
+polygon = PackedVector2Array(0, 0, 0.41375127, 1.0519933, 0.42135137, 1.0484499, 1.0609417, 0.008380532)
+
+[node name="CSGPolygon3D15" type="CSGPolygon3D" parent="CSGCombiner3D"]
+transform = Transform3D(-0.5547598, 0, -0.007019592, 0, 0.421, 0, 0.021932445, 0, -0.17755373, 0.37643036, 0.06275505, -0.18584718)
+polygon = PackedVector2Array(0, 0, 0.41375127, 1.0519933, 0.42135137, 1.0484499, 1.0609417, 0.008380532)
+
+[node name="CSGPolygon3D16" type="CSGPolygon3D" parent="CSGCombiner3D"]
+transform = Transform3D(-0.508478, 0, 0.016878389, 0, 0.421, 0, -0.048306994, 0, -0.17766142, 1.0904433, 0, -0.19819054)
+polygon = PackedVector2Array(0, 0, 0.41375127, 1.0519933, 0.42135137, 1.0484499, 1.0609417, 0.008380532)
+
+[node name="CSGPolygon3D17" type="CSGPolygon3D" parent="CSGCombiner3D"]
+transform = Transform3D(-0.508478, 0, 0.016878389, 0, 0.421, 0, -0.048306994, 0, -0.17766142, -0.09964657, 0.06082177, -0.15952249)
+polygon = PackedVector2Array(0, 0, 0.41375127, 1.0519933, 0.42135137, 1.0484499, 1.0609417, 0.008380532)
+
+[node name="CSGPolygon3D18" type="CSGPolygon3D" parent="CSGCombiner3D"]
+transform = Transform3D(-0.601581, 0, -0.040283438, 0, 0.421, 0, 0.13602456, 0, -0.17815715, -0.9063537, 0.06082177, -0.1840697)
+polygon = PackedVector2Array(0, 0, 0.41375127, 1.0519933, 0.42135137, 1.0484499, 1.0609417, 0.008380532)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.010457993, 0.23461571, -0.014390945)
+shape = SubResource("BoxShape3D_44tt7")
+
+[node name="KillBabyZone" parent="." instance=ExtResource("1_1upk7")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="KillBabyZone"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.010457993, 0.23461571, -0.014390945)
+shape = SubResource("BoxShape3D_44tt7")

@@ -1,6 +1,6 @@
 [gd_scene load_steps=22 format=3 uid="uid://dhxvxylwyx3s6"]
 
-[ext_resource type="Script" uid="uid://cm6f3heq6xqh3" path="res://Scripts/opening_cutscene.gd" id="1_02jfn"]
+[ext_resource type="Script" uid="uid://cm6f3heq6xqh3" path="res://scripts/opening_cutscene.gd" id="1_02jfn"]
 [ext_resource type="Texture2D" uid="uid://cnq637ewhcbk" path="res://assets/Cutscenes/Image1Cutscene.png" id="1_oebjb"]
 [ext_resource type="Texture2D" uid="uid://fx3nxexmnae2" path="res://assets/Cutscenes/Image2Cutscene.png" id="2_2bufu"]
 [ext_resource type="AudioStream" uid="uid://bnaa53e8hs8vw" path="res://assets/sound effects/car-crash-sound-effect-376874.mp3" id="2_ci5ub"]
@@ -160,8 +160,8 @@ script = ExtResource("1_02jfn")
 
 [node name="Background" type="Sprite2D" parent="."]
 material = SubResource("CanvasItemMaterial_o80my")
-position = Vector2(923.50006, 525.5)
-scale = Vector2(2093, 1193)
+position = Vector2(935.00024, 765.5001)
+scale = Vector2(3564.0002, 2673)
 texture = SubResource("CanvasTexture_3qp00")
 
 [node name="CutsceneImages" type="Sprite2D" parent="."]
@@ -171,7 +171,7 @@ texture = ExtResource("1_oebjb")
 
 [node name="CarCrashSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2_ci5ub")
-volume_db = -25.524
+volume_db = -5.0
 
 [node name="BabyCry" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_02jfn")
@@ -193,7 +193,6 @@ libraries = {
 
 [node name="BackgroundMusic" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("16_6j8m8")
-volume_db = -11.797
 autoplay = true
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
