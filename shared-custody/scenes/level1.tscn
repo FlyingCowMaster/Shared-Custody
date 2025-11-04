@@ -17,10 +17,10 @@
 [ext_resource type="Texture2D" uid="uid://m05m3khiwf2m" path="res://assets/3DAssets/Wall/DefaultMaterial_Normal_OpenGL.png" id="8_mq0oc"]
 [ext_resource type="Texture2D" uid="uid://dyy4m472vc6vx" path="res://assets/3DAssets/Wall/DefaultMaterial_Roughness.png" id="9_msy1c"]
 [ext_resource type="PackedScene" uid="uid://bq03xe7hhnb4x" path="res://scenes/assets/hole.tscn" id="9_u3awl"]
-[ext_resource type="PackedScene" uid="uid://bkejdlqeic10b" path="res://scenes/assets/spikes.tscn" id="10_d3jkd"]
+[ext_resource type="PackedScene" path="res://scenes/assets/spikes.tscn" id="10_d3jkd"]
 [ext_resource type="PackedScene" uid="uid://4c04tlwc1m4g" path="res://scenes/assets/door.tscn" id="10_u068y"]
 [ext_resource type="PackedScene" uid="uid://6w4yu6ji1utk" path="res://scenes/characters/enemy.tscn" id="11_u3awl"]
-[ext_resource type="Script" uid="uid://cu6x6kintnmm0" path="res://scripts/enemy_movement.gd" id="12_2ku1j"]
+[ext_resource type="Script" path="res://scripts/enemy_movement.gd" id="12_2ku1j"]
 
 [sub_resource type="Environment" id="Environment_u068y"]
 ambient_light_source = 2
@@ -197,14 +197,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.887291, 1.063, -23.129654
 curve = SubResource("Curve3D_m7ahb")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D"]
-transform = Transform3D(-0.9998891, -0.00020748674, 0.007790848, 0, 0.9996428, 0.026618624, -0.0077935862, 0.026619803, -0.99953777, 8.784168, 0.22079062, -4.1292763)
+transform = Transform3D(-0.9998889, -0.00020748674, 0.007790848, 0, 0.9996428, 0.026618624, -0.007793585, 0.026619803, -0.99953777, 8.784168, 0.22079062, -4.1292763)
 
 [node name="Baby" parent="Path3D/PathFollow3D" instance=ExtResource("1_m7ahb")]
 enter_method = "test"
 exit_method = "test"
 
 [node name="ParticlePathFollower" parent="Path3D" instance=ExtResource("5_ru4tf")]
-transform = Transform3D(-0.99990255, -0.00020748674, 0.0077908575, 0, 0.9996428, 0.026618656, -0.0077936915, 0.026619803, -0.99953896, 8.784168, 0.22079062, -4.1292763)
+transform = Transform3D(-0.99990237, -0.00020748674, 0.007790856, 0, 0.9996428, 0.026618652, -0.00779369, 0.026619803, -0.9995388, 8.784168, 0.22079062, -4.1292763)
 
 [node name="LightBulb" parent="." instance=ExtResource("6_6sh32")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -18.341942, 2.3830976, -24.09218)
