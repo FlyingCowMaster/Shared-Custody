@@ -1,15 +1,20 @@
 extends StaticBody3D
 
 @export var isPossesed = false
-
+var possesor
 var light
 
 func _ready():
 	light = $WALL_LAMP_2/OmniLight3D
 
-func togglePossesion():
+func togglePossesionMom():
+	set_collision_layer_value(2,isPossesed)
 	isPossesed = !isPossesed
 
+func togglePossesionDad():
+	set_collision_layer_value(3,isPossesed)
+	isPossesed = !isPossesed
+	
 func _process(_delta: float) -> void:
 	if (isPossesed): turn_on_light()
 	else: turn_off_light()
