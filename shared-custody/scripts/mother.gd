@@ -56,26 +56,26 @@ func _physics_process(delta):
 		else:
 			isPossesing = false
 			posessed.call(possesionFunc)
-			$MeshInstance3D.show()
+			$BansheeMom.show()
 		get_tree().create_timer(0.5).timeout.connect(func(): canPosess = true)
 
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	print(body)
 	if body.has_method("togglePossesion"):
 		body.call("togglePossesion")
-		$MeshInstance3D.visible = false
+		$BansheeMom.visible = false
 		posessed = body
 		isPossesing = true
 		possesionFunc = "togglePossesion"
 	elif body.has_method("togglePossesionMom"):
-		$MeshInstance3D.visible = false
+		$BansheeMom.visible = false
 		posessed = body
 		isPossesing = true
 		body.call("togglePossesionMom")
 		possesionFunc = "togglePossesionMom"
 	elif body.get_parent().has_method("togglePossesion"):
 		body.get_parent().call("togglePossesion")
-		$MeshInstance3D.visible = false
+		$BansheeMom.visible = false
 		posessed = body
 		isPossesing = true
 		possesionFunc = "togglePossesion"
