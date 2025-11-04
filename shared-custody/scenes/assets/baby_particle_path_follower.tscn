@@ -1,39 +1,44 @@
-[gd_scene load_steps=5 format=3 uid="uid://b02lgthkhoxeo"]
+[gd_scene load_steps=7 format=3 uid="uid://b02lgthkhoxeo"]
 
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_km48i"]
-spread = 180.0
-initial_velocity_max = 5.0
-scale_min = 0.0
-scale_max = 0.29999998
+[ext_resource type="Texture2D" uid="uid://cpopwpoxlh04l" path="res://assets/3DAssets/greater-than-sign-computer-icons-arrow-symbol-others-e320848bc57f969b1d0f10c3fcc6dfd9.png" id="1_135pt"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_135pt"]
-render_priority = 1
-transparency = 1
-shading_mode = 0
-albedo_color = Color(0, 0, 0, 1)
-grow = true
-grow_amount = 0.245
-stencil_mode = 3
-stencil_flags = 1
-stencil_compare = 5
-metadata/_stencil_owned = true
+[sub_resource type="Gradient" id="Gradient_135pt"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4kmhl"]
-next_pass = SubResource("StandardMaterial3D_135pt")
-shading_mode = 0
-diffuse_mode = 3
-stencil_mode = 1
-stencil_flags = 2
-stencil_outline_thickness = 0.245
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_4bm4s"]
+gradient = SubResource("Gradient_135pt")
 
-[sub_resource type="SphereMesh" id="SphereMesh_4bm4s"]
-material = SubResource("StandardMaterial3D_4kmhl")
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_135pt"]
+gravity = Vector3(0, 0, 0)
+color_ramp = SubResource("GradientTexture1D_4bm4s")
+collision_mode = 1
+collision_friction = 0.0
+collision_bounce = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4bm4s"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+blend_mode = 1
+depth_draw_mode = 2
+vertex_color_use_as_albedo = true
+albedo_color = Color(1, 0, 0, 1)
+albedo_texture = ExtResource("1_135pt")
+emission_enabled = true
+grow_amount = 2.313
+stencil_reference = 0
+stencil_outline_thickness = 0.323
+
+[sub_resource type="QuadMesh" id="QuadMesh_xcpon"]
+material = SubResource("StandardMaterial3D_4bm4s")
+orientation = 1
 
 [node name="ParticlePathFollower" type="PathFollow3D"]
-transform = Transform3D(0.00049824023, 0, -0.99997807, 0, 1, 0, 0.99997807, 0, 0.00049824023, 0.30995178, -1.168251e-05, 0.06291199)
 
-[node name="BabyTrail" type="GPUParticles3D" parent="."]
-amount = 50
-trail_lifetime = 3.0
-process_material = SubResource("ParticleProcessMaterial_km48i")
-draw_pass_1 = SubResource("SphereMesh_4bm4s")
+[node name="FootTrail" type="GPUParticles3D" parent="."]
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 0, 0, 0)
+amount = 10
+fixed_fps = 10
+visibility_aabb = AABB(-50, -50, -50, 100, 100, 100)
+process_material = SubResource("ParticleProcessMaterial_135pt")
+draw_pass_1 = SubResource("QuadMesh_xcpon")
