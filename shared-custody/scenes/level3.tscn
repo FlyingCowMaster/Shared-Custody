@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://hhvqqi6qehdi"]
+[gd_scene load_steps=9 format=3 uid="uid://hhvqqi6qehdi"]
 
 [ext_resource type="Script" uid="uid://btbdogsrkdv8t" path="res://scripts/event_manager.gd" id="1_jyq2n"]
 [ext_resource type="PackedScene" uid="uid://bs0tan5nouunp" path="res://scenes/characters/baby.tscn" id="1_qyetb"]
+[ext_resource type="Script" uid="uid://b4hd5iyiarnug" path="res://scripts/camera_follower.gd" id="2_6lxtr"]
 [ext_resource type="PackedScene" uid="uid://diirsbe27rlth" path="res://scenes/characters/father.tscn" id="2_jyq2n"]
 [ext_resource type="PackedScene" uid="uid://bvs4oj4gdilar" path="res://scenes/characters/mother.tscn" id="3_7uttt"]
 [ext_resource type="PackedScene" uid="uid://b02lgthkhoxeo" path="res://scenes/assets/baby_particle_path_follower.tscn" id="5_7uttt"]
@@ -20,8 +21,11 @@ point_count = 13
 [node name="Level 3" type="Node"]
 script = ExtResource("1_jyq2n")
 
-[node name="Camera3D" type="Camera3D" parent="."]
+[node name="Camera3D" type="Camera3D" parent="." node_paths=PackedStringArray("mother", "father")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.9720917, 17.727484)
+script = ExtResource("2_6lxtr")
+mother = NodePath("../Mother")
+father = NodePath("../Father")
 
 [node name="Floors & Walls" type="CSGCombiner3D" parent="."]
 transform = Transform3D(0.7611568, 0, 0, 0, 1, 0, 0, 0, 0.5205656, 0, 0, 0)
@@ -86,11 +90,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.945824, 1.063, -21.32343)
 curve = SubResource("Curve3D_qyetb")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D"]
-transform = Transform3D(-0.014972209, 0, -0.9998586, 0, 1, 0, 0.9998586, 0, -0.014972209, 0.30995178, -1.168251e-05, 0.06291199)
+transform = Transform3D(-0.014972205, 0, -0.9998583, 0, 1, 0, 0.9998583, 0, -0.014972205, 0.30995178, -1.168251e-05, 0.06291199)
 
 [node name="Baby" parent="Path3D/PathFollow3D" instance=ExtResource("1_qyetb")]
 enter_method = "test"
 exit_method = "test"
 
 [node name="ParticlePathFollower" parent="Path3D" instance=ExtResource("5_7uttt")]
-transform = Transform3D(-0.014972311, 0, -0.9998654, 0, 1, 0, 0.9998654, 0, -0.014972311, 0.30995178, -1.168251e-05, 0.06291199)
+transform = Transform3D(-0.014972307, 0, -0.9998651, 0, 1, 0, 0.9998651, 0, -0.014972307, 0.30995178, -1.168251e-05, 0.06291199)

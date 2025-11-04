@@ -1,15 +1,16 @@
-[gd_scene load_steps=23 format=3 uid="uid://cmjxurx3qflen"]
+[gd_scene load_steps=24 format=3 uid="uid://cmjxurx3qflen"]
 
 [ext_resource type="Script" uid="uid://btbdogsrkdv8t" path="res://scripts/event_manager.gd" id="1_4kmhl"]
 [ext_resource type="PackedScene" uid="uid://bs0tan5nouunp" path="res://scenes/characters/baby.tscn" id="1_ph3nu"]
 [ext_resource type="PackedScene" uid="uid://diirsbe27rlth" path="res://scenes/characters/father.tscn" id="2_4kmhl"]
+[ext_resource type="Script" uid="uid://b4hd5iyiarnug" path="res://scripts/camera_follower.gd" id="2_cmspm"]
 [ext_resource type="Texture2D" uid="uid://cw0u3tb2i7r5v" path="res://assets/3DAssets/lambert1_Base_Color.png" id="2_vrdqu"]
 [ext_resource type="PackedScene" uid="uid://b02lgthkhoxeo" path="res://scenes/assets/baby_particle_path_follower.tscn" id="3_6yjpi"]
 [ext_resource type="Texture2D" uid="uid://dnulbtqh7ntvf" path="res://assets/3DAssets/lambert1_Metallic.png" id="3_cmspm"]
 [ext_resource type="PackedScene" uid="uid://bvs4oj4gdilar" path="res://scenes/characters/mother.tscn" id="3_cq4me"]
 [ext_resource type="Texture2D" uid="uid://dxg5gtiyiokb3" path="res://assets/3DAssets/lambert1_Normal_DirectX.png" id="4_ikfo1"]
 [ext_resource type="Texture2D" uid="uid://cp06yaiu0yvka" path="res://assets/3DAssets/lambert1_Roughness.png" id="5_dwom6"]
-[ext_resource type="PackedScene" uid="uid://ckoq51a42mi66" path="res://scenes/light_bulb.tscn" id="6_6yjpi"]
+[ext_resource type="PackedScene" uid="uid://ckoq51a42mi66" path="res://scenes/assets/light_bulb.tscn" id="6_6yjpi"]
 [ext_resource type="Texture2D" uid="uid://brt15q3l2eh6b" path="res://assets/3DAssets/Wall/DefaultMaterial_BaseColor.png" id="6_bl2xa"]
 [ext_resource type="Texture2D" uid="uid://ddbud8hxlhkx8" path="res://assets/3DAssets/Wall/DefaultMaterial_Metallic.png" id="7_15kfc"]
 [ext_resource type="PackedScene" uid="uid://b6viguqx6ukpp" path="res://scenes/assets/breakable.tscn" id="7_gbqnl"]
@@ -51,8 +52,11 @@ size = Vector3(5, 2.423706, 24.012207)
 [node name="Tutorial" type="Node"]
 script = ExtResource("1_4kmhl")
 
-[node name="Camera3D" type="Camera3D" parent="."]
+[node name="Camera3D" type="Camera3D" parent="." node_paths=PackedStringArray("mother", "father")]
 transform = Transform3D(1, 0, 0, 0, 0.23988919, 0.9708003, 0, -0.9708003, 0.23988919, 0, 57.563366, 17.727484)
+script = ExtResource("2_cmspm")
+mother = NodePath("../Mother")
+father = NodePath("../Father")
 
 [node name="Floors & Walls" type="CSGCombiner3D" parent="."]
 use_collision = true

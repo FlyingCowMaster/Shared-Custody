@@ -1,7 +1,8 @@
-[gd_scene load_steps=30 format=3 uid="uid://cpr3bn875rien"]
+[gd_scene load_steps=31 format=3 uid="uid://cpr3bn875rien"]
 
 [ext_resource type="Script" uid="uid://btbdogsrkdv8t" path="res://scripts/event_manager.gd" id="1_dwgg1"]
 [ext_resource type="PackedScene" uid="uid://bs0tan5nouunp" path="res://scenes/characters/baby.tscn" id="1_m7ahb"]
+[ext_resource type="Script" uid="uid://b4hd5iyiarnug" path="res://scripts/camera_follower.gd" id="2_1ooyw"]
 [ext_resource type="Texture2D" uid="uid://cw0u3tb2i7r5v" path="res://assets/3DAssets/lambert1_Base_Color.png" id="2_3w4mx"]
 [ext_resource type="PackedScene" uid="uid://diirsbe27rlth" path="res://scenes/characters/father.tscn" id="2_dwgg1"]
 [ext_resource type="PackedScene" uid="uid://bvs4oj4gdilar" path="res://scenes/characters/mother.tscn" id="3_ru4tf"]
@@ -72,9 +73,12 @@ point_count = 2
 [node name="Level 1" type="Node"]
 script = ExtResource("1_dwgg1")
 
-[node name="Camera3D" type="Camera3D" parent="."]
+[node name="Camera3D" type="Camera3D" parent="." node_paths=PackedStringArray("mother", "father")]
 transform = Transform3D(1, 0, 0, 0, 0.3467883, 0.93794346, 0, -0.93794346, 0.3467883, -3.4556847, 33.877213, 17.090527)
 environment = SubResource("Environment_u068y")
+script = ExtResource("2_1ooyw")
+mother = NodePath("../Mother")
+father = NodePath("../Father")
 
 [node name="Floors & Walls" type="CSGCombiner3D" parent="."]
 transform = Transform3D(0.6342973, 0, 0, 0, 1, 0, 0, 0, 0.5205656, 0, 0, 0)
@@ -197,14 +201,18 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.887291, 1.063, -23.129654
 curve = SubResource("Curve3D_m7ahb")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D"]
+<<<<<<< HEAD
 transform = Transform3D(-0.9998876, -0.00020748674, 0.007790848, 0, 0.9996428, 0.026618624, -0.0077935746, 0.026619803, -0.99953777, 8.784168, 0.22079062, -4.1292763)
+=======
+transform = Transform3D(-0.99988836, -0.00020748674, 0.007790848, 0, 0.9996428, 0.026618624, -0.0077935806, 0.026619803, -0.99953777, 8.784168, 0.22079062, -4.1292763)
+>>>>>>> c5d8a29 (Camera Controlller)
 
 [node name="Baby" parent="Path3D/PathFollow3D" instance=ExtResource("1_m7ahb")]
 enter_method = "test"
 exit_method = "test"
 
 [node name="ParticlePathFollower" parent="Path3D" instance=ExtResource("5_ru4tf")]
-transform = Transform3D(-0.99990106, -0.00020748674, 0.007790848, 0, 0.9996428, 0.026618624, -0.00779368, 0.026619803, -0.99953777, 8.784168, 0.22079062, -4.1292763)
+transform = Transform3D(-0.99990183, -0.00020748674, 0.007790852, 0, 0.9996428, 0.026618637, -0.007793686, 0.026619803, -0.99953824, 8.784168, 0.22079062, -4.1292763)
 
 [node name="LightBulb" parent="." instance=ExtResource("6_6sh32")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -18.341942, 2.3830976, -24.09218)
