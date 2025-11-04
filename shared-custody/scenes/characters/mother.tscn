@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://bvs4oj4gdilar"]
 
-[ext_resource type="Script" uid="uid://bcp1rvmd05dhg" path="res://Scripts/mother.gd" id="1_6ku4e"]
+[ext_resource type="Script" uid="uid://bcp1rvmd05dhg" path="res://scripts/mother.gd" id="1_6ku4e"]
 [ext_resource type="PackedScene" uid="uid://dxh8g5dpxyvg1" path="res://assets/3DAssets/Characters/BansheeMom.glb" id="2_35mfd"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_g2els"]
@@ -10,8 +10,6 @@ height = 2.5029297
 [sub_resource type="BoxShape3D" id="BoxShape3D_6ku4e"]
 
 [node name="Player" type="CharacterBody3D"]
-collision_layer = 5
-collision_mask = 5
 script = ExtResource("1_6ku4e")
 
 [node name="BansheeMom" parent="." instance=ExtResource("2_35mfd")]
@@ -23,7 +21,7 @@ shape = SubResource("CapsuleShape3D_g2els")
 
 [node name="Area3D" type="Area3D" parent="."]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
-collision_layer = 4
+collision_layer = 0
 collision_mask = 4
 monitoring = false
 
