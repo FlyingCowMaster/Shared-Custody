@@ -1,10 +1,39 @@
-[gd_scene load_steps=4 format=3 uid="uid://bs0tan5nouunp"]
+[gd_scene load_steps=8 format=3 uid="uid://bs0tan5nouunp"]
 
-[ext_resource type="Script" uid="uid://jl6d1s2b460i" path="res://Scripts/baby_collider.gd" id="1_vrc4k"]
+[ext_resource type="Script" uid="uid://jl6d1s2b460i" path="res://scripts/baby_collider.gd" id="1_vrc4k"]
 [ext_resource type="PackedScene" uid="uid://0hm7n87vlbeu" path="res://assets/3DAssets/Characters/Child.glb" id="2_blylm"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vrc4k"]
 size = Vector3(0.8934479, 1.6115799, 0.96203613)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_blylm"]
+spread = 180.0
+initial_velocity_max = 5.0
+scale_min = 0.0
+scale_max = 0.29999998
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wgdp1"]
+render_priority = 1
+transparency = 1
+shading_mode = 0
+albedo_color = Color(0, 0, 0, 1)
+grow = true
+grow_amount = 0.245
+stencil_mode = 3
+stencil_flags = 1
+stencil_compare = 5
+metadata/_stencil_owned = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4kmhl"]
+next_pass = SubResource("StandardMaterial3D_wgdp1")
+shading_mode = 0
+diffuse_mode = 3
+stencil_mode = 1
+stencil_flags = 2
+stencil_outline_thickness = 0.245
+
+[sub_resource type="SphereMesh" id="SphereMesh_ad6kp"]
+material = SubResource("StandardMaterial3D_4kmhl")
 
 [node name="Baby" type="Area3D"]
 collision_mask = 128
@@ -16,6 +45,12 @@ transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 [node name="TriggerCollider" type="CollisionShape3D" parent="."]
 transform = Transform3D(0.4520371, 0.023156881, 0.008963687, -0.02315233, 0.452126, -0.0004591001, -0.008975436, -3.1413664e-18, 0.4526296, 0.01658547, 0.45850217, 0.0062586335)
 shape = SubResource("BoxShape3D_vrc4k")
+
+[node name="BabyTrail" type="GPUParticles3D" parent="."]
+amount = 50
+trail_lifetime = 3.0
+process_material = SubResource("ParticleProcessMaterial_blylm")
+draw_pass_1 = SubResource("SphereMesh_ad6kp")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="area_exited" from="." to="." method="_on_area_exited"]

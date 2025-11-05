@@ -137,6 +137,7 @@ curve = SubResource("Curve3D_6yjpi")
 transform = Transform3D(-0.0066679306, 0, -0.9999546, 0, 1, 0, 0.9999546, 0, -0.0066679306, 0.30995178, -1.168251e-05, -3.260086)
 
 [node name="Baby" parent="Path3D/PathFollow3D" instance=ExtResource("1_ph3nu")]
+transform = Transform3D(-4.377216e-08, 0, 1, 0, 1, 0, -1, 0, -4.377216e-08, 0, 0, 0)
 enter_method = "test"
 exit_method = "test"
 

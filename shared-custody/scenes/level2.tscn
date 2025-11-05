@@ -309,7 +309,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.723798, 0.46767962, -3.869
 curve = SubResource("Curve3D_bo4dx")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D2"]
-transform = Transform3D(-0.013057571, -0.034768537, 0.9993064, -1.8626383e-09, 0.99939007, 0.034771554, -0.99991107, 0.00045403116, -0.013049674, -0.02270794, -0.019153476, -0.013527632)
+transform = Transform3D(-0.013057571, -0.034768537, 0.99930656, -1.8626383e-09, 0.99939007, 0.03477156, -0.99991107, 0.00045403116, -0.013049677, -0.02270794, -0.019153476, -0.013527632)
 script = ExtResource("9_bo4dx")
 
 [node name="Buzzsaw" parent="Path3D2/PathFollow3D" instance=ExtResource("9_xa7n4")]
@@ -331,7 +331,7 @@ transform = Transform3D(0.035387937, 0, 0.9993736, 0, 1, 0, -0.9993736, 0, 0.035
 curve = SubResource("Curve3D_8g4ke")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D4"]
-transform = Transform3D(-0.9995429, -0.00011359378, -0.030217493, 0, 0.9999901, -0.0037591849, 0.030217713, -0.0037574603, -0.9995356, -0.00097084045, -0.00941205, -0.020932674)
+transform = Transform3D(-0.9995429, -0.00011359376, -0.030217493, 0, 0.9999899, -0.0037591849, 0.030217713, -0.0037574596, -0.9995356, -0.00097084045, -0.00941205, -0.020932674)
 script = ExtResource("9_bo4dx")
 
 [node name="Buzzsaw" parent="Path3D4/PathFollow3D" instance=ExtResource("9_xa7n4")]
@@ -381,7 +381,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.145434, 0.6826478, -10.495
 curve = SubResource("Curve3D_cleqw")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D6"]
-transform = Transform3D(-0.012921952, -0.0011342464, -0.99991435, -5.8207588e-11, 0.99999934, -0.0011343394, 0.999915, -1.4657865e-05, -0.012921943, -0.015583992, -0.00750643, 0.00091171265)
+transform = Transform3D(-0.01292195, -0.0011342464, -0.99991417, -5.8207578e-11, 0.99999934, -0.0011343393, 0.9999148, -1.4657865e-05, -0.0129219415, -0.015583992, -0.00750643, 0.00091171265)
 script = ExtResource("9_bo4dx")
 
 [node name="Buzzsaw" parent="Path3D6/PathFollow3D" instance=ExtResource("9_xa7n4")]
