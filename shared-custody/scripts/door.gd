@@ -1,16 +1,17 @@
 extends StaticBody3D
 
-@export var isPossesedMom = false
-@export var isPossesedDad = false
+@export var isPossesedMom: bool = false
+@export var isPossesedDad: bool = false
 
 func togglePossesionMom():
 	isPossesedMom = !isPossesedMom
+	shared_possesion_check()
 
 func togglePossesionDad():
 	isPossesedDad = !isPossesedDad
+	shared_possesion_check()
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta) -> void:
+func shared_possesion_check():
 	if isPossesedDad and isPossesedMom:
 		print("Shared Possesion!")
 		GlobalLevelManager.goto_scene()

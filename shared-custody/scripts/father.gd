@@ -4,16 +4,12 @@ extends CharacterBody3D
 @export var speed = 13
 # The downward acceleration when in the air, in meters per second squared.
 @export var fall_acceleration = 75
-@export var isPossesing = false
-var target_velocity = Vector3.ZERO
+@export var isPossesing: bool = false
+var target_velocity: Vector3 = Vector3.ZERO
 
 var posessed: Node3D
-var canPosess: bool
+var canPosess: bool = true
 var possesionFunc: String
-
-func _ready():
-	canPosess = true
-	print()
 			
 func possesionCheck():
 	$Area3D.monitoring = true
@@ -51,7 +47,6 @@ func _physics_process(delta):
 	if Input.is_action_pressed("possesion2") and canPosess:
 		canPosess = false
 		if not isPossesing:
-			print("possesion!")
 			possesionCheck()
 		else:
 			isPossesing = false
@@ -70,7 +65,6 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 		possesionFunc = "togglePossesion"
 	
 	elif body.has_method("togglePossesionDad"):
-		print("found dad")
 		body.call("togglePossesionDad")
 		$PoltDad.visible = false
 		posessed = body

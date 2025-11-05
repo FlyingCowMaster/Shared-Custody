@@ -1,7 +1,6 @@
 extends StaticBody3D
 
 @export var isPossesed = false
-var possesor
 var light
 
 func _ready():
@@ -19,7 +18,7 @@ func togglePossesionDad():
 	toggleLight()
 	
 func toggleLight():
-	if (isPossesed): 
+	if isPossesed: 
 		light.visible = true
 		set_collision_layer_value(5, false)
 	else:
