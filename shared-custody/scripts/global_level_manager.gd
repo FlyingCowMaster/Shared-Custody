@@ -7,8 +7,8 @@ func _ready() -> void:
 	var root = get_tree().root
 	current_scene = root.get_child(-1)
 
-func goto_scene(path="current scene"):
-	"""Changes scene to given scene, must use full path name"""
+##Changes scene to given scene, must use full path name. Defualts to current scene
+func goto_scene(path: String="current scene"):
 	get_tree().current_scene = current_scene
 	if path == "current scene":
 		path = get_tree().current_scene.scene_file_path
