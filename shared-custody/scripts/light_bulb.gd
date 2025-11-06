@@ -20,7 +20,7 @@ func togglePossesionDad():
 func toggleLight():
 	if isPossesed: 
 		light.visible = true
-		set_collision_layer_value(5, false)
+		$LightTrigger/CollisionShape3D.translate(Vector3(0, -50, 0))
 	else:
 		light.visible = false
-		set_collision_layer_value(5, true)
+		$LightTrigger/CollisionShape3D.translate(Vector3(0, 50, 0))

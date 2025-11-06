@@ -1,35 +1,22 @@
-extends Node3D
+extends Area3D
 
 @export var root_node: NodePath
 @export var enter_method: String
 @export var exit_method: String
 @export var maxSpeed = 4.0
+@export var isInArea = false
 var speed = maxSpeed
 
-var baby: PathFollow3D
-var babyCollision: Area3D
-
 func _ready() -> void:
-	baby = $".."
-	babyCollision = $"."
-	baby.progress = 0
+	print(get_parent())
+	get_parent().progress = 0
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	baby.progress += speed * delta
-
-func _on_area_entered(area: Area3D) -> void:
-	print("Baby entered: ", area.name)
-	if (false):
-		# Kill Baby
-		get_node(root_node).call("restartLevel")
-	elif (area.name.begins_with("Light")):
-		# Block Baby
-		speed = -4
-		print("Blocked")
-	else: 
-		speed = maxSpeed
-		print("Unblocked")
-
-func _on_area_exited(_area: Area3D) -> void:
-	pass
+	if (not get_overlapping_areas().is_empty()): isInArea = true
+	else: isInArea = false
+	print(get_overlapping_areas())
+	
+	if (isInArea): speed = -4
+	else: speed = maxSpeed
+	get_parent().progress += speed * delta
