@@ -8,14 +8,14 @@ extends Area3D
 var speed = maxSpeed
 
 func _ready() -> void:
-	print(get_parent())
+	#print(get_parent())
 	get_parent().progress = 0
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if (not get_overlapping_areas().is_empty()): isInArea = true
 	else: isInArea = false
-	print(get_overlapping_areas())
+	#print(get_overlapping_areas())
 	
 	if (isInArea): speed = -4
 	else: speed = maxSpeed
