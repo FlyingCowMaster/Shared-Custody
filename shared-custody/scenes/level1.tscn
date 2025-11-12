@@ -201,14 +201,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.887291, 1.063, -23.129654
 curve = SubResource("Curve3D_m7ahb")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D"]
-transform = Transform3D(-0.99988747, -0.00020748674, 0.007790848, 0, 0.9996428, 0.026618624, -0.0077935737, 0.026619803, -0.99953777, 8.784168, 0.22079062, -4.1292763)
+transform = Transform3D(-0.9998873, -0.00020748674, 0.007790848, 0, 0.9996428, 0.026618624, -0.0077935723, 0.026619803, -0.99953777, 8.784168, 0.22079062, -4.1292763)
+loop = false
 
 [node name="Baby" parent="Path3D/PathFollow3D" instance=ExtResource("1_m7ahb")]
 enter_method = "test"
 exit_method = "test"
 
 [node name="ParticlePathFollower" parent="Path3D" instance=ExtResource("5_ru4tf")]
-transform = Transform3D(-0.99990094, -0.00020748674, 0.007790848, 0, 0.9996428, 0.026618624, -0.007793679, 0.026619803, -0.99953777, 8.784168, 0.22079062, -4.1292763)
+transform = Transform3D(-0.9999008, -0.00020748674, 0.007790848, 0, 0.9996428, 0.026618624, -0.007793678, 0.026619803, -0.99953777, 8.784168, 0.22079062, -4.1292763)
 
 [node name="LightBulb" parent="." instance=ExtResource("6_6sh32")]
 transform = Transform3D(-4.3707733e-08, -0.01293253, -0.9999164, -5.652988e-10, 0.9999164, -0.01293253, 1, 0, -4.371139e-08, -18.341942, 2.3830976, -24.09218)

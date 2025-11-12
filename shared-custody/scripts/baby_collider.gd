@@ -13,6 +13,9 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	if (get_parent().progress_ratio >= 1.0):
+		GlobalLevelManager.next_scene()
+	
 	if (not get_overlapping_areas().is_empty()): isInArea = true
 	else: isInArea = false
 	#print(get_overlapping_areas())

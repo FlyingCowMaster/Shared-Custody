@@ -90,11 +90,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.945824, 1.063, -21.32343)
 curve = SubResource("Curve3D_qyetb")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D"]
-transform = Transform3D(-0.014972205, 0, -0.9998583, 0, 1, 0, 0.9998583, 0, -0.014972205, 0.30995178, -1.168251e-05, 0.06291199)
+transform = Transform3D(-0.014972203, 0, -0.9998582, 0, 1, 0, 0.9998582, 0, -0.014972203, 0.30995178, -1.168251e-05, 0.06291199)
+loop = false
 
 [node name="Baby" parent="Path3D/PathFollow3D" instance=ExtResource("1_qyetb")]
 enter_method = "test"
 exit_method = "test"
 
 [node name="ParticlePathFollower" parent="Path3D" instance=ExtResource("5_7uttt")]
-transform = Transform3D(-0.014972307, 0, -0.9998651, 0, 1, 0, 0.9998651, 0, -0.014972307, 0.30995178, -1.168251e-05, 0.06291199)
+transform = Transform3D(-0.014972306, 0, -0.99986506, 0, 1, 0, 0.99986506, 0, -0.014972306, 0.30995178, -1.168251e-05, 0.06291199)
