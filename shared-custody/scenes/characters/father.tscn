@@ -13,7 +13,7 @@ height = 2.3063965
 script = ExtResource("1_ltch0")
 
 [node name="PoltDad" parent="." instance=ExtResource("2_gbbrh")]
-transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -6.3723383, -0.34615636, 0)
+transform = Transform3D(-1.0927847e-08, 0, 0.25, 0, 0.25, 0, -0.25, 0, -1.0927847e-08, 0.30076504, -0.34615636, 7)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.33270174, 0.078448415, -0.014092445)

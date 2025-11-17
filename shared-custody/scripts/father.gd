@@ -30,8 +30,12 @@ func _physics_process(delta):
 			direction.z -= 1
 
 		if direction != Vector3.ZERO:
-			direction = direction.normalized()
 			# Setting the basis property will affect the rotation of the node.
+			direction = direction.normalized()
+			
+			# Rotate the character, as long as they are moving
+			var target_angle = atan2(-direction.x, -direction.z)
+			rotation.y = lerp_angle(rotation.y, target_angle, delta * 10)
 
 		# Ground Velocity
 		target_velocity.x = direction.x * speed
@@ -40,10 +44,11 @@ func _physics_process(delta):
 		# Vertical Velocity
 		if not is_on_floor(): # If in the air, fall towards the floor. Literally gravity
 			target_velocity.y = target_velocity.y - (fall_acceleration * delta)
-
+		
 		# Moving the Character
 		velocity = target_velocity
 		move_and_slide()
+	
 	if Input.is_action_pressed("possesion2") and canPosess:
 		canPosess = false
 		if not isPossesing:
@@ -54,6 +59,7 @@ func _physics_process(delta):
 				posessed.call(possesionFunc)
 			$PoltDad.show()
 		get_tree().create_timer(0.5).timeout.connect(func(): canPosess = true)
+
 
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	print("Dad entered ", body.name)

@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://b02lgthkhoxeo"]
 
-[ext_resource type="Texture2D" uid="uid://cpopwpoxlh04l" path="res://assets/3DAssets/greater-than-sign-computer-icons-arrow-symbol-others-e320848bc57f969b1d0f10c3fcc6dfd9.png" id="1_135pt"]
+[ext_resource type="Texture2D" uid="uid://cfv2rsqthjf66" path="res://assets/3DAssets/greater-than-sign-computer-icons-arrow-symbol-others-e320848bc57f969b1d0f10c3fcc6dfd9.png" id="1_135pt"]
 
 [sub_resource type="Gradient" id="Gradient_135pt"]
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
@@ -37,8 +37,9 @@ orientation = 1
 
 [node name="FootTrail" type="GPUParticles3D" parent="."]
 transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 0, 0, 0)
-amount = 10
-fixed_fps = 10
+amount = 40
+lifetime = 5.0
+fixed_fps = 60
 visibility_aabb = AABB(-50, -50, -50, 100, 100, 100)
 process_material = SubResource("ParticleProcessMaterial_135pt")
 draw_pass_1 = SubResource("QuadMesh_xcpon")
